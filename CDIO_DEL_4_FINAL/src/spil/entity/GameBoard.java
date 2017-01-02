@@ -6,12 +6,11 @@ import java.util.Collections;
 import desktop_codebehind.Car;
 import desktop_fields.Street;
 import spil.boundery.GUIBoundary;
-import spil.entity.field.Field;
-import spil.entity.field.Shipping;
 import spil.entity.field.Brewery;
+import spil.entity.field.Field;
 import spil.entity.field.Refuge;
+import spil.entity.field.Shipping;
 import spil.entity.field.Tax;
-import spil.entity.field.Street;
 
 public class GameBoard {
 
@@ -26,17 +25,17 @@ public class GameBoard {
 			// Debug code do not delete.
 			new Refuge(0), new Refuge(0),
 
-			new Street(FieldInfo.territoryPrices[0], FieldInfo.territoryRents[0]),
-			new Street(FieldInfo.territoryPrices[1], FieldInfo.territoryRents[1]),
-			new Street(FieldInfo.territoryPrices[2], FieldInfo.territoryRents[2]),
-			new Street(FieldInfo.territoryPrices[3], FieldInfo.territoryRents[3]),
-			new Street(FieldInfo.territoryPrices[4], FieldInfo.territoryRents[4]),
-			new Street(FieldInfo.territoryPrices[5], FieldInfo.territoryRents[5]),
-			new Street(FieldInfo.territoryPrices[6], FieldInfo.territoryRents[6]),
-			new Street(FieldInfo.territoryPrices[7], FieldInfo.territoryRents[7]),
-			new Street(FieldInfo.territoryPrices[8], FieldInfo.territoryRents[8]),
-			new Street(FieldInfo.territoryPrices[9], FieldInfo.territoryRents[9]),
-			new Street(FieldInfo.territoryPrices[10], FieldInfo.territoryRents[10]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[0], FieldInfo.territoryRents[0]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[1], FieldInfo.territoryRents[1]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[2], FieldInfo.territoryRents[2]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[3], FieldInfo.territoryRents[3]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[4], FieldInfo.territoryRents[4]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[5], FieldInfo.territoryRents[5]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[6], FieldInfo.territoryRents[6]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[7], FieldInfo.territoryRents[7]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[8], FieldInfo.territoryRents[8]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[9], FieldInfo.territoryRents[9]),
+			new spil.entity.field.Street(FieldInfo.territoryPrices[10], FieldInfo.territoryRents[10]),
 			new Refuge(FieldInfo.refugeeReceive[0]), new Refuge(FieldInfo.refugeeReceive[1]),
 			new Brewery(FieldInfo.laborCampPrices[0]), new Brewery(FieldInfo.laborCampPrices[1]),
 			new Tax(FieldInfo.taxRents[0]), new Tax(FieldInfo.taxRents[1]), new Shipping(FieldInfo.fleetPrices[0]),
