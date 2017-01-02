@@ -1,8 +1,8 @@
-package main;
+package spil.main;
 
 import javax.swing.SwingUtilities;
 
-import controller.GameController;
+import spil.controller.GameController;
 
 public class Main {
 
