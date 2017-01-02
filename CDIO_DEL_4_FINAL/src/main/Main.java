@@ -1,11 +1,13 @@
 package main;
 
-import controller.Controller;
+import javax.swing.SwingUtilities;
+
+import controller.GameController;
 
 public class Main {
 
-		public static void main(String[] args) {
-		new Controller().start();
-		
-}
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> new GameController());
+	}
+
 }
