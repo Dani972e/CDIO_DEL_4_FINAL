@@ -7,11 +7,11 @@ import desktop_codebehind.Car;
 import desktop_fields.Street;
 import spil.boundery.GUIBoundary;
 import spil.entity.field.Field;
-import spil.entity.field.Fleet;
-import spil.entity.field.LaborCamp;
-import spil.entity.field.Refugee;
+import spil.entity.field.Shipping;
+import spil.entity.field.Brewery;
+import spil.entity.field.Refuge;
 import spil.entity.field.Tax;
-import spil.entity.field.Territory;
+import spil.entity.field.Street;
 
 public class GameBoard {
 
@@ -24,24 +24,24 @@ public class GameBoard {
 	 */
 	private final spil.entity.field.Field[] fields = {
 			// Debug code do not delete.
-			new Refugee(0), new Refugee(0),
+			new Refuge(0), new Refuge(0),
 
-			new Territory(FieldInfo.territoryPrices[0], FieldInfo.territoryRents[0]),
-			new Territory(FieldInfo.territoryPrices[1], FieldInfo.territoryRents[1]),
-			new Territory(FieldInfo.territoryPrices[2], FieldInfo.territoryRents[2]),
-			new Territory(FieldInfo.territoryPrices[3], FieldInfo.territoryRents[3]),
-			new Territory(FieldInfo.territoryPrices[4], FieldInfo.territoryRents[4]),
-			new Territory(FieldInfo.territoryPrices[5], FieldInfo.territoryRents[5]),
-			new Territory(FieldInfo.territoryPrices[6], FieldInfo.territoryRents[6]),
-			new Territory(FieldInfo.territoryPrices[7], FieldInfo.territoryRents[7]),
-			new Territory(FieldInfo.territoryPrices[8], FieldInfo.territoryRents[8]),
-			new Territory(FieldInfo.territoryPrices[9], FieldInfo.territoryRents[9]),
-			new Territory(FieldInfo.territoryPrices[10], FieldInfo.territoryRents[10]),
-			new Refugee(FieldInfo.refugeeReceive[0]), new Refugee(FieldInfo.refugeeReceive[1]),
-			new LaborCamp(FieldInfo.laborCampPrices[0]), new LaborCamp(FieldInfo.laborCampPrices[1]),
-			new Tax(FieldInfo.taxRents[0]), new Tax(FieldInfo.taxRents[1]), new Fleet(FieldInfo.fleetPrices[0]),
-			new Fleet(FieldInfo.fleetPrices[1]), new Fleet(FieldInfo.fleetPrices[2]),
-			new Fleet(FieldInfo.fleetPrices[3]) };
+			new Street(FieldInfo.territoryPrices[0], FieldInfo.territoryRents[0]),
+			new Street(FieldInfo.territoryPrices[1], FieldInfo.territoryRents[1]),
+			new Street(FieldInfo.territoryPrices[2], FieldInfo.territoryRents[2]),
+			new Street(FieldInfo.territoryPrices[3], FieldInfo.territoryRents[3]),
+			new Street(FieldInfo.territoryPrices[4], FieldInfo.territoryRents[4]),
+			new Street(FieldInfo.territoryPrices[5], FieldInfo.territoryRents[5]),
+			new Street(FieldInfo.territoryPrices[6], FieldInfo.territoryRents[6]),
+			new Street(FieldInfo.territoryPrices[7], FieldInfo.territoryRents[7]),
+			new Street(FieldInfo.territoryPrices[8], FieldInfo.territoryRents[8]),
+			new Street(FieldInfo.territoryPrices[9], FieldInfo.territoryRents[9]),
+			new Street(FieldInfo.territoryPrices[10], FieldInfo.territoryRents[10]),
+			new Refuge(FieldInfo.refugeeReceive[0]), new Refuge(FieldInfo.refugeeReceive[1]),
+			new Brewery(FieldInfo.laborCampPrices[0]), new Brewery(FieldInfo.laborCampPrices[1]),
+			new Tax(FieldInfo.taxRents[0]), new Tax(FieldInfo.taxRents[1]), new Shipping(FieldInfo.fleetPrices[0]),
+			new Shipping(FieldInfo.fleetPrices[1]), new Shipping(FieldInfo.fleetPrices[2]),
+			new Shipping(FieldInfo.fleetPrices[3]) };
 
 	/*
 	 * Array that holds all the car figures.

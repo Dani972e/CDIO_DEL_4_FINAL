@@ -7,7 +7,7 @@ import spil.entity.TextInfo;
 /* 
  * final class so nobody accidently inherits from this class.
  */
-public final class Refugee extends Field {
+public final class Refuge extends Field {
 
 	/*
 	 * Variable to hold the Field bonus amount.
@@ -17,7 +17,7 @@ public final class Refugee extends Field {
 	/*
 	 * Refugee constructor which sets variable bonus.
 	 */
-	public Refugee(int bonus) {
+	public Refuge(int bonus) {
 		this.bonus = bonus;
 	}
 

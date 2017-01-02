@@ -9,7 +9,7 @@ import spil.entity.Player;
 /* 
  * final class so nobody accidently inherits from this class.
  */
-public final class LaborCamp extends Ownable {
+public final class Brewery extends Ownable {
 
 	/*
 	 * ArrayList object to keep track of Players who own instances of the
@@ -25,7 +25,7 @@ public final class LaborCamp extends Ownable {
 	/*
 	 * Constructor that sets price variable with super constructor.
 	 */
-	public LaborCamp(int price) {
+	public Brewery(int price) {
 		super(price);
 	}
 

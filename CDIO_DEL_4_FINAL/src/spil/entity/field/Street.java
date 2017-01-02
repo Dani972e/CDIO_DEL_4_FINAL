@@ -5,7 +5,7 @@ import spil.entity.Player;
 /* 
  * final class so nobody accidently inherits from this class.
  */
-public final class Territory extends Ownable {
+public final class Street extends Ownable {
 
 	/*
 	 * Rent for the Territory field.
@@ -15,7 +15,7 @@ public final class Territory extends Ownable {
 	/*
 	 * Territory constructor with field price and field rent.
 	 */
-	public Territory(int price, int rent) {
+	public Street(int price, int rent) {
 		super(price);
 		this.rent = rent;
 	}

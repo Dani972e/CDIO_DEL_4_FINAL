@@ -9,7 +9,7 @@ import spil.entity.Player;
 /* 
  * final class so nobody accidently inherits from this class.
  */
-public final class Fleet extends Ownable {
+public final class Shipping extends Ownable {
 
 	/*
 	 * Different rents of this field.
@@ -31,7 +31,7 @@ public final class Fleet extends Ownable {
 	/*
 	 * Constructor that sets price variable with super constructor.
 	 */
-	public Fleet(int price) {
+	public Shipping(int price) {
 		super(price);
 	}
 
