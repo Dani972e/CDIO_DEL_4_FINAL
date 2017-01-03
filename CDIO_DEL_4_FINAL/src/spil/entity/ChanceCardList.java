@@ -1,4 +1,4 @@
-package spil.entity.field;
+package spil.entity;
 
 public class ChanceCardList {
 
