@@ -1,4 +1,4 @@
-package spil.entity;
+package spil.controller;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -6,6 +6,9 @@ import java.util.Collections;
 import desktop_codebehind.Car;
 import desktop_fields.Street;
 import spil.boundery.GUIBoundary;
+import spil.entity.FieldInfo;
+import spil.entity.Player;
+import spil.entity.TextInfo;
 import spil.entity.field.Brewery;
 import spil.entity.field.Field;
 import spil.entity.field.Refuge;
