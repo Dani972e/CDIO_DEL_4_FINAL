@@ -1,4 +1,4 @@
-package spil.boundery;
+package spil.boundary;
 
 import desktop_codebehind.Car;
 import desktop_fields.Field;

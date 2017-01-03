@@ -1,7 +1,7 @@
 package spil.entity;
 
 import desktop_codebehind.Car;
-import spil.boundery.GUIBoundary;
+import spil.boundary.GUIBoundary;
 
 public class PlayerList {
 

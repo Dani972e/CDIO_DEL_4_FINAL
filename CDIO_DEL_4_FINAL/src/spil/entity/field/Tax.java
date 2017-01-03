@@ -1,6 +1,6 @@
 package spil.entity.field;
 
-import spil.boundery.GUIBoundary;
+import spil.boundary.GUIBoundary;
 import spil.entity.FieldInfo;
 import spil.entity.Player;
 import spil.entity.TextInfo;

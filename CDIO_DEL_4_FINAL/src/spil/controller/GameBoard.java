@@ -5,7 +5,7 @@ import java.util.Collections;
 
 import desktop_codebehind.Car;
 import desktop_fields.Street;
-import spil.boundery.GUIBoundary;
+import spil.boundary.GUIBoundary;
 import spil.entity.FieldInfo;
 import spil.entity.Player;
 import spil.entity.TextInfo;
