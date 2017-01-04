@@ -59,12 +59,10 @@ public class GUIBoundary {
 		// DEBUG! 
 		// Dette virker hvis man tager player.getPosition() + 1; Det giver mening. se bug report.
 		// Det introducere dog en mulig fejl. 
-
 		int index = calculateGUIIndex(player.getPosition());
 		System.out.println(player.getName() + " index when removing car: " + index);
 		// Vi transformerer Field index til GUI index.
 		GUI.removeCar(index, player.getName());
-
 	}
 
 	public static boolean chooseTaxEffect(Player player, int taxAmount) {
