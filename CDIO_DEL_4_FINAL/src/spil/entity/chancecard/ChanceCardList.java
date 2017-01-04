@@ -31,7 +31,7 @@ public class ChanceCardList {
 
 
 	public void pickOneCard(Player player){
-		
+
 		int newIndex;
 
 		ChanceCard tempCard=new BonusChanceCard(0);
@@ -49,15 +49,13 @@ public class ChanceCardList {
 			}
 			temp[newIndex-1]=chanceCardList[i]; //apply the new position to every number (not the last)
 		}
-		
-		for (int i=0; i<temp.length;++i){
-			if (temp[i]==null)
-				temp[i]=tempCard;
-		}
+
+		temp[0]=tempCard;
+
 		chanceCardList=temp;
 	}
-	
-	private void useEffect(Player player, Object card){
+
+	private void useEffect(Player player, ChanceCard card){
 		if (card instanceof BonusChanceCard){
 			//System.out.println("effect: "+((BonusChanceCard) card).getEffect());
 			player.addBalance(((BonusChanceCard) card).getEffect());
