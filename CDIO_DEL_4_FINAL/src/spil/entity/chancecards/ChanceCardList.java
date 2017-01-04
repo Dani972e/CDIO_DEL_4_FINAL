@@ -1,4 +1,6 @@
-package spil.entity;
+package spil.entity.chancecards;
+
+import spil.entity.Player;
 
 public class ChanceCardList {
 	private ChanceCard[] chanceCardList;
@@ -6,7 +8,7 @@ public class ChanceCardList {
 	public ChanceCardList(int numberOfChanceCard){
 		chanceCardList=new ChanceCard[numberOfChanceCard];
 		for(int i=0; i<numberOfChanceCard; ++i){
-			chanceCardList[i]=new ChanceCard("Card "+(int)(i+1));
+			chanceCardList[i]=new BonusChanceCard(i*100+1);
 		}
 	}
 
@@ -28,15 +30,15 @@ public class ChanceCardList {
 	}
 
 
-	public void pickOneCard(){
-		//TODO Use effect
+	public void pickOneCard(Player player){
 		
 		int newIndex;
 
-		ChanceCard tempCard=new ChanceCard("");
+		ChanceCard tempCard=new BonusChanceCard(0);
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
 
 		tempCard=chanceCardList[0];
+		useEffect(player, chanceCardList[chanceCardList.length-1]); //Activate effect
 		chanceCardList[0]=null;
 
 		for (int i=0; i<temp.length;++i){
@@ -53,6 +55,14 @@ public class ChanceCardList {
 				temp[i]=tempCard;
 		}
 		chanceCardList=temp;
+	}
+	
+	private void useEffect(Player player, Object card){
+		if (card instanceof BonusChanceCard){
+			//System.out.println("effect: "+((BonusChanceCard) card).getEffect());
+			player.addBalance(((BonusChanceCard) card).getEffect());
+		}
+		else;
 	}
 
 }
