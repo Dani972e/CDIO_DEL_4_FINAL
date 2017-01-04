@@ -58,7 +58,8 @@ public class TextInfo {
 	public static final String TITLE = "Treasure Hunt 2";
 	public static final String VERSION = "v0.02";
 
-	public static final String[][] fieldText = { { "1. Start", "", "Hvergang De passerer modtag kr. 4.000" },
+	public static final String[][] fieldText = { 
+			{"1. Start", "", "Hvergang De passerer modtag kr. 4.000" },
 			{ "2. Rødovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
 			{ "3.", "Prøv lykken", "ChanceKort" },
 			{ "4. Hvidovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },

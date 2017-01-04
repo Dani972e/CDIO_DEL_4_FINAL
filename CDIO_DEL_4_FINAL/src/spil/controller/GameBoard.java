@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import desktop_codebehind.Car;
+import desktop_fields.Chance;
+import desktop_fields.Empty;
+import desktop_fields.Jail;
+import desktop_fields.Start;
 import desktop_fields.Street;
 import spil.boundary.GUIBoundary;
 import spil.entity.FieldInfo;
@@ -21,7 +25,87 @@ public class GameBoard {
 	/*
 	 * Array that holds all the graphical fields.
 	 */
-	private final desktop_fields.Field[] guiFields;
+	private final desktop_fields.Field[] guiFields = {
+			new Start.Builder().setBgColor(Color.RED).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[0][0]).setSubText(TextInfo.fieldText[0][1]).setDescription(TextInfo.fieldText[0][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[1][0]).setSubText(TextInfo.fieldText[1][1]).setDescription(TextInfo.fieldText[1][2]).build(),
+			
+			new Chance.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).build(),
+
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[3][0]).setSubText(TextInfo.fieldText[3][1]).setDescription(TextInfo.fieldText[3][2]).build(),
+			
+			new desktop_fields.Tax.Builder().setBgColor(Color.CYAN).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[4][0]).setSubText(TextInfo.fieldText[4][1]).setDescription(TextInfo.fieldText[4][2]).build(),
+			
+			new desktop_fields.Shipping.Builder().setBgColor(Color.CYAN).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[5][0]).setSubText(TextInfo.fieldText[5][1]).setDescription(TextInfo.fieldText[5][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[6][0]).setSubText(TextInfo.fieldText[6][1]).setDescription(TextInfo.fieldText[6][2]).build(),
+			
+			new Chance.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[8][0]).setSubText(TextInfo.fieldText[8][1]).setDescription(TextInfo.fieldText[8][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[9][0]).setSubText(TextInfo.fieldText[9][1]).setDescription(TextInfo.fieldText[9][2]).build(),
+			
+			new Jail.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[10][0]).setSubText(TextInfo.fieldText[10][1]).setDescription(TextInfo.fieldText[10][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[11][0]).setSubText(TextInfo.fieldText[11][1]).setDescription(TextInfo.fieldText[11][2]).build(),
+			
+			new desktop_fields.Brewery.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[12][0]).setSubText(TextInfo.fieldText[12][1]).setDescription(TextInfo.fieldText[12][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[13][0]).setSubText(TextInfo.fieldText[13][1]).setDescription(TextInfo.fieldText[13][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[14][0]).setSubText(TextInfo.fieldText[14][1]).setDescription(TextInfo.fieldText[14][2]).build(),
+			
+			new desktop_fields.Shipping.Builder().setBgColor(Color.CYAN).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[15][0]).setSubText(TextInfo.fieldText[15][1]).setDescription(TextInfo.fieldText[15][2]).build(),
+		
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[16][0]).setSubText(TextInfo.fieldText[16][1]).setDescription(TextInfo.fieldText[16][2]).build(),
+			
+			new Chance.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[18][0]).setSubText(TextInfo.fieldText[18][1]).setDescription(TextInfo.fieldText[18][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[19][0]).setSubText(TextInfo.fieldText[19][1]).setDescription(TextInfo.fieldText[19][2]).build(),
+			
+			new Empty.Builder().build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[21][0]).setSubText(TextInfo.fieldText[21][1]).setDescription(TextInfo.fieldText[21][2]).build(),
+			
+			new Chance.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[23][0]).setSubText(TextInfo.fieldText[23][1]).setDescription(TextInfo.fieldText[23][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[24][0]).setSubText(TextInfo.fieldText[24][1]).setDescription(TextInfo.fieldText[24][2]).build(),
+					
+			new desktop_fields.Shipping.Builder().setBgColor(Color.CYAN).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[25][0]).setSubText(TextInfo.fieldText[25][1]).setDescription(TextInfo.fieldText[25][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[26][0]).setSubText(TextInfo.fieldText[26][1]).setDescription(TextInfo.fieldText[26][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[27][0]).setSubText(TextInfo.fieldText[27][1]).setDescription(TextInfo.fieldText[27][2]).build(),
+			
+			new desktop_fields.Brewery.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[28][0]).setSubText(TextInfo.fieldText[28][1]).setDescription(TextInfo.fieldText[28][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[29][0]).setSubText(TextInfo.fieldText[29][1]).setDescription(TextInfo.fieldText[29][2]).build(),
+			
+			new Jail.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[30][0]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[31][0]).setSubText(TextInfo.fieldText[31][1]).setDescription(TextInfo.fieldText[31][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[32][0]).setSubText(TextInfo.fieldText[32][1]).setDescription(TextInfo.fieldText[32][2]).build(),
+			
+			new Chance.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).build(),
+			
+			new desktop_fields.Shipping.Builder().setBgColor(Color.CYAN).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[34][0]).setSubText(TextInfo.fieldText[34][1]).setDescription(TextInfo.fieldText[34][2]).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[35][0]).setSubText(TextInfo.fieldText[35][1]).setDescription(TextInfo.fieldText[35][2]).build(),
+			
+			new Chance.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).build(),
+			
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[37][0]).setSubText(TextInfo.fieldText[37][1]).setDescription(TextInfo.fieldText[37][2]).build(),
+	
+			new desktop_fields.Tax.Builder().setBgColor(Color.CYAN).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[38][0]).setSubText(TextInfo.fieldText[38][1]).setDescription(TextInfo.fieldText[38][2]).build(),
+					
+			new Street.Builder().setBgColor(Color.BLUE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[39][0]).setSubText(TextInfo.fieldText[39][1]).setDescription(TextInfo.fieldText[39][2]).build(),
+	};
 	/*
 	 * Array that holds all the functional fields.
 	 */
@@ -67,13 +151,7 @@ public class GameBoard {
 	 * c GameBoard constructor that initializes the graphical fields.
 	 */
 	public GameBoard() {
-		guiFields = new desktop_fields.Field[FieldInfo.FIELD_COUNT];
 
-		for (int i = 0; i < FieldInfo.FIELD_COUNT; i++) {
-			guiFields[i] = new Street.Builder().setBgColor(Color.WHITE)
-					.setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[i][0])
-					.setSubText(TextInfo.fieldText[i][1]).setDescription(TextInfo.fieldText[i][2]).build();
-		}
 	}
 
 	/*
