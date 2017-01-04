@@ -11,10 +11,21 @@ public class TestChanceCardList {
 		
 		chanceCardList.mixCards();
 		
-		for(ChanceCard card : chanceCardList.getAllCards()){
+		for(ChanceCard card : chanceCardList.getAllCards())
 			System.out.println(card);
 		System.out.println("--------------------------");
 		
-	}
+		chanceCardList.pickOneCard();
+		
+		for(ChanceCard card : chanceCardList.getAllCards())
+			System.out.println(card);
+		System.out.println("--------------------------");
+		
+		chanceCardList.pickOneCard();
+		
+		for(ChanceCard card : chanceCardList.getAllCards())
+			System.out.println(card);
+		System.out.println("--------------------------");
+		
 
 	}}
