@@ -18,8 +18,7 @@ public class GUIBoundary {
 	}
 
 	public static boolean purchaseField(Player player, int price) {
-		String result = GUI.getUserButtonPressed(TextInfo.purchaseFieldMessage(player, price),
-				TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
+		String result = GUI.getUserButtonPressed(TextInfo.purchaseFieldMessage(player, price), TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
 		if (result.equals(TextInfo.buttonYesMessage) && (checkBalance(player, price))) {
 			print((TextInfo.purchaseConfirmedMessage(player, price)));
 			return true;
@@ -64,11 +63,7 @@ public class GUIBoundary {
 	}
 
 	public static void removePlayerCar(Player player) {
-		// This should not be here.
 		int pos = player.getPosition();
-		if (pos == 0) {
-			player.setPosition(1);
-		}
 		GUI.removeCar(player.getPosition(), player.getName());
 	}
 
@@ -84,8 +79,8 @@ public class GUIBoundary {
 	}
 
 	public static int decidePlayerAmount() {
-		String result = GUI.getUserSelection(TextInfo.welcomeMessage, TextInfo.btnArray[0], TextInfo.btnArray[1],
-				TextInfo.btnArray[2], TextInfo.btnArray[3], TextInfo.btnArray[4]);
+		String result = GUI.getUserSelection(TextInfo.welcomeMessage, TextInfo.btnArray[0], TextInfo.btnArray[1], TextInfo.btnArray[2],
+				TextInfo.btnArray[3], TextInfo.btnArray[4]);
 		return Integer.parseInt(result);
 	}
 
