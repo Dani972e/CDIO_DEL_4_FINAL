@@ -37,9 +37,9 @@ public class ChanceCardList {
 		ChanceCard tempCard=new BonusChanceCard(0);
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
 
-		tempCard=chanceCardList[0];
+		tempCard=chanceCardList[chanceCardList.length-1];
 		useEffect(player, chanceCardList[chanceCardList.length-1]); //Activate effect
-		chanceCardList[0]=null;
+		chanceCardList[chanceCardList.length-1]=null;
 
 		for (int i=0; i<temp.length;++i){
 			newIndex=i+2; //use shift number to make the new position
