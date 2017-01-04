@@ -1,8 +1,8 @@
 package test;
 import spil.entity.Player;
 import spil.entity.TextInfo;
-import spil.entity.chancecards.ChanceCard;
-import spil.entity.chancecards.ChanceCardList;
+import spil.entity.chancecard.ChanceCard;
+import spil.entity.chancecard.ChanceCardList;
 
 public class TestChanceCardList {
 	private static ChanceCardList chanceCardList;
