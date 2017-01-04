@@ -240,12 +240,20 @@ public class GameBoard {
 	 * landOnField method that puts a player on a field.
 	 */
 	public void landOnField(Player player) {
-		// HER SKAL POSITION ÅBENBART VÆRE -1?
-		int pos = player.getPosition() - 1;
-		// DEBUG!!
-		System.out.println(player.getName() + " position when entering field: " + pos);
-		fields[pos].landOnField(player);
+		int pos = player.getPosition();
+		if (pos > 1) {
+			fields[pos].landOnField(player);
+		} else {
+			GUIBoundary.print(TextInfo.homeMessage(player));
+		}
 	}
+	
+//		 HER SKAL POSITION Ã…BENBART VÃ†RE -1?
+//		int pos = player.getPosition() - 1;
+//		DEBUG!!
+//		System.out.println(player.getName() + " position when entering field: " + pos);
+//		fields[pos].landOnField(player);
+//	}
 
 	/*
 	 * Method that places a player on the GUI.
