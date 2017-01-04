@@ -56,8 +56,14 @@ public class GUIBoundary {
 	}
 
 	public static void removePlayerCar(Player player) { // THIS HERE IS IMPORTANT. (Index bug.)
-		int pos = player.getPosition();
-		GUI.removeCar(player.getPosition(), player.getName());
+		// DEBUG! 
+		// Dette virker hvis man tager player.getPosition() + 1; Det giver mening. se bug report.
+		// Det introducere dog en mulig fejl. 
+		System.out.println(player.getName() + " index when removing car: " + player.getPosition());
+		// Vi transformerer Field index til GUI index.
+		int index = calculateGUIIndex(player.getPosition());
+		GUI.removeCar(index, player.getName());
+		// ----------------------------^^^^^^^^---------------------------
 	}
 
 	public static boolean chooseTaxEffect(Player player, int taxAmount) {
@@ -79,6 +85,13 @@ public class GUIBoundary {
 
 	public static void showDice(int[] rollList) {
 		GUI.setDice(rollList[0], rollList[1]);
+	}
+	
+	/*
+	 * Er dette okay?
+	 */
+	private static int calculateGUIIndex(int fieldIndex) {
+		return fieldIndex + 1;
 	}
 
 }

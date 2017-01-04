@@ -156,27 +156,48 @@ public class GameBoard {
 	/*
 	 * Array that holds all the functional fields.
 	 */
-	private final spil.entity.field.Field[] fields = { new spil.entity.field.Start(4000),
-			new spil.entity.field.Street(1200, 50), new spil.entity.field.ChanceField(),
-			new spil.entity.field.Street(1200, 50), new spil.entity.field.Tax(4000),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(2000, 100),
-			new spil.entity.field.ChanceField(), new spil.entity.field.Street(2000, 100),
-			new spil.entity.field.Street(2400, 100), new spil.entity.field.Jail(),
-			new spil.entity.field.Street(2800, 200), new spil.entity.field.Brewery(3000),
-			new spil.entity.field.Street(2800, 200), new spil.entity.field.Street(3200, 250),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(3600, 300),
-			new spil.entity.field.ChanceField(), new spil.entity.field.Street(3600, 300),
-			new spil.entity.field.Street(4000, 350), new spil.entity.field.Empty(),
-			new spil.entity.field.Street(4400, 350), new spil.entity.field.ChanceField(),
-			new spil.entity.field.Street(4400, 350), new spil.entity.field.Street(4800, 400),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(5200, 450),
-			new spil.entity.field.Street(5200, 450), new spil.entity.field.Brewery(3000),
-			new spil.entity.field.Street(5600, 500), new spil.entity.field.Jail(),
-			new spil.entity.field.Street(6000, 550), new spil.entity.field.Street(6000, 550),
-			new spil.entity.field.ChanceField(), new spil.entity.field.Street(6400, 600),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.ChanceField(),
-			new spil.entity.field.Street(7000, 700), new spil.entity.field.Tax(2000),
-			new spil.entity.field.Street(8000, 1000), };
+	private final spil.entity.field.Field[] fields = { 
+			new spil.entity.field.Start(4000),
+			new spil.entity.field.Street(1200, 50),
+			new spil.entity.field.ChanceField(),
+			new spil.entity.field.Street(1200, 50), 
+			new spil.entity.field.Tax(4000),
+			new spil.entity.field.Shipping(4000), 
+			new spil.entity.field.Street(2000, 100),
+			new spil.entity.field.ChanceField(), 
+			new spil.entity.field.Street(2000, 100),
+			new spil.entity.field.Street(2400, 100), 
+			new spil.entity.field.Jail(),
+			new spil.entity.field.Street(2800, 200),
+			new spil.entity.field.Brewery(3000),
+			new spil.entity.field.Street(2800, 200),
+			new spil.entity.field.Street(3200, 250),
+			new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(3600, 300),
+			new spil.entity.field.ChanceField(), 
+			new spil.entity.field.Street(3600, 300),
+			new spil.entity.field.Street(4000, 350), 
+			new spil.entity.field.Empty(),
+			new spil.entity.field.Street(4400, 350), 
+			new spil.entity.field.ChanceField(),
+			new spil.entity.field.Street(4400, 350),
+			new spil.entity.field.Street(4800, 400),
+			new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(5200, 450),
+			new spil.entity.field.Street(5200, 450),
+			new spil.entity.field.Brewery(3000),
+			new spil.entity.field.Street(5600, 500),
+			new spil.entity.field.Jail(),
+			new spil.entity.field.Street(6000, 550),
+			new spil.entity.field.Street(6000, 550),
+			new spil.entity.field.ChanceField(), 
+			new spil.entity.field.Street(6400, 600),
+			new spil.entity.field.Shipping(4000),
+			new spil.entity.field.ChanceField(),
+			new spil.entity.field.Street(7000, 700), 
+			new spil.entity.field.Tax(2000),
+			new spil.entity.field.Street(8000, 1000), 
+			};
 
 	/*
 	 * Array that holds all the car figures.
@@ -219,10 +240,11 @@ public class GameBoard {
 	 * landOnField method that puts a player on a field.
 	 */
 	public void landOnField(Player player) {
-		int pos = player.getPosition();
-
+		// HER SKAL POSITION ÅBENBART VÆRE -1?
+		int pos = player.getPosition() - 1;
+		// DEBUG!!
+		System.out.println(player.getName() + " position when entering field: " + pos);
 		fields[pos].landOnField(player);
-
 	}
 
 	/*
