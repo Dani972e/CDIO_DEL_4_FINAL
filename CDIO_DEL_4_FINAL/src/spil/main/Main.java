@@ -1,7 +1,5 @@
 package spil.main;
 
-import javax.swing.SwingUtilities;
-
 import spil.controller.GameController;
 
 public class Main {
