@@ -148,7 +148,7 @@ public class GameBoard {
 	private final spil.entity.field.Field[] fields = {
 			/*// Debug code do not delete.
 			new Refuge(0), new Refuge(0),
-
+			
 			new spil.entity.field.Street(FieldInfo.territoryPrices[0], FieldInfo.territoryRents[0]),
 			new spil.entity.field.Street(FieldInfo.territoryPrices[1], FieldInfo.territoryRents[1]),
 			new spil.entity.field.Street(FieldInfo.territoryPrices[2], FieldInfo.territoryRents[2]),
@@ -164,32 +164,21 @@ public class GameBoard {
 			new Tax(FieldInfo.taxRents[0]), new Tax(FieldInfo.taxRents[1]), new Shipping(FieldInfo.fleetPrices[0]),
 			new Shipping(FieldInfo.fleetPrices[1]), new Shipping(FieldInfo.fleetPrices[2]), new Shipping(FieldInfo.fleetPrices[3]) 
 			*/
-			
-				new spil.entity.field.Start(4000),
-				new spil.entity.field.Street(1200, 50),
-				new spil.entity.field.ChanceField(),
-				new spil.entity.field.Street(1200, 50),
 
-				new spil.entity.field.Tax(4000),
-				new spil.entity.field.Shipping(4000),
-				new spil.entity.field.Street(2000, 100),
-				new spil.entity.field.ChanceField(),
-				new spil.entity.field.Street(2000, 100),
-				new spil.entity.field.Street(2400, 100),
-				
-				new spil.entity.field.Jail(),
-				new spil.entity.field.Street(2800, 200),
-				new spil.entity.field.Brewery(3000),
-				new spil.entity.field.Street(2800, 200),
-				new spil.entity.field.Street(3200, 200),
-				
-				new spil.entity.field.Shipping(4000),
-				new spil.entity.field.Street(3600, 300),
-				new spil.entity.field.ChanceField(),
-				new spil.entity.field.Street(3600, 300),
-				new spil.entity.field.Street(4000, 300),
-				
-			};
+			new spil.entity.field.Start(4000), new spil.entity.field.Street(1200, 50), new spil.entity.field.ChanceField(),
+			new spil.entity.field.Street(1200, 50), new spil.entity.field.Tax(4000), new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(2000, 100), new spil.entity.field.ChanceField(), new spil.entity.field.Street(2000, 100),
+			new spil.entity.field.Street(2400, 100), new spil.entity.field.Jail(), new spil.entity.field.Street(2800, 200),
+			new spil.entity.field.Brewery(3000), new spil.entity.field.Street(2800, 200), new spil.entity.field.Street(3200, 250),
+			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(3600, 300), new spil.entity.field.ChanceField(),
+			new spil.entity.field.Street(3600, 300), new spil.entity.field.Street(4000, 350), new spil.entity.field.Empty(),
+			new spil.entity.field.Street(4400, 350), new spil.entity.field.ChanceField(), new spil.entity.field.Street(4400, 350),
+			new spil.entity.field.Street(4800, 400), new spil.entity.field.Shipping(4000), new spil.entity.field.Street(5200, 450),
+			new spil.entity.field.Street(5200, 450), new spil.entity.field.Brewery(3000), new spil.entity.field.Street(5600, 500),
+			new spil.entity.field.Jail(), new spil.entity.field.Street(6000, 550), new spil.entity.field.Street(6000, 550),
+			new spil.entity.field.ChanceField(), new spil.entity.field.Street(6400, 600), new spil.entity.field.Shipping(4000),
+			new spil.entity.field.ChanceField(), new spil.entity.field.Street(7000, 700), new spil.entity.field.Tax(2000),
+			new spil.entity.field.Street(8000, 1000), };
 
 	/*
 	 * Array that holds all the car figures.
@@ -203,7 +192,7 @@ public class GameBoard {
 					.secondaryColor(FieldInfo.carColors[3][1]).build(),
 			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldInfo.carColors[4][0]).secondaryColor(FieldInfo.carColors[4][1]).build(),
 			new Car.Builder().patternDotted().typeCar().primaryColor(FieldInfo.carColors[5][0]).secondaryColor(FieldInfo.carColors[5][1]).build(), };
-	
+
 	/*
 	 * Method that shows all the graphical fields.
 	 */
