@@ -1,4 +1,4 @@
-package spil.entity.chancecards;
+package spil.entity.chancecard;
 
 public abstract class ChanceCard {
 	protected int effect;

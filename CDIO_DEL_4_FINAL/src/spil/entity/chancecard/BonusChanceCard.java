@@ -1,4 +1,4 @@
-package spil.entity.chancecards;
+package spil.entity.chancecard;
 
 public class BonusChanceCard extends ChanceCard {
 

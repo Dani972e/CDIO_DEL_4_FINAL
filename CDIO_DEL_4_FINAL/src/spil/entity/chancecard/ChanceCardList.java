@@ -1,4 +1,4 @@
-package spil.entity.chancecards;
+package spil.entity.chancecard;
 
 import spil.entity.Player;
 
