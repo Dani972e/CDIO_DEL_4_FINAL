@@ -203,7 +203,6 @@ public class GameBoard {
 
 		while (newPosition > numberOfFields) {
 			newPosition -= numberOfFields;
-			
 		}
 		player.setPosition(newPosition);
 	}
