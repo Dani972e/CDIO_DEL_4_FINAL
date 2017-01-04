@@ -1,5 +1,6 @@
 package spil.controller;
 
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -69,8 +70,8 @@ public class GameBoard {
 		guiFields = new desktop_fields.Field[FieldInfo.FIELD_COUNT];
 
 		for (int i = 0; i < FieldInfo.FIELD_COUNT; i++) {
-			guiFields[i] = new Street.Builder().setBgColor(FieldInfo.fieldColors[i][0])
-					.setFgColor(FieldInfo.fieldColors[i][1]).setTitle(TextInfo.fieldText[i][0])
+			guiFields[i] = new Street.Builder().setBgColor(Color.WHITE)
+					.setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[i][0])
 					.setSubText(TextInfo.fieldText[i][1]).setDescription(TextInfo.fieldText[i][2]).build();
 		}
 	}
