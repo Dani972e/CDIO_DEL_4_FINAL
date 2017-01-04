@@ -11,7 +11,7 @@ public final class Start extends Field {
 		this.startBonus = startBonus;
 	}
 
-	public void rundeBonus() {
+	public void roundBonus() {
 
 	}
 
