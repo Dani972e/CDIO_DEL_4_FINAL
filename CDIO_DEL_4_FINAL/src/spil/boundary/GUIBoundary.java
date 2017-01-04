@@ -36,14 +36,7 @@ public class GUIBoundary {
 	}
 
 	public static void print(String message) {
-		if (message != null) {
-			try {
-				GUI.showMessage(message);
-			} catch (Exception e) {
-				e.printStackTrace();
-				GUI.showMessage(TextInfo.errorMessage);
-			}
-		}
+		GUI.showMessage(message);
 	}
 
 	public static void initFields(Field[] fields) {
@@ -62,7 +55,7 @@ public class GUIBoundary {
 		GUI.setCar(player.getPosition(), player.getName());
 	}
 
-	public static void removePlayerCar(Player player) {
+	public static void removePlayerCar(Player player) { // THIS HERE IS IMPORTANT. (Index bug.)
 		int pos = player.getPosition();
 		GUI.removeCar(player.getPosition(), player.getName());
 	}
