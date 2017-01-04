@@ -1,5 +1,6 @@
 package spil.entity.field;
 
+import spil.controller.GameBoard;
 import spil.entity.Player;
 
 public final class Start extends Field {
@@ -8,6 +9,10 @@ public final class Start extends Field {
 
 	public Start(int startBonus) {
 		this.startBonus = startBonus;
+	}
+
+	public void rundeBonus() {
+
 	}
 
 	@Override
