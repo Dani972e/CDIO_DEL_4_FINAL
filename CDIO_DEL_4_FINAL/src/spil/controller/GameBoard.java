@@ -146,7 +146,7 @@ public class GameBoard {
 	 * Array that holds all the functional fields.
 	 */
 	private final spil.entity.field.Field[] fields = {
-			// Debug code do not delete.
+			/*// Debug code do not delete.
 			new Refuge(0), new Refuge(0),
 
 			new spil.entity.field.Street(FieldInfo.territoryPrices[0], FieldInfo.territoryRents[0]),
@@ -162,7 +162,34 @@ public class GameBoard {
 			new spil.entity.field.Street(FieldInfo.territoryPrices[10], FieldInfo.territoryRents[10]), new Refuge(FieldInfo.refugeeReceive[0]),
 			new Refuge(FieldInfo.refugeeReceive[1]), new Brewery(FieldInfo.laborCampPrices[0]), new Brewery(FieldInfo.laborCampPrices[1]),
 			new Tax(FieldInfo.taxRents[0]), new Tax(FieldInfo.taxRents[1]), new Shipping(FieldInfo.fleetPrices[0]),
-			new Shipping(FieldInfo.fleetPrices[1]), new Shipping(FieldInfo.fleetPrices[2]), new Shipping(FieldInfo.fleetPrices[3]) };
+			new Shipping(FieldInfo.fleetPrices[1]), new Shipping(FieldInfo.fleetPrices[2]), new Shipping(FieldInfo.fleetPrices[3]) 
+			*/
+			
+				new spil.entity.field.Start(4000),
+				new spil.entity.field.Street(1200, 50),
+				new spil.entity.field.ChanceField(),
+				new spil.entity.field.Street(1200, 50),
+
+				new spil.entity.field.Tax(4000),
+				new spil.entity.field.Shipping(4000),
+				new spil.entity.field.Street(2000, 100),
+				new spil.entity.field.ChanceField(),
+				new spil.entity.field.Street(2000, 100),
+				new spil.entity.field.Street(2400, 100),
+				
+				new spil.entity.field.Jail(),
+				new spil.entity.field.Street(2800, 200),
+				new spil.entity.field.Brewery(3000),
+				new spil.entity.field.Street(2800, 200),
+				new spil.entity.field.Street(3200, 200),
+				
+				new spil.entity.field.Shipping(4000),
+				new spil.entity.field.Street(3600, 300),
+				new spil.entity.field.ChanceField(),
+				new spil.entity.field.Street(3600, 300),
+				new spil.entity.field.Street(4000, 300),
+				
+			};
 
 	/*
 	 * Array that holds all the car figures.
@@ -176,14 +203,7 @@ public class GameBoard {
 					.secondaryColor(FieldInfo.carColors[3][1]).build(),
 			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldInfo.carColors[4][0]).secondaryColor(FieldInfo.carColors[4][1]).build(),
 			new Car.Builder().patternDotted().typeCar().primaryColor(FieldInfo.carColors[5][0]).secondaryColor(FieldInfo.carColors[5][1]).build(), };
-
-	/*
-	 * c GameBoard constructor that initializes the graphical fields.
-	 */
-	public GameBoard() {
-
-	}
-
+	
 	/*
 	 * Method that shows all the graphical fields.
 	 */
