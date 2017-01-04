@@ -14,8 +14,7 @@ public final class Shipping extends Ownable {
 	/*
 	 * Different rents of this field.
 	 */
-	private int[] rents = { FieldInfo.fleetRents[0], FieldInfo.fleetRents[1], FieldInfo.fleetRents[2],
-			FieldInfo.fleetRents[3] };
+	private int[] rents = { 0, 0, 0, 0 };
 
 	/*
 	 * Rent variable for this field.
