@@ -38,7 +38,9 @@ public class GameBoard {
 			
 			
 			
-			new desktop_fields.Tax.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[4][0]).setSubText(TextInfo.fieldText[4][1]).setDescription(TextInfo.fieldText[4][2]).build(),
+			// Lavet om fra TAX til STREET grundet bug.)
+			// new desktop_fields.Tax.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[4][0]).setSubText(TextInfo.fieldText[4][1]).setDescription(TextInfo.fieldText[4][2]).build(),
+			new Street.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[4][0]).setSubText(TextInfo.fieldText[4][1]).setDescription(TextInfo.fieldText[4][2]).build(),
 			
 			
 			
@@ -56,7 +58,7 @@ public class GameBoard {
 			
 			
 			
-			new Jail.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).setTitle(TextInfo.fieldText[10][0]).setSubText(TextInfo.fieldText[10][1]).setDescription(TextInfo.fieldText[10][2]).build(),
+			new Jail.Builder().setBgColor(Color.GRAY).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[10][0]).setSubText(TextInfo.fieldText[10][1]).setDescription(TextInfo.fieldText[10][2]).build(),
 			
 			
 			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[11][0]).setSubText(TextInfo.fieldText[11][1]).setDescription(TextInfo.fieldText[11][2]).build(),
@@ -109,7 +111,7 @@ public class GameBoard {
 			
 			
 			
-			new Jail.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).setSubText(TextInfo.fieldText[30][1]).setDescription(TextInfo.fieldText[30][2]).build(),
+			new Jail.Builder().setBgColor(Color.GRAY).setFgColor(Color.BLACK).setSubText(TextInfo.fieldText[30][1]).setDescription(TextInfo.fieldText[30][2]).build(),
 			
 			
 			
@@ -125,15 +127,16 @@ public class GameBoard {
 			new desktop_fields.Shipping.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[35][0]).setSubText(TextInfo.fieldText[35][1]).setDescription(TextInfo.fieldText[35][2]).build(),
 			
 			
-			
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 			
-
 			
 			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[37][0]).setSubText(TextInfo.fieldText[37][1]).setDescription(TextInfo.fieldText[37][2]).build(),
-	
-			new desktop_fields.Tax.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[38][0]).setSubText(TextInfo.fieldText[38][1]).setDescription(TextInfo.fieldText[38][2]).build(),
-					
+			
+			
+			// Lavet om fra TAX til STREET grundet bug.)
+			// new desktop_fields.Tax.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[38][0]).setSubText(TextInfo.fieldText[38][1]).setDescription(TextInfo.fieldText[38][2]).build(),
+			new Street.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[38][0]).setSubText(TextInfo.fieldText[38][1]).setDescription(TextInfo.fieldText[38][2]).build(),
+			
 			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[39][0]).setSubText(TextInfo.fieldText[39][1]).setDescription(TextInfo.fieldText[39][2]).build(),
 	};
 	/*

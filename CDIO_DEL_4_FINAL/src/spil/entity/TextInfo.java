@@ -63,7 +63,7 @@ public class TextInfo {
 			{ "Rødovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
 			{ "", "Prøv lykken", "ChanceKort" },
 			{ "Hvidovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
-			{ "Indkomstskat 10% eller 4000 kr.", "", "10% af dine samlede værdier (kontanter, bygninger og den trykte pris for dine grunde og virksomheder) eller kr. 4.000" },
+			{ "Indkomst      skat", "10% el. Kr 4.000.", "10% af dine samlede værdier (kontanter, bygninger og den trykte pris for dine grunde og virksomheder) eller kr. 4.000" },
 			{ "SFL-Færgerne", "Kr. 4.000", "Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 			{ "Roskildevej", "Kr. 2.000", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
 			{ "", "Prøv lykken", "ChanceKort" },
@@ -97,9 +97,8 @@ public class TextInfo {
 			{ "DSB Rederierne Halsskov/Knudshoved", "Kr. 4.000", "Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 			{ "", "Prøv lykken", "ChanceKort" },
 			{ "Frederiks    -berggade", "Kr. 7.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." },
-			{ "Ekstraordinær statsskat", "Betal Kr. 2.000", "" },
+			{ "Ekstraordinær           statsskat", "Betal Kr. 2.000", "Betal Kr. 2.000" },
 			{ "Rådhus   -pladsen", "Kr. 8.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." },
-				
 	};
 
 	public static final String welcomeMessage = "Welcome to " + TITLE + ", " + VERSION
