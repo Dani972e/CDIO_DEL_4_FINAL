@@ -32,8 +32,7 @@ public class PlayerList {
 		playerList = new Player[playerCount];
 
 		for (int i = 0; i < playerCount; i++) {
-			playerList[i] = new Player(TextInfo.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins,
-					position);
+			playerList[i] = new Player(TextInfo.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins, position);
 			GUIBoundary.addPlayer(playerList[i], cars[i]);
 		}
 	}
@@ -42,10 +41,8 @@ public class PlayerList {
 	 * Sets all Player objects Cars to the initial position.
 	 */
 	public void setHomeCars() {
-		for (Player player : playerList) { // HER SKAL DER BRUGES GUI INDEX! IKKE FIELD INDEX.
-			//player.setPosition(1); 
+		for (Player player : playerList) {
 			GUIBoundary.placePlayerCar(player);
-			//player.setPosition(0);
 		}
 	}
 
