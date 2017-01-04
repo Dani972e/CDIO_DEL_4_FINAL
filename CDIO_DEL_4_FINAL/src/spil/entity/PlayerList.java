@@ -42,7 +42,7 @@ public class PlayerList {
 	 * Sets all Player objects Cars to the initial position.
 	 */
 	public void setHomeCars() {
-		for (Player player : playerList) {
+		for (Player player : playerList) { // HER SKAL DER BRUGES GUI INDEX! IKKE FIELD INDEX.
 			player.setPosition(1);
 			GUIBoundary.placePlayerCar(player);
 			player.setPosition(0);
