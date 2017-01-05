@@ -20,7 +20,6 @@ public class JailedPlayers {
 			if (jailedPlayers[i] != null) {
 				if (jailedPlayers[i].equals(player)) {
 					if (counters[i] > 0) {
-						counters[i] -= 1;
 						return true;
 					}
 					return false;
@@ -28,6 +27,17 @@ public class JailedPlayers {
 			}
 		}
 		return false;
+	}
+
+	public void decCounters() {
+		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
+			if (jailedPlayers[i] != null) {
+				if (counters[i] > 0) {
+					counters[i] -= 1;
+					break;
+				}
+			}
+		}
 	}
 
 }

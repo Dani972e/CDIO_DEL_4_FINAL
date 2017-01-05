@@ -20,10 +20,10 @@ public final class Jail extends Field {
 		if (!isJail) {
 			GUIBoundary.print(TextInfo.jailFieldMessage(player));
 		} else if (isJail) {
+			GUIBoundary.print(TextInfo.jailedFieldMessage(player));
 			GUIBoundary.removePlayerCar(player);
 			player.setPosition(10);
 			GUIBoundary.placePlayerCar(player);
-			GUIBoundary.print(TextInfo.jailedFieldMessage(player));
 			jailedPlayers.jailPlayer(player);
 		}
 	}
