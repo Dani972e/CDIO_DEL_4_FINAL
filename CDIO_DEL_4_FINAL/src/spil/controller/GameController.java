@@ -46,24 +46,17 @@ public class GameController {
 		while (playerList.getPlayersLeft() > 1) {
 			while (playerList.getPlayer(index) == null)
 				index = calculateIndex(index);
-
+			
+		
+			
 			Player currentPlayer = playerList.getPlayer(index);
 
-			GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
-
-			int[] rollList = diceCup.rollDice(currentPlayer);
-			int rollTotal = diceCup.getTotalRoll(rollList);
-
-			currentPlayer.setLatestRoll(rollTotal);
-			GUIBoundary.showDice(rollList);
-			GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
-
-			GUIBoundary.removePlayerCar(currentPlayer);
-			gameBoard.movePlayer(currentPlayer, rollTotal);
-			GUIBoundary.placePlayerCar(currentPlayer);
-
-			gameBoard.landOnField(currentPlayer);
-			GUIBoundary.updatePlayer(currentPlayer);
+			
+			
+			if (diceCup.checkRollEquality(rollList)) {
+				GUIBoundary.print("Tillykke! Du har fået et ekstra kast.");
+			
+			}
 
 			if (currentPlayer.isBankrupt()) {
 				GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
@@ -90,4 +83,21 @@ public class GameController {
 		return index + 1;
 	}
 
+	private int[] playRound(Player currentPlayer) {
+		GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
+		
+		int[] rollList = diceCup.rollDice(currentPlayer);
+		int rollTotal = diceCup.getTotalRoll(rollList);
+		
+		currentPlayer.setLatestRoll(rollTotal);
+		GUIBoundary.showDice(rollList);
+		GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
+		
+		GUIBoundary.removePlayerCar(currentPlayer);
+		gameBoard.movePlayer(currentPlayer, rollTotal);
+		GUIBoundary.placePlayerCar(currentPlayer);
+		
+		gameBoard.landOnField(currentPlayer);
+		GUIBoundary.updatePlayer(currentPlayer);
+	}
 }
