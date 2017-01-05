@@ -23,7 +23,7 @@ import spil.entity.field.Field;
 
 public class GameBoard {
 
-	private JailedPlayers jailedPlayers;
+	private JailedPlayers jailedPlayers = new JailedPlayers();
 
 	/*
 	 * Array that holds all the graphical fields.
@@ -207,7 +207,6 @@ public class GameBoard {
 
 	public GameBoard(PlayerList playerList) {
 		this.playerList = playerList;
-		jailedPlayers = new JailedPlayers();
 	}
 
 	public PlayerList getPlayerList() {
