@@ -230,7 +230,7 @@ public class GameBoard {
 		int newPosition = player.getPosition() + amount;
 		int numberOfFields = FieldInfo.FIELD_COUNT;
 
-		while (newPosition > numberOfFields) {
+		while (newPosition >= numberOfFields) {
 			newPosition -= numberOfFields;
 			
 		}
