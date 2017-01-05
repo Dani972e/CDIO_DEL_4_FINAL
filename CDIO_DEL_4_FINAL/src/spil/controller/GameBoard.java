@@ -161,9 +161,8 @@ public class GameBoard {
 	/*
 	 * Array that holds all the functional fields.
 	 */
-	private ChanceCardList chanceCardList=new ChanceCardList(30, this);
-	
-	
+	private ChanceCardList chanceCardList = new ChanceCardList(30, this);
+
 	private final spil.entity.field.Field[] fields = { new spil.entity.field.Start(4000),
 			new spil.entity.field.Street(1200, 50), new spil.entity.field.ChanceField(chanceCardList),
 			new spil.entity.field.Street(1200, 50), new spil.entity.field.Tax(4000),
@@ -205,7 +204,7 @@ public class GameBoard {
 
 	private PlayerList playerList;
 
-	public GameBoard(PlayerList playerList) {
+	public void setPlayerList(PlayerList playerList) {
 		this.playerList = playerList;
 	}
 
@@ -270,6 +269,10 @@ public class GameBoard {
 
 	public boolean isJailed(Player player) {
 		return jailedPlayers.isJailed(player);
+	}
+
+	public void decJailCounters() {
+		jailedPlayers.decCounters();
 	}
 
 }

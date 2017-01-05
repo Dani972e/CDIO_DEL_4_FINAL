@@ -22,7 +22,7 @@ public class GameController {
 	 */
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
-		gameBoard = new GameBoard(playerList);
+		gameBoard = new GameBoard();
 
 		gameBoard.initFields();
 
@@ -31,6 +31,8 @@ public class GameController {
 		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 0, gameBoard.getRandomUniqueCars());
 		playerList.setHomeCars();
 
+		gameBoard.setPlayerList(playerList);
+		
 		GUIBoundary.print(TextInfo.playerAmountMessage(playerAmount));
 
 		initGameLoop();
@@ -49,23 +51,29 @@ public class GameController {
 
 			Player currentPlayer = playerList.getPlayer(index);
 
-			playRound(currentPlayer);
-
 			if (gameBoard.isJailed(currentPlayer)) {
 				GUIBoundary.print(TextInfo.stillJailedMessage(currentPlayer));
 			}
 
-			if (diceCup.checkRollEquality()) {
-				GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
+			if (!gameBoard.isJailed(currentPlayer)) {
+
 				playRound(currentPlayer);
+
+				if (diceCup.checkRollEquality() && !gameBoard.isJailed(currentPlayer)) {
+					GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
+					playRound(currentPlayer);
+				}
+
+				if (currentPlayer.isBankrupt()) {
+					GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
+					GUIBoundary.removePlayerCar(currentPlayer);
+					gameBoard.deleteFieldOwners(currentPlayer);
+					playerList.removePlayer(currentPlayer);
+				}
+
 			}
 
-			if (currentPlayer.isBankrupt()) {
-				GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
-				GUIBoundary.removePlayerCar(currentPlayer);
-				gameBoard.deleteFieldOwners(currentPlayer);
-				playerList.removePlayer(currentPlayer);
-			}
+			gameBoard.decJailCounters();
 
 			index = calculateIndex(index);
 		}
