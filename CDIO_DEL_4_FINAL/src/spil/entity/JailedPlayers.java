@@ -9,7 +9,7 @@ public class JailedPlayers {
 		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
 			if (jailedPlayers[i] == null) {
 				jailedPlayers[i] = player;
-				counters[i] = 2;
+				counters[i] = 3;
 				break;
 			}
 		}
