@@ -7,10 +7,21 @@ public class ChanceCardList {
 
 	public ChanceCardList(int numberOfChanceCard){
 		chanceCardList=new ChanceCard[numberOfChanceCard];
-		for(int i=0; i<numberOfChanceCard; ++i){
-			chanceCardList[i]=new BonusChanceCard(i*100+1);
-		}
-	}
+
+
+			for(int i=0; i<(int)(numberOfChanceCard/4); ++i)
+					chanceCardList[i]=new BonusChanceCard(i*100+1);
+			
+			for(int i=(int)(numberOfChanceCard/4); i<(int)(2*(numberOfChanceCard/4)); ++i)
+				chanceCardList[i]=new TaxChanceCard(i*50);
+			
+			for(int i=(int)(2*(numberOfChanceCard/4)); i<(int)(3*(numberOfChanceCard/4)); ++i)
+				chanceCardList[i]=new MoveChanceCard(i-10);
+			
+			for(int i=(int)(3*(numberOfChanceCard/4)); i<numberOfChanceCard; ++i)
+				chanceCardList[i]=new PayChanceCard(i*25);
+
+			}
 
 	public ChanceCard[] getAllCards(){
 		return chanceCardList;
@@ -34,12 +45,9 @@ public class ChanceCardList {
 
 		int newIndex;
 
-		ChanceCard tempCard=new BonusChanceCard(0);
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
 
-		tempCard=chanceCardList[chanceCardList.length-1];
 		useEffect(player, chanceCardList[chanceCardList.length-1]); //Activate effect
-		chanceCardList[chanceCardList.length-1]=null;
 
 		for (int i=0; i<temp.length;++i){
 			newIndex=i+2; //use shift number to make the new position
@@ -50,17 +58,27 @@ public class ChanceCardList {
 			temp[newIndex-1]=chanceCardList[i]; //apply the new position to every number (not the last)
 		}
 
-		temp[0]=tempCard;
-
 		chanceCardList=temp;
 	}
 
 	private void useEffect(Player player, ChanceCard card){
 		if (card instanceof BonusChanceCard){
 			//System.out.println("effect: "+((BonusChanceCard) card).getEffect());
-			player.addBalance(((BonusChanceCard) card).getEffect());
+			player.addBalance(card.getEffect());
 		}
-		else;
+
+		else if (card instanceof TaxChanceCard){
+			player.removeBalance(card.getEffect());
+		}
+
+		else if (card instanceof MoveChanceCard){
+			//TODO Move player "effect" amount of field
+		}
+
+		else if (card instanceof PayChanceCard){
+			//TODO Remove Balance from other players
+			player.addBalance(card.getEffect());
+		}
 	}
 
 }
