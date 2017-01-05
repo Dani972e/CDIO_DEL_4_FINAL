@@ -55,7 +55,7 @@ public class TextInfo {
 	public static final String[][] fieldText = { 
 			{ "Start", "Modtag 4.000", "Hvergang De passerer modtag kr. 4.000" },
 			
-			{ "Rødovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
+			{ "Rødovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000,      Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
 			
 			{ "", "Prøv lykken", "ChanceKort" },
 			
@@ -73,7 +73,7 @@ public class TextInfo {
 			
 			{ "Allégade", "Kr. 2.400", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
 			
-			{ "I Fængsel", "På Besøg", "" },
+			{ "I Fængsel", "På Besøg", "På besøg i fængslet" },
 			
 			{ "Frederiksberg Allé", "Kr. 2.800", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 			
@@ -93,7 +93,7 @@ public class TextInfo {
 			
 			{ "Strandvej", "Kr. 4.000", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
 			
-			{ "Rasteplads", "Parkering", "" },
+			{ "Rasteplads", "Parkering", "Ta´ en pause" },
 			
 			{ "Trianglen", "Kr. 4.000", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
 			
@@ -113,7 +113,7 @@ public class TextInfo {
 			
 			{ "Østergade", "Kr. 5.600", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
 			
-			{ "", "De Fængsles", "Ryk til I Fængsel" },
+			{ "", "De Fængsles", "Du bliver fængslet!" },
 			
 			{ "Amagertorv", "Kr. 6.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
 			
