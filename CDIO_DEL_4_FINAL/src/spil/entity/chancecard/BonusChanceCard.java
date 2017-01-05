@@ -7,6 +7,6 @@ public class BonusChanceCard extends ChanceCard {
 	}
 	
 	public String toString(){
-		return ""+effect;
+		return "Bonus: kr"+effect;
 	}
 }
