@@ -52,7 +52,7 @@ public class GameController {
 			playRound(currentPlayer);
 
 			if (diceCup.checkRollEquality()) {
-				GUIBoundary.print("Tillykke! Du har fået et ekstra kast.");
+				GUIBoundary.print(TextInfo.rollInfoMessageRollEquality(currentPlayer));
 				playRound(currentPlayer);
 			}
 

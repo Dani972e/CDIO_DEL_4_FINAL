@@ -168,7 +168,9 @@ public class TextInfo {
 	public static String rollInfoMessage(Player player) {
 		return player.getName() + ", klik på  \"OK\" knappen for at rafle.";
 	}
-
+	public static String rollInfoMessageRollEquality(Player player) {
+	return player.getName() + " tillykke! Du har fået et ekstra kast.";
+	}
 	public static String rollMessage(Player player, int[] rollValues) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0, n = rollValues.length; i < n; i++) {
