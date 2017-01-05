@@ -30,7 +30,7 @@ public class GameController {
 		int playerAmount = GUIBoundary.decidePlayerAmount();
 
 		// Position used to be 0, changed it to 1 for debugging purposes.
-		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 1, gameBoard.getRandomUniqueCars());
+		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 0, gameBoard.getRandomUniqueCars());
 		playerList.setHomeCars();
 
 		GUIBoundary.print(TextInfo.playerAmountMessage(playerAmount));
@@ -60,12 +60,6 @@ public class GameController {
 			GUIBoundary.showDice(rollList);
 			GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
 
-			/*
-			 * Der kommer en fejl her, grundet at Player positionen er 0 (functional field index) som start,
-			 * DOG er GUI felternes start felt index 1! 
-			 *
-			 * Så her er et problem.
-			 */
 			GUIBoundary.removePlayerCar(currentPlayer);
 			gameBoard.movePlayer(currentPlayer, rollTotal);
 			GUIBoundary.placePlayerCar(currentPlayer);

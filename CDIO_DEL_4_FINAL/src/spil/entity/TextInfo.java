@@ -229,11 +229,19 @@ public class TextInfo {
 	}
 
 	public static String getFieldName(Player player) {
-		return TextInfo.fieldText[player.getPosition() - 1][0];
+		return TextInfo.fieldText[player.getPosition()][0];
 	}
 
 	public static String landMessage(Player player) {
 		return player.getName() + " lander på " + getFieldName(player) + "!\n\n";
+	}
+	
+	public static String jailFieldMessage(Player player) {
+		return "Du tager på et hurtigt besøg i fængslet.";
+	}
+	
+	public static String jailedFieldMessage(Player player) {
+		return "Du bliver fanget af politiet og sendes direkte i fængslet";
 	}
 
 };

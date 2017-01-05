@@ -242,7 +242,7 @@ public class GameBoard {
 	 */
 	public void landOnField(Player player) {
 		// Her skal position åbenbart minusses med 1? (-1)
-		int pos = player.getPosition() - 1;
+		int pos = player.getPosition();
 		// DEBUG!
 		System.out.println(player.getName() + " position when entering field: " + pos);
 		fields[pos].landOnField(player);

@@ -52,16 +52,19 @@ public class GUIBoundary {
 	}
 
 	public static void placePlayerCar(Player player) {
-		GUI.setCar(player.getPosition(), player.getName());
+		int magicNumber = 1;
+		GUI.setCar(player.getPosition() + magicNumber, player.getName());
 	}
 
 	public static void removePlayerCar(Player player) { // THIS HERE IS IMPORTANT. (Index bug.)
 		// DEBUG! 
 		// Dette virker hvis man tager player.getPosition() + 1; Det giver mening. se bug report.
+		
+		int magicNumber = 1;
 		// Det introducere dog en mulig fejl. 
-		System.out.println(player.getName() + " index when removing car: " + player.getPosition());
+		System.out.println(player.getName() + " index when removing car: " + player.getPosition() + magicNumber);
 		// Vi transformerer Field index til GUI index.
-		GUI.removeCar(player.getPosition(), player.getName());
+		GUI.removeCar(player.getPosition() + magicNumber, player.getName());
 	}
 
 	public static boolean chooseTaxEffect(Player player, int taxAmount) {
