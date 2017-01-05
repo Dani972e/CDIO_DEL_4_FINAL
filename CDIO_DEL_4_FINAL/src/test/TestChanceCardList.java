@@ -12,7 +12,7 @@ public class TestChanceCardList {
 		// TODO Auto-generated method stub
 		player1 = new Player(TextInfo.playerName + " 1", 1000000, 0, 0, 0);
 		
-		chanceCardList=new ChanceCardList(30);
+		//chanceCardList=new ChanceCardList(30);
 		
 		for(ChanceCard card : chanceCardList.getAllCards())
 			System.out.println(card);
