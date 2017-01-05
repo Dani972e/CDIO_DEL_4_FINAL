@@ -62,5 +62,9 @@ public class DiceCup {
 	public int getDieAmount() {
 		return diceList.length;
 	}
-
+	
+	public boolean checkRollEquality(int[] rollList) {
+		
+		return true;
+	}
 }

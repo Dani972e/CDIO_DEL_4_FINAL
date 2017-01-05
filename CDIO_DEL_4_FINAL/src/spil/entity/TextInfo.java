@@ -77,7 +77,7 @@ public class TextInfo {
 			
 			{ "Frederiksberg Allé", "Kr. 2.800", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 			
-			{ "Tuborg", "Kr. 3.000", "Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
+			{ "Bryghuset", "Kr. 3.000", "Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
 			
 			{ "Bülowsvej", "Kr. 2800", "Kr. 2.800", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 			
@@ -93,7 +93,7 @@ public class TextInfo {
 			
 			{ "Strandvej", "Kr. 4.000", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
 			
-			{ "Den Danske Bank", "Parkering", "" },
+			{ "Rasteplads", "Parkering", "" },
 			
 			{ "Trianglen", "Kr. 4.000", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
 			
@@ -109,7 +109,7 @@ public class TextInfo {
 			
 			{ "Kgs. Nytorv", "Kr. 5.200", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
 			
-			{ "Coca Cola", "Kr. 3.000", "Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
+			{ "Bryghuset", "Kr. 3.000", "Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
 			
 			{ "Østergade", "Kr. 5.600", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
 			
