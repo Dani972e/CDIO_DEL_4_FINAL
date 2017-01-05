@@ -1,5 +1,6 @@
 package spil.entity.chancecard;
 
+import spil.boundary.GUIBoundary;
 import spil.controller.GameBoard;
 import spil.entity.Player;
 
@@ -80,8 +81,12 @@ public class ChanceCardList {
 		}
 
 		else if (card instanceof MoveChanceCard){
+			GUIBoundary.removePlayerCar(player);
 			gameBoard.movePlayer(player, card.getEffect());
+			GUIBoundary.placePlayerCar(player);
+
 			gameBoard.landOnField(player);
+			GUIBoundary.updatePlayer(player);
 			System.out.println("effect move: "+card.getEffect());
 		
 		}
