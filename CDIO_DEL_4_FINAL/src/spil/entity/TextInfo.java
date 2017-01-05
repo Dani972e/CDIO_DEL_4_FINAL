@@ -93,7 +93,7 @@ public class TextInfo {
 			
 			{ "Strandvej", "Kr. 4.000", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
 			
-			{ "Rasteplads", "Parkering", "" },
+			{ "Rasteplads", "Parkering", "Ta´ en pause" },
 			
 			{ "Trianglen", "Kr. 4.000", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
 			
