@@ -161,7 +161,8 @@ public class GameBoard {
 	/*
 	 * Array that holds all the functional fields.
 	 */
-	private ChanceCardList chanceCardList;
+	private ChanceCardList chanceCardList=new ChanceCardList(30, this);
+	
 	
 	private final spil.entity.field.Field[] fields = { new spil.entity.field.Start(4000),
 			new spil.entity.field.Street(1200, 50), new spil.entity.field.ChanceField(chanceCardList),
@@ -207,7 +208,6 @@ public class GameBoard {
 	public GameBoard(PlayerList playerList) {
 		this.playerList = playerList;
 		jailedPlayers = new JailedPlayers();
-		chanceCardList=new ChanceCardList(30, this);
 	}
 
 	public PlayerList getPlayerList() {

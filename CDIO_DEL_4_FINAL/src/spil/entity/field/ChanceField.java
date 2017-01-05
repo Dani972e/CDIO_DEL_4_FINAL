@@ -9,7 +9,7 @@ public class ChanceField extends Field {
 	private ChanceCardList chanceCardList;
 	
 	public ChanceField(ChanceCardList chanceCardList){
-		
+		this.chanceCardList=chanceCardList;
 	}
 
 	@Override
