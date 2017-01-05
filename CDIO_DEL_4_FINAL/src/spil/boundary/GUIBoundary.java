@@ -13,12 +13,15 @@ import spil.entity.TextInfo;
  */
 public class GUIBoundary {
 
+	private static final int incrementGUIIndex = 1;
+
 	private GUIBoundary() {
 
 	}
 
 	public static boolean purchaseField(Player player, int price) {
-		String result = GUI.getUserButtonPressed(TextInfo.purchaseFieldMessage(player, price), TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
+		String result = GUI.getUserButtonPressed(TextInfo.purchaseFieldMessage(player, price),
+				TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
 		if (result.equals(TextInfo.buttonYesMessage) && (checkBalance(player, price))) {
 			print((TextInfo.purchaseConfirmedMessage(player, price)));
 			return true;
@@ -52,19 +55,12 @@ public class GUIBoundary {
 	}
 
 	public static void placePlayerCar(Player player) {
-		int magicNumber = 1;
-		GUI.setCar(player.getPosition() + magicNumber, player.getName());
+		GUI.setCar(player.getPosition() + incrementGUIIndex, player.getName());
 	}
 
-	public static void removePlayerCar(Player player) { // THIS HERE IS IMPORTANT. (Index bug.)
-		// DEBUG! 
-		// Dette virker hvis man tager player.getPosition() + 1; Det giver mening. se bug report.
-		
-		int magicNumber = 1;
-		// Det introducere dog en mulig fejl. 
-		System.out.println(player.getName() + " index when removing car: " + player.getPosition() + magicNumber);
-		// Vi transformerer Field index til GUI index.
-		GUI.removeCar(player.getPosition() + magicNumber, player.getName());
+	public static void removePlayerCar(Player player) {
+		System.out.println(player.getName() + " index when removing car: " + player.getPosition() + incrementGUIIndex);
+		GUI.removeCar(player.getPosition() + incrementGUIIndex, player.getName());
 	}
 
 	public static boolean chooseTaxEffect(Player player, int taxAmount) {
@@ -79,8 +75,8 @@ public class GUIBoundary {
 	}
 
 	public static int decidePlayerAmount() {
-		String result = GUI.getUserSelection(TextInfo.welcomeMessage, TextInfo.btnArray[0], TextInfo.btnArray[1], TextInfo.btnArray[2],
-				TextInfo.btnArray[3], TextInfo.btnArray[4]);
+		String result = GUI.getUserSelection(TextInfo.welcomeMessage, TextInfo.btnArray[0], TextInfo.btnArray[1],
+				TextInfo.btnArray[2], TextInfo.btnArray[3], TextInfo.btnArray[4]);
 		return Integer.parseInt(result);
 	}
 
