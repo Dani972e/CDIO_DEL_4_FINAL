@@ -17,14 +17,15 @@ public class JailedPlayers {
 
 	public boolean isJailed(Player player) {
 		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
-			if (jailedPlayers[i].equals(player)) {
-				if (counters[i] > 0) {
-					counters[i] -= 1;
-					return true;
+			if (jailedPlayers[i] != null) {
+				if (jailedPlayers[i].equals(player)) {
+					if (counters[i] > 0) {
+						counters[i] -= 1;
+						return true;
+					}
+					return false;
 				}
-				return false;
 			}
-
 		}
 		return false;
 	}
