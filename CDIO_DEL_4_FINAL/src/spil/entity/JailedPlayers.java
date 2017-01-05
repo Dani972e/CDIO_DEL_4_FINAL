@@ -32,9 +32,11 @@ public class JailedPlayers {
 	public void decPlayerCounter(Player jailedPlayer) {
 		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
 			if (jailedPlayers[i] != null) {
+				System.out.println(jailedPlayers[i].getName() + ": " + counters[i]);
 				if (jailedPlayers[i].equals(jailedPlayer)) {
 					if (counters[i] > 0) {
 						counters[i] -= 1;
+						removeJailedPlayer(i);
 						break;
 					}
 				}
@@ -42,4 +44,9 @@ public class JailedPlayers {
 		}
 	}
 
+	private void removeJailedPlayer(int index) {
+		if (counters[index] == 0) {
+			jailedPlayers[index] = null;
+		}
+	}
 }
