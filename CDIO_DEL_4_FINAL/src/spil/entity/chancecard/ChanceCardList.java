@@ -1,11 +1,15 @@
 package spil.entity.chancecard;
 
+import spil.controller.GameBoard;
 import spil.entity.Player;
 
 public class ChanceCardList {
 	private ChanceCard[] chanceCardList;
+	private GameBoard gameBoard;
 
-	public ChanceCardList(int numberOfChanceCard){
+	public ChanceCardList(int numberOfChanceCard, GameBoard gameBoard){
+		this.gameBoard=gameBoard;
+		
 		chanceCardList=new ChanceCard[numberOfChanceCard];
 
 
@@ -72,12 +76,20 @@ public class ChanceCardList {
 		}
 
 		else if (card instanceof MoveChanceCard){
-			//TODO Move player "effect" amount of field
+			gameBoard.movePlayer(player, card.getEffect());
+			gameBoard.landOnField(player);
 		}
 
 		else if (card instanceof PayChanceCard){
 			//TODO Remove Balance from other players
-			player.addBalance(card.getEffect());
+			int winMoney=0;
+			
+			for(int i=0; i<gameBoard.getPlayerList().getTotalPlayers(); ++i)
+				if(!player.equals(gameBoard.getPlayerList().getPlayer(i)))
+					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
+					winMoney=+card.getEffect();
+				
+			player.addBalance(winMoney);
 		}
 	}
 
