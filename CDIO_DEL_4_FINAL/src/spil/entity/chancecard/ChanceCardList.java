@@ -26,7 +26,7 @@ public class ChanceCardList {
 			for(int i=(int)(3*(numberOfChanceCard/4)); i<numberOfChanceCard; ++i)
 				chanceCardList[i]=new PayChanceCard(i*25);
 
-			//mixCards();
+			mixCards();
 			
 	}
 
