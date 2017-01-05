@@ -32,7 +32,7 @@ public class GameController {
 		playerList.setHomeCars();
 
 		gameBoard.setPlayerList(playerList);
-		
+
 		GUIBoundary.print(TextInfo.playerAmountMessage(playerAmount));
 
 		initGameLoop();
@@ -73,7 +73,7 @@ public class GameController {
 
 			}
 
-			gameBoard.decJailCounters();
+			gameBoard.decPlayerCounter(currentPlayer);
 
 			index = calculateIndex(index);
 		}

@@ -271,8 +271,8 @@ public class GameBoard {
 		return jailedPlayers.isJailed(player);
 	}
 
-	public void decJailCounters() {
-		jailedPlayers.decCounters();
+	public void decPlayerCounter(Player jailedPlayer) {
+		jailedPlayers.decPlayerCounter(jailedPlayer);
 	}
 
 }
