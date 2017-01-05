@@ -12,12 +12,12 @@ public class DiceCup {
 	 * Array holding all the Die objects.
 	 */
 	private Die[] diceList;
+	private int[] rollList;
 
 	/*
-	 * Constructor that uses the dieCount variable as the amount
-	 * of Dice that the above array should hold. maxFaceValue
-	 * is the maximum faceValue of all the dice.
-	 * Initializes the diceList.
+	 * Constructor that uses the dieCount variable as the amount of Dice that
+	 * the above array should hold. maxFaceValue is the maximum faceValue of all
+	 * the dice. Initializes the diceList.
 	 */
 	public DiceCup(int dieCount, int maxFaceValue) {
 
@@ -28,6 +28,7 @@ public class DiceCup {
 		}
 
 		diceList = new Die[dieCount];
+		rollList = new int[diceList.length];
 
 		for (int i = 0; i < dieCount; i++) {
 			diceList[i] = new Die(maxFaceValue);
@@ -38,7 +39,6 @@ public class DiceCup {
 	 * Rolls all the Dice in the diceList array once each.
 	 */
 	public int[] rollDice(Player player) {
-		int[] rollList = new int[diceList.length];
 		for (int i = 0, n = rollList.length; i < n; i++) {
 			rollList[i] = diceList[i].roll();
 		}
@@ -48,7 +48,7 @@ public class DiceCup {
 	/*
 	 * Gets the total roll of all the rolls in the rollList array parameter.
 	 */
-	public int getTotalRoll(int[] rollList) {
+	public int getTotalRoll() {
 		int total = 0;
 		for (int i = 0, n = rollList.length; i < n; i++) {
 			total += rollList[i];
@@ -63,7 +63,7 @@ public class DiceCup {
 		return diceList.length;
 	}
 
-	public boolean checkRollEquality(int[] rollList) {
+	public boolean checkRollEquality() {
 		for (int i = 0, n = rollList.length; i < n; i++) {
 			if ((i + 1) < n) {
 				if (rollList[i] != rollList[i + 1]) {

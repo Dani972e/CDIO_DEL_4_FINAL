@@ -16,6 +16,7 @@ import spil.boundary.GUIBoundary;
 import spil.entity.FieldInfo;
 import spil.entity.JailedPlayers;
 import spil.entity.Player;
+import spil.entity.PlayerList;
 import spil.entity.TextInfo;
 import spil.entity.field.Field;
 
@@ -198,8 +199,15 @@ public class GameBoard {
 			new Car.Builder().patternDotted().typeCar().primaryColor(FieldInfo.carColors[5][0])
 					.secondaryColor(FieldInfo.carColors[5][1]).build(), };
 
-	public GameBoard() {
+	private PlayerList playerList;
+
+	public GameBoard(PlayerList playerList) {
+		this.playerList = playerList;
 		jailedPlayers = new JailedPlayers();
+	}
+
+	public PlayerList getPlayerList() {
+		return playerList;
 	}
 
 	/*

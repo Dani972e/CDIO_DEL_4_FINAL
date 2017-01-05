@@ -22,7 +22,7 @@ public class GameController {
 	 */
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
-		gameBoard = new GameBoard();
+		gameBoard = new GameBoard(null);
 
 		gameBoard.initFields();
 
@@ -46,16 +46,14 @@ public class GameController {
 		while (playerList.getPlayersLeft() > 1) {
 			while (playerList.getPlayer(index) == null)
 				index = calculateIndex(index);
-			
-		
-			
+
 			Player currentPlayer = playerList.getPlayer(index);
 
-			
-			
-			if (diceCup.checkRollEquality(rollList)) {
+			playRound(currentPlayer);
+
+			if (diceCup.checkRollEquality()) {
 				GUIBoundary.print("Tillykke! Du har fået et ekstra kast.");
-			
+				playRound(currentPlayer);
 			}
 
 			if (currentPlayer.isBankrupt()) {
@@ -83,20 +81,20 @@ public class GameController {
 		return index + 1;
 	}
 
-	private int[] playRound(Player currentPlayer) {
+	private void playRound(Player currentPlayer) {
 		GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
-		
+
 		int[] rollList = diceCup.rollDice(currentPlayer);
-		int rollTotal = diceCup.getTotalRoll(rollList);
-		
+		int rollTotal = diceCup.getTotalRoll();
+
 		currentPlayer.setLatestRoll(rollTotal);
 		GUIBoundary.showDice(rollList);
 		GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
-		
+
 		GUIBoundary.removePlayerCar(currentPlayer);
 		gameBoard.movePlayer(currentPlayer, rollTotal);
 		GUIBoundary.placePlayerCar(currentPlayer);
-		
+
 		gameBoard.landOnField(currentPlayer);
 		GUIBoundary.updatePlayer(currentPlayer);
 	}
