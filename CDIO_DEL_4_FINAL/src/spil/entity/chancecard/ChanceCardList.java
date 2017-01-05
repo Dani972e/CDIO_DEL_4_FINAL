@@ -84,7 +84,7 @@ public class ChanceCardList {
 			//TODO Remove Balance from other players
 			int winMoney=0;
 			
-			for(int i=0; i<gameBoard.getPlayerList().getTotalPlayers(); ++i)
+			for(int i=0; i<gameBoard.getPlayerList().getPlayersLeft(); ++i)
 				if(!player.equals(gameBoard.getPlayerList().getPlayer(i)))
 					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
 					winMoney=+card.getEffect();
