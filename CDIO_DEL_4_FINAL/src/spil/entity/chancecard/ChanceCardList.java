@@ -25,7 +25,9 @@ public class ChanceCardList {
 			for(int i=(int)(3*(numberOfChanceCard/4)); i<numberOfChanceCard; ++i)
 				chanceCardList[i]=new PayChanceCard(i*25);
 
-			}
+			mixCards();
+			
+	}
 
 	public ChanceCard[] getAllCards(){
 		return chanceCardList;
@@ -67,30 +69,37 @@ public class ChanceCardList {
 
 	private void useEffect(Player player, ChanceCard card){
 		if (card instanceof BonusChanceCard){
-			//System.out.println("effect: "+((BonusChanceCard) card).getEffect());
+			System.out.println("effect: "+((BonusChanceCard) card).getEffect());
 			player.addBalance(card.getEffect());
 		}
 
 		else if (card instanceof TaxChanceCard){
 			player.removeBalance(card.getEffect());
+			System.out.println("effect: -"+card.getEffect());
+			
 		}
 
 		else if (card instanceof MoveChanceCard){
 			gameBoard.movePlayer(player, card.getEffect());
 			gameBoard.landOnField(player);
+			System.out.println("effect move: "+card.getEffect());
+		
 		}
+		
+		if (gameBoard.equals(null))
+			System.out.println("DEBUG");
 
-		else if (card instanceof PayChanceCard){
+		//else if (card instanceof PayChanceCard){
 			//TODO Remove Balance from other players
-			int winMoney=0;
+			//int winMoney=0;
 			
-			for(int i=0; i<gameBoard.getPlayerList().getPlayersLeft(); ++i)
-				if(!player.equals(gameBoard.getPlayerList().getPlayer(i)))
-					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
-					winMoney=+card.getEffect();
+			//for(int i=0; i<gameBoard.getPlayerList().getPlayersLeft(); ++i)
+				//if(!player.equals(gameBoard.getPlayerList().getPlayer(i)))
+					//gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
+					//winMoney=+card.getEffect();
 				
-			player.addBalance(winMoney);
-		}
+			//player.addBalance(winMoney);
+		//}
 	}
 
 }
