@@ -52,7 +52,7 @@ public class GameController {
 			playRound(currentPlayer);
 
 			if (diceCup.checkRollEquality()) {
-				GUIBoundary.print(TextInfo.rollInfoMessageRollEquality(currentPlayer));
+				GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
 				playRound(currentPlayer);
 			}
 

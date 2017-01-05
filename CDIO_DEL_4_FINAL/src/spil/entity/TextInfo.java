@@ -52,86 +52,114 @@ public class TextInfo {
 	public static final String TITLE = "Treasure Hunt 3";
 	public static final String VERSION = "v0.00";
 
-	public static final String[][] fieldText = { 
-			{ "Start", "Modtag 4.000", "Hvergang De passerer modtag kr. 4.000" },
-			
-			{ "Rødovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000,      Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
-			
+	public static final String[][] fieldText = { { "Start", "Modtag 4.000", "Hvergang De passerer modtag kr. 4.000" },
+
+			{ "Rødovrevej", "Kr. 1.200",
+					"Bygge pris = Kr. 1.000,      Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
+
 			{ "", "Prøv lykken", "ChanceKort" },
-			
-			{ "Hvidovrevej", "Kr. 1.200", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
-			
-			{ "Indkomstskat", "10% el. Kr 4.000.", "10% af dine samlede værdier (kontanter, bygninger og den trykte pris for dine grunde og virksomheder) eller kr. 4.000" },
-			
-			{ "SFL-Færgerne", "Kr. 4.000", "Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
-			
-			{ "Roskildevej", "Kr. 2.000", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
-			
+
+			{ "Hvidovrevej", "Kr. 1.200",
+					"Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
+
+			{ "Indkomstskat", "10% el. Kr 4.000.",
+					"10% af dine samlede værdier (kontanter, bygninger og den trykte pris for dine grunde og virksomheder) eller kr. 4.000" },
+
+			{ "SFL-Færgerne", "Kr. 4.000",
+					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
+
+			{ "Roskildevej", "Kr. 2.000",
+					"Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
+
 			{ "", "Prøv lykken", "ChanceKort" },
-			
-			{ "Valby Langgade", "Kr. 2.000", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
-			
-			{ "Allégade", "Kr. 2.400", "Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
-			
+
+			{ "Valby Langgade", "Kr. 2.000",
+					"Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
+
+			{ "Allégade", "Kr. 2.400",
+					"Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 100, 1 hus = kr. 600, 2 huse = Kr. 1.800, 3 huse = Kr. 5.400, 4 huse = Kr. 8.000, Hotel = Kr. 11.000." },
+
 			{ "I Fængsel", "På Besøg", "På besøg i fængslet" },
-			
-			{ "Frederiksberg Allé", "Kr. 2.800", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
-			
-			{ "Bryghuset", "Kr. 3.000", "Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
-			
-			{ "Bülowsvej", "Kr. 2800", "Kr. 2.800", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
-			
-			{ "Gl. Kongevej", "Kr. 2.800", "Kr. 2.800", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
-			
-			{ "DSB Rederierne, Kalundborg/Århus", "Kr. 4.000", "Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
-			
-			{ "Bernstoffsvej", "Kr. 3.600", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
-			
+
+			{ "Frederiksberg Allé", "Kr. 2.800",
+					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
+
+			{ "Bryghuset", "Kr. 3.000",
+					"Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
+
+			{ "Bülowsvej", "Kr. 2800", "Kr. 2.800",
+					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
+
+			{ "Gl. Kongevej", "Kr. 2.800", "Kr. 2.800",
+					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
+
+			{ "DSB Rederierne, Kalundborg/Århus", "Kr. 4.000",
+					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
+
+			{ "Bernstoffsvej", "Kr. 3.600",
+					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
+
 			{ "", "Prøv lykken", "ChanceKort" },
-			
-			{ "Hellerupvej", "Kr. 3.600", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
-			
-			{ "Strandvej", "Kr. 4.000", "Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
-			
+
+			{ "Hellerupvej", "Kr. 3.600",
+					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
+
+			{ "Strandvej", "Kr. 4.000",
+					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 300, 1 hus = kr. 1.400, 2 huse = Kr. 4.000, 3 huse = Kr. 11.000, 4 huse = Kr. 16.000, Hotel = Kr. 19.000." },
+
 			{ "Rasteplads", "Parkering", "Ta´ en pause" },
-			
-			{ "Trianglen", "Kr. 4.000", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
-			
+
+			{ "Trianglen", "Kr. 4.000",
+					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
+
 			{ "", "Prøv lykken", "ChanceKort" },
-			
-			{ "Østerbrogade", "Kr. 4.000", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
-			
-			{ "Grønningen", "Kr. 4.800", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
-			
-			{ "DFDS Seaways", "Kr. 4.000", "Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
-			
-			{ "Bredgade", "Kr. 5.200", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
-			
-			{ "Kgs. Nytorv", "Kr. 5.200", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
-			
-			{ "Bryghuset", "Kr. 3.000", "Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
-			
-			{ "Østergade", "Kr. 5.600", "Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
-			
+
+			{ "Østerbrogade", "Kr. 4.000",
+					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
+
+			{ "Grønningen", "Kr. 4.800",
+					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
+
+			{ "DFDS Seaways", "Kr. 4.000",
+					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
+
+			{ "Bredgade", "Kr. 5.200",
+					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
+
+			{ "Kgs. Nytorv", "Kr. 5.200",
+					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
+
+			{ "Bryghuset", "Kr. 3.000",
+					"Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
+
+			{ "Østergade", "Kr. 5.600",
+					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
+
 			{ "", "De Fængsles", "Du bliver fængslet!" },
-			
-			{ "Amagertorv", "Kr. 6.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
-			
-			{ "Vimmelskaftet", "Kr. 6.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
-			
+
+			{ "Amagertorv", "Kr. 6.000",
+					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
+
+			{ "Vimmelskaftet", "Kr. 6.000",
+					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
+
 			{ "", "Prøv lykken", "ChanceKort" },
-			
-			{ "Nygade", "Kr. 6.400", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
-			
-			{ "DSB Rederierne Halsskov/Knudshoved", "Kr. 4.000", "Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
-			
+
+			{ "Nygade", "Kr. 6.400",
+					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
+
+			{ "DSB Rederierne Halsskov/Knudshoved", "Kr. 4.000",
+					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
+
 			{ "", "Prøv lykken", "ChanceKort" },
-			
-			{ "Frederiksberggade", "Kr. 7.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." },
-			
+
+			{ "Frederiksberggade", "Kr. 7.000",
+					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." },
+
 			{ "Ekstraordinærstatsskat", "Betal Kr. 2.000", "Betal Kr. 2.000" },
-			
-			{ "Rådhuspladsen", "Kr. 8.000", "Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." }, };
+
+			{ "Rådhuspladsen", "Kr. 8.000",
+					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." }, };
 
 	public static final String welcomeMessage = "Velkommen til " + TITLE + ", " + VERSION
 			+ "!\n\nDette er et matador-lignende spil, hvor du kommer til at rafle med to terninger"
@@ -168,9 +196,11 @@ public class TextInfo {
 	public static String rollInfoMessage(Player player) {
 		return player.getName() + ", klik på  \"OK\" knappen for at rafle.";
 	}
-	public static String rollInfoMessageRollEquality(Player player) {
-	return player.getName() + " tillykke! Du har fået et ekstra kast.";
+
+	public static String rollEqualityMessage(Player player) {
+		return "Tillykke, " + player.getName() + " har fået et ekstra kast!";
 	}
+
 	public static String rollMessage(Player player, int[] rollValues) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0, n = rollValues.length; i < n; i++) {
@@ -237,11 +267,11 @@ public class TextInfo {
 	public static String landMessage(Player player) {
 		return player.getName() + " lander på " + getFieldName(player) + "!\n\n";
 	}
-	
+
 	public static String jailFieldMessage(Player player) {
 		return "Du tager på et hurtigt besøg i fængslet.";
 	}
-	
+
 	public static String jailedFieldMessage(Player player) {
 		return "Du bliver fanget af politiet og sendes direkte i fængslet";
 	}
