@@ -276,4 +276,8 @@ public class TextInfo {
 		return "Du bliver fanget af politiet og sendes direkte i fængslet";
 	}
 
+	public static String stillJailedMessage(Player player) {
+		return player.getName() + " er stadig fængslet.";
+	}
+
 };

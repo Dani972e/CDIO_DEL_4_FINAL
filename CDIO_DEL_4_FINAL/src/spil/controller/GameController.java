@@ -22,7 +22,7 @@ public class GameController {
 	 */
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
-		gameBoard = new GameBoard(null);
+		gameBoard = new GameBoard(playerList);
 
 		gameBoard.initFields();
 
@@ -50,6 +50,10 @@ public class GameController {
 			Player currentPlayer = playerList.getPlayer(index);
 
 			playRound(currentPlayer);
+
+			if (gameBoard.isJailed(currentPlayer)) {
+				GUIBoundary.print(TextInfo.stillJailedMessage(currentPlayer));
+			}
 
 			if (diceCup.checkRollEquality()) {
 				GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
