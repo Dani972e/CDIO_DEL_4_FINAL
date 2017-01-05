@@ -22,14 +22,12 @@ public class GameController {
 	 */
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
-
 		gameBoard = new GameBoard();
 
 		gameBoard.initFields();
 
 		int playerAmount = GUIBoundary.decidePlayerAmount();
 
-		// Position used to be 0, changed it to 1 for debugging purposes.
 		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 0, gameBoard.getRandomUniqueCars());
 		playerList.setHomeCars();
 
@@ -73,6 +71,7 @@ public class GameController {
 				gameBoard.deleteFieldOwners(currentPlayer);
 				playerList.removePlayer(currentPlayer);
 			}
+
 			index = calculateIndex(index);
 		}
 
