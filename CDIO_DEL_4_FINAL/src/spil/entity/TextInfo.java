@@ -148,7 +148,7 @@ public class TextInfo {
 			{ "Nygade", "Kr. 6.400",
 					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 550, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
 
-			{ "DSB Rederierne Halsskov/Knudshoved", "Kr. 4.000",
+			{ "DSB Rederierne", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 
 			{ "", "Prøv lykken", "ChanceKort" },
@@ -156,7 +156,7 @@ public class TextInfo {
 			{ "Frederiksberggade", "Kr. 7.000",
 					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." },
 
-			{ "Ekstraordinærstatsskat", "Betal Kr. 2.000", "" },
+			{ "Ekstraordinær      -statsskat", "Betal Kr. 2.000", "" },
 
 			{ "Rådhuspladsen", "Kr. 8.000",
 					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." }, };
