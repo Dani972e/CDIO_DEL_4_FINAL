@@ -232,7 +232,7 @@ public class GameBoard {
 			newPosition -= numberOfFields;
 			player.setPosition(newPosition);
 			GUIBoundary.placePlayerCar(player);
-			GUIBoundary.print("Tillykke du har passeret Start, få Kr.4000");
+			GUIBoundary.print(TextInfo.startMessage());
 			player.addBalance(4000);
 			GUIBoundary.updatePlayer(player);
 		}

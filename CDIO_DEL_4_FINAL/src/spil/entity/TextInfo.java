@@ -299,5 +299,10 @@ public class TextInfo {
 	public static String parkingMessage(Player player) {
 		return player.getName() + " tager en pause.";
 	}
+	
+	public static String startMessage() {
+		return "Du har passeret Start, modtag Kr. 4.000";
+	}
+	
 
 };
