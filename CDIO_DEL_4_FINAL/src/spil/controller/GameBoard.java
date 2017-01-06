@@ -12,6 +12,7 @@ import desktop_fields.Refuge;
 import desktop_fields.Shipping;
 import desktop_fields.Start;
 import desktop_fields.Street;
+import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.entity.FieldInfo;
 import spil.entity.JailedPlayers;
@@ -227,8 +228,13 @@ public class GameBoard {
 		int numberOfFields = FieldInfo.FIELD_COUNT;
 
 		while (newPosition >= numberOfFields) {
+			GUIBoundary.removePlayerCar(player);
 			newPosition -= numberOfFields;
-
+			player.setPosition(newPosition);
+			GUIBoundary.placePlayerCar(player);
+			GUIBoundary.print("Tillykke du har passeret Start, få Kr.4000");
+			player.addBalance(4000);
+			GUIBoundary.updatePlayer(player);
 		}
 		player.setPosition(newPosition);
 	}

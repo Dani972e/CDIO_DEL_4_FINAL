@@ -99,10 +99,10 @@ public class TextInfo {
 			{ "Bryghuset", "Kr. 3.000",
 					"Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
 
-			{ "Bülowsvej", "Kr. 2800", "Kr. 2.800",
+			{ "Bülowsvej", "Kr. 2800",
 					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 
-			{ "Gl. Kongevej", "Kr. 2.800", "Kr. 2.800",
+			{ "Gl. Kongevej", "Kr. 2.800",
 					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 
 			{ "DSB Rederierne, Kalundborg/Århus", "Kr. 4.000",
