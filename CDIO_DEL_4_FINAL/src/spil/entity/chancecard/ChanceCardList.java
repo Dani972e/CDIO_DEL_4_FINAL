@@ -98,7 +98,8 @@ public class ChanceCardList {
 				}
 			GUIBoundary.print("effect/ all players shall pay: " + card.getEffect() + " to " + player.getName());
 			GUIBoundary.updatePlayer(player);
-		}
+		} else if(card instanceof JailChanceCard)
+			GUIBoundary.print("Jail chance card is not implemented yet !");
 	}
 
 }
