@@ -83,4 +83,5 @@ public class GUIBoundary {
 	public static void showDice(int[] rollList) {
 		GUI.setDice(rollList[0], rollList[1]);
 	}
+	
 }
