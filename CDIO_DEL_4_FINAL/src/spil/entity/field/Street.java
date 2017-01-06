@@ -4,7 +4,6 @@ import java.awt.Color;
 
 import spil.boundary.GUIBoundary;
 import spil.entity.Player;
-import spil.entity.TextInfo;
 
 /* 
  * final class so nobody accidently inherits from this class.
@@ -36,7 +35,7 @@ public final class Street extends Ownable {
 
 		try {
 			if (owner.equals(player) && !isPurchased) {
-				GUIBoundary.print(TextInfo.purchaseHouseMessage(player));
+				GUIBoundary.purchaseHouse(player);
 			}
 		} catch (NullPointerException e) {
 			return;
