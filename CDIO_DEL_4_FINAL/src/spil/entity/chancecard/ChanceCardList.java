@@ -24,14 +24,14 @@ public class ChanceCardList {
 		//Tax
 		for(int i=13; i<21; ++i)
 			chanceCardList[i] = new TaxChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
-		
+
 		//Place and move
 		for(int i=21; i<24; ++i)
 			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
 		chanceCardList[24] = new MoveChanceCard(TextInfo.chanceCardValue[24], TextInfo.chanceCardText[24]);
 		chanceCardList[25] = new MoveChanceCard(TextInfo.chanceCardValue[25], TextInfo.chanceCardText[25]);
 		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[26]);
-		
+
 		//Jail
 		for(int i=27; i<30; ++i)
 			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
@@ -94,14 +94,14 @@ public class ChanceCardList {
 			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof MoveChanceCard) {
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			
 			GUIBoundary.removePlayerCar(player);
 			gameBoard.movePlayer(player, card.getEffect());
 			GUIBoundary.placePlayerCar(player);
 
 			gameBoard.landOnField(player);
 			GUIBoundary.updatePlayer(player);
-			
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof PayChanceCard) {
 			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i)
@@ -110,16 +110,30 @@ public class ChanceCardList {
 					player.addBalance(card.getEffect());
 					GUIBoundary.updatePlayer(gameBoard.getPlayerList().getPlayer(i));
 				}
-			
+
 			GUIBoundary.updatePlayer(player);
-			
+
 			GUIBoundary.print(player.getName() + " : " + card.getDesc());
-			
-		} else if(card instanceof JailChanceCard)
+
+		} else if(card instanceof JailChanceCard){
+			player.setPosition(card.getEffect());
+			gameBoard.landOnField(player);
+			GUIBoundary.updatePlayer(player);
 			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
-		
-		else if(card instanceof PlaceChanceCard)
+
+		}
+
+		else if(card instanceof PlaceChanceCard){
+			while(player.getPosition() != card.getEffect()){
+				System.out.println(player.getName() + " DEBUG PLACE " + card.getEffect() + "/n" + card.getDesc());
+				gameBoard.movePlayer(player, 1);
+				GUIBoundary.updatePlayer(player);
+			}
+			gameBoard.landOnField(player);
+
 			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
+
+		}
 	}
 
 }
