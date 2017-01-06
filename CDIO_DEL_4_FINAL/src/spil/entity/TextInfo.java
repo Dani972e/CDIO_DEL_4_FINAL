@@ -301,7 +301,7 @@ public class TextInfo {
 	}
 	
 	public static String startMessage() {
-		return "Du har passeret Start, modtag Kr. 4.000";
+		return "Du har passeret \"Start\", modtag Kr. 4.000";
 	}
 	
 
