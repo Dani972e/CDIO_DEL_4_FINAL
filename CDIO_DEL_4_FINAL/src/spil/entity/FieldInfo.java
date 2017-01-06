@@ -14,7 +14,6 @@ public class FieldInfo {
 	}
 
 	public static final int FIELD_COUNT = 40;
-	public static final int TAX_SPECIAL_POS = 18;
 
 	public static final int DICE_MULTIPLIER = 100;
 	public static final double TAX_MULTIPLIER = 0.1;

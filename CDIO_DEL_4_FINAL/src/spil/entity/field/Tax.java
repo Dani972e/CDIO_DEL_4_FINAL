@@ -13,14 +13,14 @@ public final class Tax extends Field {
 	/*
 	 * Tax amount of the field.
 	 */
-	private int tax;
+	private int taxAmount;
 	private boolean isChoiceField;
 
 	/*
 	 * Constructor which sets the tax amount.
 	 */
-	public Tax(int tax, boolean isChoiceField) {
-		this.tax = tax;
+	public Tax(int taxAmount, boolean isChoiceField) {
+		this.taxAmount = taxAmount;
 		this.isChoiceField = isChoiceField;
 	}
 
@@ -32,15 +32,15 @@ public final class Tax extends Field {
 	 */
 	@Override
 	public void landOnField(Player player) {
-		if (player.getPosition() == FieldInfo.TAX_SPECIAL_POS) {
-			if (GUIBoundary.chooseTaxEffect(player, tax)) {
-				player.removeBalance(tax);
+		if (isChoiceField) {
+			if (GUIBoundary.chooseTaxEffect(player, taxAmount)) {
+				player.removeBalance(taxAmount);
 			} else {
 				player.removeBalance((int) (FieldInfo.TAX_MULTIPLIER * player.getBalance()));
 			}
-		} else {
-			GUIBoundary.print(TextInfo.taxMessage(player, tax));
-			player.removeBalance(tax);
+		} else if (!isChoiceField) {
+			GUIBoundary.print(TextInfo.taxMessage(player, taxAmount));
+			player.removeBalance(taxAmount);
 		}
 	}
 

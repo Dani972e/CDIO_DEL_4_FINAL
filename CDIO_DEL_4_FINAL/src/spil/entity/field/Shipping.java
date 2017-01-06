@@ -14,7 +14,7 @@ public final class Shipping extends Ownable {
 	/*
 	 * Different rents of this field.
 	 */
-	private int[] rents = { 0, 0, 0, 0 };
+	private int[] rents = { 500, 1000, 2000, 4000 };
 
 	/*
 	 * Rent variable for this field.
