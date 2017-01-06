@@ -62,8 +62,7 @@ public class TextInfo {
 			{ "Hvidovrevej", "Kr. 1.200",
 					"Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
 
-			{ "Indkomstskat", "10% el. Kr 4.000.",
-					"10% af dine samlede pengebeholdning eller kr. 4.000" },
+			{ "Indkomstskat", "10% el. Kr 4.000.", "10% af dine samlede pengebeholdning eller kr. 4.000" },
 
 			{ "SFL-Færgerne", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
@@ -269,11 +268,11 @@ public class TextInfo {
 	}
 
 	public static String jailFieldMessage(Player player) {
-		return "Du tager på et hurtigt besøg i fængslet.";
+		return player.getName() + " tager på et hurtigt besøg i fængslet.";
 	}
 
 	public static String jailedFieldMessage(Player player) {
-		return "Du bliver fanget af politiet og sendes direkte i fængslet.";
+		return player.getName() + " bliver fanget af politiet og sendes direkte i fængslet.";
 	}
 
 	public static String stillJailedMessage(Player player) {
