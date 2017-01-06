@@ -14,7 +14,6 @@ public class TextInfo {
 			"Deres præmieobligation er kommet ud. De modtager kr. 1.000 af banken.",
 			"Kommunen har eftergivet et kvartals skat. Hæv i banken kr. 3.000.",
 			"Deres præmieobligation er kommet ud. De modtager kr. 1.000 af banken.",
-			"Det er Deres fødselsdag. Modtag af hver medspiller kr. 200.",
 			"De havde en række med elleve rigtige i tipning. Modtag kr. 1.000.",
 			"De modtager Deres aktieudbytte. Modtag kr. 1.000 af banken.", "Modtag udbytte af Deres aktier kr. 1.000.",
 			"Modtag udbytte af Deres aktier kr. 1.000.",
@@ -23,6 +22,7 @@ public class TextInfo {
 			"De modtager \" Matador-legatet for værdig trængende\", stort kr. 40.000. Ved værdig trængende forstås, at Deres formue, d.v.s. Deres kontante penge + skøder + bygninger ikke overstiger kr. 15.000.",
 			"De har vundet i Klasselotteriet. Modtag kr. 500.",
 			"Værdien af egen avl fra nyttehaven udgør kr. 200, som De modtager af banken",
+			"Det er Deres fødselsdag. Modtag af hver medspiller kr. 200.",
 
 			// Betal penge
 			"De har måtte vedtage en parkeringsbøde. Betal kr. 200 i bøde.", "Betal Deres bilforsikring kr. 1.000.",
@@ -37,11 +37,10 @@ public class TextInfo {
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér kr. 4.000.",
 			"Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selvskabet ikke ejes af nogen kan De købe det af banken.",
-			"Ryk tre felter tilbage.",
 			"Tag med den nærmeste færge - Flyt brikken frem og hvis De passerer \"Start\" indkassér da kr. 4.000.",
+			"Ryk tre felter tilbage.",
 
 			// Gå i fængsel
-			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000." };
@@ -49,15 +48,15 @@ public class TextInfo {
 	public static final int[] chanceCardValue = {
 
 			// Få penge
-			1000, 3000, 1000, 200, 1000, 1000, 1000, 1000, 1000, 1000, 5000, 500, 200,
+			1000, 3000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 5000, 500, 200, 200,
 			// Betal penge
-			200, 1000, 3000, 2000, 1000, 1000, 200, 
+			200, 1000, 3000, 3000, 2000, 1000, 1000, 200, 
 
 			// Ryk til felt
-			0, 0, 0, 0, 3, 0,
+			0, 0, 0, 0, 0, 3,
 
 			// Gå i fængsel
-			-1,-1,-1,-1};
+			-1,-1,-1};
 	
 	private TextInfo() {
 

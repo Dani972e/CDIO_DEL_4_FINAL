@@ -3,28 +3,37 @@ package spil.entity.chancecard;
 import spil.boundary.GUIBoundary;
 import spil.controller.GameBoard;
 import spil.entity.Player;
+import spil.entity.TextInfo;
 
 public class ChanceCardList {
 
-	private ChanceCard[] chanceCardList;
 	private GameBoard gameBoard;
+
+	private ChanceCard[] chanceCardList;
 
 	public ChanceCardList(int numberOfChanceCards, GameBoard gameBoard) {
 		this.gameBoard = gameBoard;
 
 		chanceCardList = new ChanceCard[numberOfChanceCards];
 
-		for (int i = 0; i < (int) (numberOfChanceCards / 4); ++i)
-			chanceCardList[i] = new BonusChanceCard(i * 100 + 1);
+		//Bonus and pay
+		for(int i=0; i<12; ++i)
+			chanceCardList[i] = new BonusChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
+		chanceCardList[12] = new PayChanceCard(TextInfo.chanceCardValue[12], TextInfo.chanceCardText[12]);
 
-		for (int i = (int) (numberOfChanceCards / 4); i < (int) (2 * (numberOfChanceCards / 4)); ++i)
-			chanceCardList[i] = new TaxChanceCard(i * 50);
+		//Tax
+		for(int i=13; i<21; ++i)
+			chanceCardList[i] = new TaxChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
+		
+		//Place and move
+		for(int i=21; i<26; ++i)
+			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
+		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[18]);
+		
+		//Jail
+		for(int i=27; i<30; ++i)
+			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
 
-		for (int i = (int) (2 * (numberOfChanceCards / 4)); i < (int) (3 * (numberOfChanceCards / 4)); ++i)
-			chanceCardList[i] = new MoveChanceCard(i - 10);
-
-		for (int i = (int) (3 * (numberOfChanceCards / 4)); i < numberOfChanceCards; ++i)
-			chanceCardList[i] = new PayChanceCard(i * 25);
 
 		shuffleCards();
 	}
@@ -59,7 +68,7 @@ public class ChanceCardList {
 
 			while (newIndex > temp.length) {
 				newIndex = newIndex - (temp.length); // if we go out the array,
-														// make a modulo
+				// make a modulo
 			}
 			temp[newIndex - 1] = chanceCardList[i]; // apply the new position to every number (not the last)
 		}
@@ -73,12 +82,12 @@ public class ChanceCardList {
 			System.out.println("DEBUG");
 
 		if (card instanceof BonusChanceCard) {
-			GUIBoundary.print("effect: " +  card.getEffect() + " " + player.getName());
 			player.addBalance(card.getEffect());
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof TaxChanceCard) {
 			player.removeBalance(card.getEffect());
-			GUIBoundary.print("effect: -" + card.getEffect() + " " + player.getName());
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof MoveChanceCard) {
 			GUIBoundary.removePlayerCar(player);
@@ -87,7 +96,8 @@ public class ChanceCardList {
 
 			gameBoard.landOnField(player);
 			GUIBoundary.updatePlayer(player);
-			GUIBoundary.print("effect move: " + card.getEffect() + " " + player.getName());
+			
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof PayChanceCard) {
 			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i)
@@ -96,10 +106,16 @@ public class ChanceCardList {
 					player.addBalance(card.getEffect());
 					GUIBoundary.updatePlayer(gameBoard.getPlayerList().getPlayer(i));
 				}
-			GUIBoundary.print("effect/ all players shall pay: " + card.getEffect() + " to " + player.getName());
+			
 			GUIBoundary.updatePlayer(player);
+			
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			
 		} else if(card instanceof JailChanceCard)
-			GUIBoundary.print("Jail chance card is not implemented yet !");
+			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
+		
+		else if(card instanceof PlaceChanceCard)
+			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
 	}
 
 }

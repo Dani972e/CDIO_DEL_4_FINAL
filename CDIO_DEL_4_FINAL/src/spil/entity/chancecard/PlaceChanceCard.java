@@ -1,9 +1,13 @@
 package spil.entity.chancecard;
 
-public class PlaceChanceCard {
+public class PlaceChanceCard extends ChanceCard {
 
-	public PlaceChanceCard() {
-		// TODO Auto-generated constructor stub
+	public PlaceChanceCard(int effect, String desc) {
+		super(effect, desc);
+	}
+
+	public String toString() {
+		return "Place: " + effect;
 	}
 
 }
