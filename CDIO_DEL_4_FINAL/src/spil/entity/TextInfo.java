@@ -36,8 +36,8 @@ public class TextInfo {
 			"Tag ind på Rådhuspladsen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér kr. 4.000.",
-			"Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selvskabet ikke ejes af nogen kan De købe det af banken.",
-			"Tag med den nærmeste færge - Flyt brikken frem og hvis De passerer \"Start\" indkassér da kr. 4.000.",
+			"Ryk tre felter foran.",
+			"Ryk tre felter foran.",
 			"Ryk tre felter tilbage.",
 
 			// Gå i fængsel
@@ -53,7 +53,7 @@ public class TextInfo {
 			200, 1000, 3000, 3000, 2000, 1000, 1000, 200, 
 
 			// Ryk til felt
-			0, 0, 0, 0, 0, 3,
+			39, 24, 11, 5, 2, -3,
 
 			// Gå i fængsel
 			-1,-1,-1};
