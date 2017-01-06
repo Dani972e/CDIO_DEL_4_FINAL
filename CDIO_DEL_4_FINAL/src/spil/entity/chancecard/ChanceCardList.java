@@ -73,12 +73,12 @@ public class ChanceCardList {
 			System.out.println("DEBUG");
 
 		if (card instanceof BonusChanceCard) {
-			System.out.println("effect: " + ((BonusChanceCard) card).getEffect());
+			GUIBoundary.print("effect: " +  card.getEffect() + " " + player.getName());
 			player.addBalance(card.getEffect());
 
 		} else if (card instanceof TaxChanceCard) {
 			player.removeBalance(card.getEffect());
-			System.out.println("effect: -" + card.getEffect());
+			GUIBoundary.print("effect: -" + card.getEffect() + " " + player.getName());
 
 		} else if (card instanceof MoveChanceCard) {
 			GUIBoundary.removePlayerCar(player);
@@ -87,16 +87,16 @@ public class ChanceCardList {
 
 			gameBoard.landOnField(player);
 			GUIBoundary.updatePlayer(player);
-			System.out.println("effect move: " + card.getEffect());
+			GUIBoundary.print("effect move: " + card.getEffect() + " " + player.getName());
 
 		} else if (card instanceof PayChanceCard) {
-			for (int i = 0; i < gameBoard.getPlayerList().getPlayersLeft(); ++i)
-				if (!player.equals(gameBoard.getPlayerList().getPlayer(i))) {
+			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i)
+				if (!player.equals(gameBoard.getPlayerList().getPlayer(i)) && gameBoard.getPlayerList().getPlayer(i)==null) {
 					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
 					player.addBalance(card.getEffect());
 					GUIBoundary.updatePlayer(gameBoard.getPlayerList().getPlayer(i));
 				}
-			System.out.println("effect all players shall pay: " + card.getEffect() + " to one player");
+			GUIBoundary.print("effect/ all players shall pay: " + card.getEffect() + " to " + player.getName());
 			GUIBoundary.updatePlayer(player);
 		}
 	}
