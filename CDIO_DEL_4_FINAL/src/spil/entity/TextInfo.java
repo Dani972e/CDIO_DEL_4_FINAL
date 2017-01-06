@@ -176,16 +176,16 @@ public class TextInfo {
 
 	public static final String btnBalancePercentage = "10% af din pengebeholdning";
 
-	public static final String purchaseFieldMessage(Player player, int price) {
+	public static String purchaseFieldMessage(Player player, int price) {
 		return landMessage(player) + getFieldName(player) + " er til rådighed for køb. Vil " + player.getName()
 				+ " købe dette felt for " + price + " kr?";
 	}
 
-	public static final String purchaseConfirmedMessage(Player player, int price) {
+	public static String purchaseConfirmedMessage(Player player, int price) {
 		return player.getName() + " købte " + getFieldName(player) + " for " + price + " kr.";
 	}
 
-	public static final String purchaseDeniedMessage(Player player) {
+	public static String purchaseDeniedMessage(Player player) {
 		return player.getName() + " købte ikke " + getFieldName(player) + ".";
 	}
 
@@ -273,11 +273,19 @@ public class TextInfo {
 	}
 
 	public static String jailedFieldMessage(Player player) {
-		return "Du bliver fanget af politiet og sendes direkte i fængslet";
+		return "Du bliver fanget af politiet og sendes direkte i fængslet.";
 	}
 
 	public static String stillJailedMessage(Player player) {
 		return player.getName() + " er stadig fængslet.";
+	}
+
+	public static String chanceCardMessage(Player player) {
+		return player.getName() + " trækker et kort.";
+	}
+
+	public static String parkingMessage(Player player) {
+		return player.getName() + " tager en pause.";
 	}
 
 };

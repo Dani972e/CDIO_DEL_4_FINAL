@@ -14,12 +14,14 @@ public final class Tax extends Field {
 	 * Tax amount of the field.
 	 */
 	private int tax;
+	private boolean isChoiceField;
 
 	/*
 	 * Constructor which sets the tax amount.
 	 */
-	public Tax(int tax) {
+	public Tax(int tax, boolean isChoiceField) {
 		this.tax = tax;
+		this.isChoiceField = isChoiceField;
 	}
 
 	/*
