@@ -156,7 +156,7 @@ public class TextInfo {
 			{ "Frederiksberggade", "Kr. 7.000",
 					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." },
 
-			{ "Ekstraordinærstatsskat", "Betal Kr. 2.000", "Betal Kr. 2.000" },
+			{ "Ekstraordinærstatsskat", "Betal Kr. 2.000", "" },
 
 			{ "Rådhuspladsen", "Kr. 8.000",
 					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 700, 1 hus = kr. 3.500, 2 huse = Kr. 10.000, 3 huse = Kr. 22.000, 4 huse = Kr. 26.000, Hotel = Kr. 30.000." }, };
