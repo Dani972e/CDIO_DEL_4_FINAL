@@ -32,10 +32,9 @@ public final class Street extends Ownable {
 	 */
 	@Override
 	public void landOnField(Player player) {
-		super.purchaseField(player, price, rent);
+		boolean isPurchased = super.purchaseField(player, price, rent);
 
-		
-		if (owner.equals(player)) {
+		if (owner.equals(player) && isPurchased) {
 			GUIBoundary.print(TextInfo.purchaseHouseMessage(player));
 
 		}
