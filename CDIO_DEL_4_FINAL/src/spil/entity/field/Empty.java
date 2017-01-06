@@ -4,7 +4,7 @@ import spil.boundary.GUIBoundary;
 import spil.entity.Player;
 import spil.entity.TextInfo;
 
-public class Parking extends Field {
+public class Empty extends Field {
 
 	@Override
 	public void landOnField(Player player) {
