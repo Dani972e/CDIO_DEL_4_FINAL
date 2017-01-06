@@ -26,9 +26,11 @@ public class ChanceCardList {
 			chanceCardList[i] = new TaxChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
 		
 		//Place and move
-		for(int i=21; i<26; ++i)
+		for(int i=21; i<24; ++i)
 			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
-		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[18]);
+		chanceCardList[24] = new MoveChanceCard(TextInfo.chanceCardValue[24], TextInfo.chanceCardText[24]);
+		chanceCardList[25] = new MoveChanceCard(TextInfo.chanceCardValue[25], TextInfo.chanceCardText[25]);
+		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[26]);
 		
 		//Jail
 		for(int i=27; i<30; ++i)
