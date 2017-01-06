@@ -63,7 +63,7 @@ public class TextInfo {
 					"Bygge pris = Kr. 1.000, Pris for at lande på grunden: uden hus = kr. 50, 1 hus = kr. 250, 2 huse = Kr. 750, 3 huse = Kr. 2.250, 4 huse = Kr. 4.000, Hotel = Kr. 6.000." },
 
 			{ "Indkomstskat", "10% el. Kr 4.000.",
-					"10% af dine samlede værdier (kontanter, bygninger og den trykte pris for dine grunde og virksomheder) eller kr. 4.000" },
+					"10% af dine samlede pengebeholdning eller kr. 4.000" },
 
 			{ "SFL-Færgerne", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
