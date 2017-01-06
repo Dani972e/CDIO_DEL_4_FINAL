@@ -215,7 +215,7 @@ public class GameBoard {
 			newPosition -= numberOfFields;
 			player.setPosition(newPosition);
 			GUIBoundary.placePlayerCar(player);
-			GUIBoundary.print(TextInfo.startMessage());
+			GUIBoundary.print(TextInfo.startMessage(player));
 			player.addBalance(4000);
 			GUIBoundary.updatePlayer(player);
 		}

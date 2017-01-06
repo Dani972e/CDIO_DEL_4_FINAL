@@ -298,12 +298,16 @@ public class TextInfo {
 		return player.getName() + " tager en pause.";
 	}
 
-	public static String startMessage() {
-		return "Du har passeret \"Start\", modtag Kr. 4.000";
+	public static String startMessage(Player player) {
+		return player.getName() + " har passeret \"Start\" og modtaget 4.000 kr.";
+	}
+
+	public static String startFieldMessage(Player player) {
+		return player.getName() + " har landet på start feltet.";
 	}
 
 	public static String purchaseHouseMessage(Player player) {
-		return "Vil " + player.getName() + " købe et hus på " + getFieldName(player);
+		return "Vil " + player.getName() + " købe et hus på " + getFieldName(player) + "?";
 	}
 
 };

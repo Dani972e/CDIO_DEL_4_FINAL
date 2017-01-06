@@ -17,7 +17,7 @@ public class Empty extends Field {
 		if (!isStart) {
 			GUIBoundary.print(TextInfo.parkingMessage(player));
 		} else if (isStart) {
-			GUIBoundary.print("Du har landet på start! FIX DENNE BESKED");
+			GUIBoundary.print(TextInfo.startFieldMessage(player));
 		}
 	}
 
