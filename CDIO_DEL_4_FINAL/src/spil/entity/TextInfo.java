@@ -56,7 +56,7 @@ public class TextInfo {
 			39, 24, 11, 5, 2, -3,
 
 			// Gå i fængsel
-			-1,-1,-1};
+			30,30,30};
 	
 	private TextInfo() {
 
