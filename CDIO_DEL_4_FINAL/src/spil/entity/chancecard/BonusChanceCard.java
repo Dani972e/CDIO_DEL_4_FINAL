@@ -5,8 +5,9 @@ public class BonusChanceCard extends ChanceCard {
 	public BonusChanceCard(int effect) {
 		super(effect);
 	}
-	
-	public String toString(){
-		return "Bonus: kr"+effect;
+
+	public String toString() {
+		return "Bonus: kr" + effect;
 	}
+
 }

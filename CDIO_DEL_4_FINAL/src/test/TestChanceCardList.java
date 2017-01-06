@@ -20,7 +20,7 @@ public class TestChanceCardList {
 		
 		System.out.println("Player 1 has: " + player1.getBalance());
 		
-		chanceCardList.mixCards();
+		chanceCardList.shuffleCards();
 		
 		for(ChanceCard card : chanceCardList.getAllCards())
 			System.out.println(card);
