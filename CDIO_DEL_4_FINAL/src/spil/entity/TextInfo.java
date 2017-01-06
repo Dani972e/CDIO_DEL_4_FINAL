@@ -43,8 +43,22 @@ public class TextInfo {
 			// Gå i fængsel
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
+			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000." };
 
+	public static final int[] chanceCardValue = {
+
+			// Få penge
+			1000, 3000, 1000, 200, 1000, 1000, 1000, 1000, 1000, 1000, 5000, 500, 200,
+			// Betal penge
+			200, 1000, 3000, 2000, 1000, 1000, 200, 
+
+			// Ryk til felt
+			0, 0, 0, 0, 3, 0,
+
+			// Gå i fængsel
+			-1,-1,-1,-1};
+	
 	private TextInfo() {
 
 	}
