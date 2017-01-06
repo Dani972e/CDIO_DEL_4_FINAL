@@ -18,12 +18,10 @@ public class JailedPlayers {
 	public boolean isJailed(Player player) {
 		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
 			if (jailedPlayers[i] != null) {
-				if (jailedPlayers[i].equals(player)) {
-					if (counters[i] > 0) {
-						return true;
-					}
-					return false;
+				if (jailedPlayers[i].equals(player) && counters[i] > 0) {
+					return true;
 				}
+				return false;
 			}
 		}
 		return false;
@@ -32,13 +30,12 @@ public class JailedPlayers {
 	public void decPlayerCounter(Player jailedPlayer) {
 		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
 			if (jailedPlayers[i] != null) {
-				System.out.println(jailedPlayers[i].getName() + ": " + counters[i]);
-				if (jailedPlayers[i].equals(jailedPlayer)) {
-					if (counters[i] > 0) {
-						counters[i] -= 1;
-						removeJailedPlayer(i);
-						break;
-					}
+				// DEBUG
+				System.out.println("DEBUG: " + jailedPlayers[i].getName() + ": " + counters[i]);
+				if (jailedPlayers[i].equals(jailedPlayer) && counters[i] > 0) {
+					counters[i] -= 1;
+					removeJailedPlayer(i);
+					break;
 				}
 			}
 		}
@@ -49,4 +46,5 @@ public class JailedPlayers {
 			jailedPlayers[index] = null;
 		}
 	}
+
 }
