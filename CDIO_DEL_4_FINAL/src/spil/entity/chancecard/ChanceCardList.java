@@ -83,12 +83,12 @@ public class ChanceCardList {
 
 		if (card instanceof BonusChanceCard) {
 			player.addBalance(card.getEffect());
-			GUIBoundary.updatePlayer(player);
+			//GUIBoundary.updatePlayer(player);
 			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof TaxChanceCard) {
 			player.removeBalance(card.getEffect());
-			GUIBoundary.updatePlayer(player);
+			//GUIBoundary.updatePlayer(player);
 			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof MoveChanceCard) {
