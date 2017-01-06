@@ -36,9 +36,7 @@ public class TextInfo {
 			"Tag ind på Rådhuspladsen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér kr. 4.000.",
-			"Ryk tre felter foran.",
-			"Ryk tre felter foran.",
-			"Ryk tre felter tilbage.",
+			"Ryk tre felter foran.", "Ryk tre felter foran.", "Ryk tre felter tilbage.",
 
 			// Gå i fængsel
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
@@ -50,14 +48,14 @@ public class TextInfo {
 			// Få penge
 			1000, 3000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 5000, 500, 200, 200,
 			// Betal penge
-			200, 1000, 3000, 3000, 2000, 1000, 1000, 200, 
+			200, 1000, 3000, 3000, 2000, 1000, 1000, 200,
 
 			// Ryk til felt
 			39, 24, 11, 5, 2, -3,
 
 			// Gå i fængsel
-			30,30,30};
-	
+			30, 30, 30 };
+
 	private TextInfo() {
 
 	}
@@ -299,10 +297,13 @@ public class TextInfo {
 	public static String parkingMessage(Player player) {
 		return player.getName() + " tager en pause.";
 	}
-	
+
 	public static String startMessage() {
 		return "Du har passeret \"Start\", modtag Kr. 4.000";
 	}
-	
+
+	public static String purchaseHouseMessage(Player player) {
+		return "Vil " + player.getName() + " købe et hus på " + getFieldName(player);
+	}
 
 };

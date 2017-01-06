@@ -6,9 +6,19 @@ import spil.entity.TextInfo;
 
 public class Empty extends Field {
 
+	private boolean isStart;
+
+	public Empty(boolean isStart) {
+		this.isStart = isStart;
+	}
+
 	@Override
 	public void landOnField(Player player) {
-		GUIBoundary.print(TextInfo.parkingMessage(player));
+		if (!isStart) {
+			GUIBoundary.print(TextInfo.parkingMessage(player));
+		} else if (isStart) {
+			GUIBoundary.print("Du har landet på start! FIX DENNE BESKED");
+		}
 	}
 
 	@Override

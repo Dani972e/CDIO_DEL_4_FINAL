@@ -29,6 +29,16 @@ public class GUIBoundary {
 		return false;
 	}
 
+	public static boolean purchaseHouse(Player player) {
+		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player), TextInfo.buttonYesMessage,
+				TextInfo.buttonNoMessage);
+		if (result.equals(TextInfo.buttonYesMessage)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	private static boolean checkBalance(Player player, int price) {
 		if (player.getBalance() >= price) {
 			return true;
@@ -83,5 +93,5 @@ public class GUIBoundary {
 	public static void showDice(int[] rollList) {
 		GUI.setDice(rollList[0], rollList[1]);
 	}
-	
+
 }

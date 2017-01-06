@@ -153,7 +153,7 @@ public class GameBoard {
 	 */
 	private ChanceCardList chanceCardList = new ChanceCardList(30, this);
 
-	private final spil.entity.field.Field[] fields = { new spil.entity.field.Start(), new spil.entity.field.Street(1200, 50, Color.BLUE),
+	private final spil.entity.field.Field[] fields = { new spil.entity.field.Empty(true), new spil.entity.field.Street(1200, 50, Color.BLUE),
 			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(1200, 50, Color.BLUE),
 			new spil.entity.field.Tax(4000, true), new spil.entity.field.Shipping(4000), new spil.entity.field.Street(2000, 100, Color.ORANGE),
 			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(2000, 100, Color.ORANGE),
@@ -162,7 +162,7 @@ public class GameBoard {
 			new spil.entity.field.Street(2800, 200, Color.GREEN), new spil.entity.field.Street(3200, 250, Color.GREEN),
 			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(3600, 300, Color.GRAY),
 			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(3600, 300, Color.GRAY),
-			new spil.entity.field.Street(4000, 350, Color.GRAY), new spil.entity.field.Parking(), new spil.entity.field.Street(4400, 350, Color.RED),
+			new spil.entity.field.Street(4000, 350, Color.GRAY), new spil.entity.field.Empty(false), new spil.entity.field.Street(4400, 350, Color.RED),
 			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(4400, 350, Color.RED),
 			new spil.entity.field.Street(4800, 400, Color.RED), new spil.entity.field.Shipping(4000),
 			new spil.entity.field.Street(5200, 450, Color.WHITE), new spil.entity.field.Street(5200, 450, Color.WHITE),
