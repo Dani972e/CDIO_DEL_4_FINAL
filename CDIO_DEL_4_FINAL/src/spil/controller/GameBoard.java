@@ -29,19 +29,16 @@ public class GameBoard {
 	/*
 	 * Array that holds all the graphical fields.
 	 */
-	private final desktop_fields.Field[] guiFields = {
-			new Start.Builder().setBgColor(Color.RED).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[0][0])
-					.setSubText(TextInfo.fieldText[0][1]).setDescription(TextInfo.fieldText[0][2]).build(),
+	private final desktop_fields.Field[] guiFields = { new Start.Builder().setBgColor(Color.RED).setFgColor(Color.BLACK)
+			.setTitle(TextInfo.fieldText[0][0]).setSubText(TextInfo.fieldText[0][1]).setDescription(TextInfo.fieldText[0][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[1][0]).setSubText(TextInfo.fieldText[1][1])
-					.setDescription(TextInfo.fieldText[1][2]).build(),
+			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[1][0])
+					.setSubText(TextInfo.fieldText[1][1]).setDescription(TextInfo.fieldText[1][2]).build(),
 
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 
-			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[3][0]).setSubText(TextInfo.fieldText[3][1])
-					.setDescription(TextInfo.fieldText[3][2]).build(),
+			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[3][0])
+					.setSubText(TextInfo.fieldText[3][1]).setDescription(TextInfo.fieldText[3][2]).build(),
 
 			// Lavet om fra TAX til STREET grundet bug.)
 			// new
@@ -52,37 +49,31 @@ public class GameBoard {
 			new Shipping.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[5][0])
 					.setSubText(TextInfo.fieldText[5][1]).setDescription(TextInfo.fieldText[5][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[6][0]).setSubText(TextInfo.fieldText[6][1])
-					.setDescription(TextInfo.fieldText[6][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[6][0])
+					.setSubText(TextInfo.fieldText[6][1]).setDescription(TextInfo.fieldText[6][2]).build(),
 
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 
-			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[8][0]).setSubText(TextInfo.fieldText[8][1])
-					.setDescription(TextInfo.fieldText[8][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[8][0])
+					.setSubText(TextInfo.fieldText[8][1]).setDescription(TextInfo.fieldText[8][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[9][0]).setSubText(TextInfo.fieldText[9][1])
-					.setDescription(TextInfo.fieldText[9][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[9][0])
+					.setSubText(TextInfo.fieldText[9][1]).setDescription(TextInfo.fieldText[9][2]).build(),
 
 			new Jail.Builder().setBgColor(Color.GRAY).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[10][0])
 					.setSubText(TextInfo.fieldText[10][1]).setDescription(TextInfo.fieldText[10][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[11][0]).setSubText(TextInfo.fieldText[11][1])
-					.setDescription(TextInfo.fieldText[11][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[11][0])
+					.setSubText(TextInfo.fieldText[11][1]).setDescription(TextInfo.fieldText[11][2]).build(),
 
 			new Brewery.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).setTitle(TextInfo.fieldText[12][0])
 					.setSubText(TextInfo.fieldText[12][1]).setDescription(TextInfo.fieldText[12][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[13][0]).setSubText(TextInfo.fieldText[13][1])
-					.setDescription(TextInfo.fieldText[13][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[13][0])
+					.setSubText(TextInfo.fieldText[13][1]).setDescription(TextInfo.fieldText[13][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[14][0]).setSubText(TextInfo.fieldText[14][1])
-					.setDescription(TextInfo.fieldText[14][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[14][0])
+					.setSubText(TextInfo.fieldText[14][1]).setDescription(TextInfo.fieldText[14][2]).build(),
 
 			new Shipping.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[15][0])
 					.setSubText(TextInfo.fieldText[15][1]).setDescription(TextInfo.fieldText[15][2]).build(),
@@ -146,9 +137,8 @@ public class GameBoard {
 
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 
-			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[37][0]).setSubText(TextInfo.fieldText[37][1])
-					.setDescription(TextInfo.fieldText[37][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[37][0])
+					.setSubText(TextInfo.fieldText[37][1]).setDescription(TextInfo.fieldText[37][2]).build(),
 
 			// Lavet om fra TAX til STREET grundet bug.)
 			// new
@@ -156,35 +146,32 @@ public class GameBoard {
 			new Street.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[38][0])
 					.setSubText(TextInfo.fieldText[38][1]).setDescription(TextInfo.fieldText[38][2]).build(),
 
-			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[39][0]).setSubText(TextInfo.fieldText[39][1])
-					.setDescription(TextInfo.fieldText[39][2]).build(), };
+			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[39][0])
+					.setSubText(TextInfo.fieldText[39][1]).setDescription(TextInfo.fieldText[39][2]).build(), };
 	/*
 	 * Array that holds all the functional fields.
 	 */
 	private ChanceCardList chanceCardList = new ChanceCardList(30, this);
 
-	private final spil.entity.field.Field[] fields = { new spil.entity.field.Start(),
-			new spil.entity.field.Street(1200, 50), new spil.entity.field.ChanceField(chanceCardList),
-			new spil.entity.field.Street(1200, 50), new spil.entity.field.Tax(4000, true),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(2000, 100),
-			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(2000, 100),
-			new spil.entity.field.Street(2400, 100), new spil.entity.field.Jail(jailedPlayers, false),
-			new spil.entity.field.Street(2800, 200), new spil.entity.field.Brewery(3000),
-			new spil.entity.field.Street(2800, 200), new spil.entity.field.Street(3200, 250),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(3600, 300),
-			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(3600, 300),
-			new spil.entity.field.Street(4000, 350), new spil.entity.field.Parking(),
-			new spil.entity.field.Street(4400, 350), new spil.entity.field.ChanceField(chanceCardList),
-			new spil.entity.field.Street(4400, 350), new spil.entity.field.Street(4800, 400),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(5200, 450),
-			new spil.entity.field.Street(5200, 450), new spil.entity.field.Brewery(3000),
-			new spil.entity.field.Street(5600, 500), new spil.entity.field.Jail(jailedPlayers, true),
-			new spil.entity.field.Street(6000, 550), new spil.entity.field.Street(6000, 550),
-			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(6400, 600),
-			new spil.entity.field.Shipping(4000), new spil.entity.field.ChanceField(chanceCardList),
-			new spil.entity.field.Street(7000, 700), new spil.entity.field.Tax(2000, false),
-			new spil.entity.field.Street(8000, 1000), };
+	private final spil.entity.field.Field[] fields = { new spil.entity.field.Start(), new spil.entity.field.Street(1200, 50, Color.BLUE),
+			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(1200, 50, Color.BLUE),
+			new spil.entity.field.Tax(4000, true), new spil.entity.field.Shipping(4000), new spil.entity.field.Street(2000, 100, Color.ORANGE),
+			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(2000, 100, Color.ORANGE),
+			new spil.entity.field.Street(2400, 100, Color.ORANGE), new spil.entity.field.Jail(jailedPlayers, false),
+			new spil.entity.field.Street(2800, 200, Color.GREEN), new spil.entity.field.Brewery(3000),
+			new spil.entity.field.Street(2800, 200, Color.GREEN), new spil.entity.field.Street(3200, 250, Color.GREEN),
+			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(3600, 300, Color.GRAY),
+			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(3600, 300, Color.GRAY),
+			new spil.entity.field.Street(4000, 350, Color.GRAY), new spil.entity.field.Parking(), new spil.entity.field.Street(4400, 350, Color.RED),
+			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(4400, 350, Color.RED),
+			new spil.entity.field.Street(4800, 400, Color.RED), new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(5200, 450, Color.WHITE), new spil.entity.field.Street(5200, 450, Color.WHITE),
+			new spil.entity.field.Brewery(3000), new spil.entity.field.Street(5600, 500, Color.WHITE),
+			new spil.entity.field.Jail(jailedPlayers, true), new spil.entity.field.Street(6000, 550, Color.YELLOW),
+			new spil.entity.field.Street(6000, 550, Color.YELLOW), new spil.entity.field.ChanceField(chanceCardList),
+			new spil.entity.field.Street(6400, 600, Color.YELLOW), new spil.entity.field.Shipping(4000),
+			new spil.entity.field.ChanceField(chanceCardList), new spil.entity.field.Street(7000, 700, Color.MAGENTA),
+			new spil.entity.field.Tax(2000, false), new spil.entity.field.Street(8000, 1000, Color.MAGENTA), };
 
 	/*
 	 * Array that holds all the car figures.
@@ -192,16 +179,12 @@ public class GameBoard {
 	private final Car[] playerCars = {
 			new Car.Builder().patternHorizontalGradiant().typeRacecar().primaryColor(FieldInfo.carColors[0][0])
 					.secondaryColor(FieldInfo.carColors[0][1]).build(),
-			new Car.Builder().patternZebra().typeCar().primaryColor(FieldInfo.carColors[1][0])
-					.secondaryColor(FieldInfo.carColors[1][1]).build(),
-			new Car.Builder().patternDotted().typeTractor().primaryColor(FieldInfo.carColors[2][0])
-					.secondaryColor(FieldInfo.carColors[2][1]).build(),
+			new Car.Builder().patternZebra().typeCar().primaryColor(FieldInfo.carColors[1][0]).secondaryColor(FieldInfo.carColors[1][1]).build(),
+			new Car.Builder().patternDotted().typeTractor().primaryColor(FieldInfo.carColors[2][0]).secondaryColor(FieldInfo.carColors[2][1]).build(),
 			new Car.Builder().patternHorizontalGradiant().typeTractor().primaryColor(FieldInfo.carColors[3][0])
 					.secondaryColor(FieldInfo.carColors[3][1]).build(),
-			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldInfo.carColors[4][0])
-					.secondaryColor(FieldInfo.carColors[4][1]).build(),
-			new Car.Builder().patternDotted().typeCar().primaryColor(FieldInfo.carColors[5][0])
-					.secondaryColor(FieldInfo.carColors[5][1]).build(), };
+			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldInfo.carColors[4][0]).secondaryColor(FieldInfo.carColors[4][1]).build(),
+			new Car.Builder().patternDotted().typeCar().primaryColor(FieldInfo.carColors[5][0]).secondaryColor(FieldInfo.carColors[5][1]).build(), };
 
 	private PlayerList playerList;
 
