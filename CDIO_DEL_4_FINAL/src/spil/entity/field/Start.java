@@ -11,10 +11,6 @@ public final class Start extends Field {
 		this.startBonus = startBonus;
 	}
 
-	public void roundBonus() {
-
-	}
-
 	@Override
 	public void landOnField(Player player) {
 
