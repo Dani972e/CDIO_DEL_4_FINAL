@@ -110,9 +110,6 @@ public class GameController {
 			if (diceCup.sameThrowJail(3)) {
 				GUIBoundary.print(TextInfo.sameCounterThrowJailMessage(currentPlayer));
 				gameBoard.jailPlayer(currentPlayer);
-				GUIBoundary.removePlayerCar(currentPlayer);
-				currentPlayer.setPosition(10);
-				GUIBoundary.placePlayerCar(currentPlayer);
 			} else {
 				GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
 				playRound(currentPlayer);

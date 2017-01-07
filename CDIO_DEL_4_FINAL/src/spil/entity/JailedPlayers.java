@@ -1,5 +1,7 @@
 package spil.entity;
 
+import spil.boundary.GUIBoundary;
+
 public class JailedPlayers {
 
 	private Player[] jailedPlayers = new Player[6];
@@ -10,6 +12,9 @@ public class JailedPlayers {
 			if (jailedPlayers[i] == null) {
 				jailedPlayers[i] = player;
 				counters[i] = 3;
+				GUIBoundary.removePlayerCar(player);
+				player.setPosition(10);
+				GUIBoundary.placePlayerCar(player);
 				break;
 			}
 		}

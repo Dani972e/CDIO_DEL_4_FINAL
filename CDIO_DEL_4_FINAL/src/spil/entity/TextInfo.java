@@ -307,7 +307,7 @@ public class TextInfo {
 	}
 	
 	public static String sameCounterThrowJailMessage(Player player) {
-		return "Desværre " + player.getName() +  " er fængslet for at slå tre ens.";
+		return "Desværre,  " + player.getName() +  " er fængslet for at slå tre ens slag.";
 	}
 
 	public static String purchaseHouseMessage(Player player) {
