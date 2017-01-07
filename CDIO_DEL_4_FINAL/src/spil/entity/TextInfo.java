@@ -305,6 +305,10 @@ public class TextInfo {
 	public static String startFieldMessage(Player player) {
 		return player.getName() + " har landet på start feltet.";
 	}
+	
+	public static String sameCounterThrowJailMessage(Player player) {
+		return "Desværre " + player.getName() +  " er fængslet for at slå tre ens.";
+	}
 
 	public static String purchaseHouseMessage(Player player) {
 		return "Vil " + player.getName() + " købe et hus på " + getFieldName(player) + "?";

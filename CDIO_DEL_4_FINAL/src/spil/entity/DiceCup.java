@@ -13,6 +13,7 @@ public class DiceCup {
 	 */
 	private Die[] diceList;
 	private int[] rollList;
+	private int sameThrowCounter = 0;
 
 	/*
 	 * Constructor that uses the dieCount variable as the amount of Dice that
@@ -71,6 +72,19 @@ public class DiceCup {
 				}
 			}
 		}
+		sameThrowCounter++;
 		return true;
 	}
+
+	public void resetSameThrowCounter() {
+		sameThrowCounter = 0;
+	}
+
+	public boolean sameThrowJail(int toJailIndex) {
+		if (sameThrowCounter == toJailIndex) {
+			return true;
+		}
+		return false;
+	}
+
 }

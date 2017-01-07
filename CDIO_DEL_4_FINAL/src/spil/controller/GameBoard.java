@@ -259,9 +259,15 @@ public class GameBoard {
 	public boolean isJailed(Player player) {
 		return jailedPlayers.isJailed(player);
 	}
-
+	
+	public void jailPlayer(Player player) {
+		jailedPlayers.jailPlayer(player);
+	}
+	
 	public void decPlayerCounter(Player jailedPlayer) {
 		jailedPlayers.decPlayerCounter(jailedPlayer);
+	
 	}
 
+	
 }
