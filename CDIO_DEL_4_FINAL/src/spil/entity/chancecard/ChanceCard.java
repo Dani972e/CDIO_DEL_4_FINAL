@@ -7,13 +7,13 @@ public abstract class ChanceCard {
 
 	public ChanceCard(int effect, String desc) {
 		this.effect = effect;
-		this.desc=desc;
+		this.desc = desc;
 	}
 
 	public int getEffect() {
 		return effect;
 	}
-	
+
 	public String getDesc() {
 		return desc;
 	}
