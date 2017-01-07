@@ -59,17 +59,6 @@ public class GameController {
 
 				playRound(currentPlayer);
 
-				if (diceCup.checkRollEquality() && !gameBoard.isJailed(currentPlayer)) {
-					if (diceCup.sameThrowJail(3)) {
-						GUIBoundary.print(TextInfo.sameCounterThrowJailMessage(currentPlayer));
-						gameBoard.jailPlayer(currentPlayer);
-					} else {
-						GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
-						playRound(currentPlayer);
-					}
-
-				}
-
 				if (currentPlayer.isBankrupt()) {
 					GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 					GUIBoundary.removePlayerCar(currentPlayer);
@@ -116,5 +105,17 @@ public class GameController {
 
 		gameBoard.landOnField(currentPlayer);
 		GUIBoundary.updatePlayer(currentPlayer);
+
+		if (diceCup.checkRollEquality() && !gameBoard.isJailed(currentPlayer)) {
+			if (diceCup.sameThrowJail(3)) {
+				GUIBoundary.print(TextInfo.sameCounterThrowJailMessage(currentPlayer));
+				gameBoard.jailPlayer(currentPlayer);
+			} else {
+				GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
+				playRound(currentPlayer);
+			}
+		}
+
 	}
+
 }
