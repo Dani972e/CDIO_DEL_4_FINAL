@@ -56,7 +56,6 @@ public class GameController {
 			}
 
 			if (!gameBoard.isJailed(currentPlayer)) {
-
 				playRound(currentPlayer);
 
 				if (currentPlayer.isBankrupt()) {
@@ -70,23 +69,11 @@ public class GameController {
 
 			gameBoard.decPlayerCounter(currentPlayer);
 			diceCup.resetSameThrowCounter();
-
 			index = calculateIndex(index);
 		}
 
 		GUIBoundary.print(TextInfo.winnerMessage(playerList.getLastPlayer()));
-
 		System.exit(0);
-	}
-
-	/*
-	 * Calculate the Player index, so that it is always in the arrays limit.
-	 */
-	private int calculateIndex(int index) {
-		if (index == (playerList.getTotalPlayers() - 1)) {
-			return index = 0;
-		}
-		return index + 1;
 	}
 
 	private void playRound(Player currentPlayer) {
@@ -99,23 +86,33 @@ public class GameController {
 		GUIBoundary.showDice(rollList);
 		GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
 
-		GUIBoundary.removePlayerCar(currentPlayer);
-		gameBoard.movePlayer(currentPlayer, rollTotal);
-		GUIBoundary.placePlayerCar(currentPlayer);
+		if (diceCup.checkRollEquality(true) && !gameBoard.isJailed(currentPlayer) && diceCup.sameThrowJail(3)) {
+			GUIBoundary.print(TextInfo.sameCounterThrowJailMessage(currentPlayer));
+			gameBoard.jailPlayer(currentPlayer);
+		} else {
+			GUIBoundary.removePlayerCar(currentPlayer);
+			gameBoard.movePlayer(currentPlayer, rollTotal);
+			GUIBoundary.placePlayerCar(currentPlayer);
 
-		gameBoard.landOnField(currentPlayer);
-		GUIBoundary.updatePlayer(currentPlayer);
+			gameBoard.landOnField(currentPlayer);
+			GUIBoundary.updatePlayer(currentPlayer);
 
-		if (diceCup.checkRollEquality() && !gameBoard.isJailed(currentPlayer)) {
-			if (diceCup.sameThrowJail(3)) {
-				GUIBoundary.print(TextInfo.sameCounterThrowJailMessage(currentPlayer));
-				gameBoard.jailPlayer(currentPlayer);
-			} else {
+			if (diceCup.checkRollEquality(false) && !gameBoard.isJailed(currentPlayer)) {
 				GUIBoundary.print(TextInfo.rollEqualityMessage(currentPlayer));
 				playRound(currentPlayer);
 			}
 		}
 
+	}
+
+	/*
+	 * Calculate the Player index, so that it is always in the arrays limit.
+	 */
+	private int calculateIndex(int index) {
+		if (index == (playerList.getTotalPlayers() - 1)) {
+			return index = 0;
+		}
+		return index + 1;
 	}
 
 }

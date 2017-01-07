@@ -46,6 +46,31 @@ public class DiceCup {
 		return rollList;
 	}
 
+	public boolean checkRollEquality(boolean increaseCounter) {
+		for (int i = 0, n = rollList.length; i < n; i++) {
+			if ((i + 1) < n) {
+				if (rollList[i] != rollList[i + 1]) {
+					return false;
+				}
+			}
+		}
+		if (increaseCounter) {
+			sameThrowCounter++;
+		}
+		return true;
+	}
+
+	public void resetSameThrowCounter() {
+		sameThrowCounter = 0;
+	}
+
+	public boolean sameThrowJail(int toJailIndex) {
+		if (sameThrowCounter == toJailIndex) {
+			return true;
+		}
+		return false;
+	}
+
 	/*
 	 * Gets the total roll of all the rolls in the rollList array parameter.
 	 */
@@ -62,29 +87,6 @@ public class DiceCup {
 	 */
 	public int getDieAmount() {
 		return diceList.length;
-	}
-
-	public boolean checkRollEquality() {
-		for (int i = 0, n = rollList.length; i < n; i++) {
-			if ((i + 1) < n) {
-				if (rollList[i] != rollList[i + 1]) {
-					return false;
-				}
-			}
-		}
-		sameThrowCounter++;
-		return true;
-	}
-
-	public void resetSameThrowCounter() {
-		sameThrowCounter = 0;
-	}
-
-	public boolean sameThrowJail(int toJailIndex) {
-		if (sameThrowCounter == toJailIndex) {
-			return true;
-		}
-		return false;
 	}
 
 }
