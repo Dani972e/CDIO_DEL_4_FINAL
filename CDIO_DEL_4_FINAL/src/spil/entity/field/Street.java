@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import spil.boundary.GUIBoundary;
 import spil.controller.GameBoard;
+import spil.entity.FieldInfo;
 import spil.entity.Player;
 import spil.entity.TextInfo;
 
@@ -39,8 +40,6 @@ public final class Street extends Ownable {
 
 		if (player.equals(owner) && !isPurchased) {
 
-			System.out.println("DEBUG: " + IDColor.toString());
-
 			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
 				if (GUIBoundary.purchaseHouse(player, houseCount)) {
 					houseCount++;
@@ -53,7 +52,27 @@ public final class Street extends Ownable {
 			} else {
 				GUIBoundary.print(TextInfo.purchaseHouseDeniedMessage(player));
 			}
+			calculateRent(houseCount);
+		}
+	}
 
+	private void calculateRent(int rentIndex) {
+		if (IDColor.equals(Color.BLUE)) {
+			rent = FieldInfo.blueRents[rentIndex];
+		} else if (IDColor.equals(Color.ORANGE)) {
+			rent = FieldInfo.orangeRents[rentIndex];
+		} else if (IDColor.equals(Color.GREEN)) {
+			rent = FieldInfo.greenRents[rentIndex];
+		} else if (IDColor.equals(Color.GRAY)) {
+			rent = FieldInfo.grayRents[rentIndex];
+		} else if (IDColor.equals(Color.RED)) {
+			rent = FieldInfo.redRents[rentIndex];
+		} else if (IDColor.equals(Color.WHITE)) {
+			rent = FieldInfo.whiteRents[rentIndex];
+		} else if (IDColor.equals(Color.YELLOW)) {
+			rent = FieldInfo.yellowRents[rentIndex];
+		} else if (IDColor.equals(Color.MAGENTA)) {
+			rent = FieldInfo.magentaRents[rentIndex];
 		}
 	}
 

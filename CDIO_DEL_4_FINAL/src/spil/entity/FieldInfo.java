@@ -34,4 +34,18 @@ public class FieldInfo {
 
 	public static final int blueRents[] = { 250, 750, 2250, 4000, 6000 };
 
+	public static final int orangeRents[] = { 600, 1800, 5400, 8000, 11000 };
+
+	public static final int greenRents[] = { 1000, 3000, 9000, 12500, 15000 };
+
+	public static final int grayRents[] = { 1400, 4000, 11000, 16000, 19000 };
+
+	public static final int redRents[] = { 1800, 5000, 14000, 17500, 21000 };
+
+	public static final int whiteRents[] = { 2200, 6600, 16000, 19500, 23000 };
+
+	public static final int yellowRents[] = { 2600, 7800, 18000, 22000, 25000 };
+
+	public static final int magentaRents[] = { 3500, 10000, 22000, 26000, 30000 };
+
 }
