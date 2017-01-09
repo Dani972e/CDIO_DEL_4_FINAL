@@ -35,7 +35,7 @@ public final class Street extends Ownable {
 
 		try {
 			if (owner.equals(player) && !isPurchased) {
-				GUIBoundary.purchaseHouse(player);
+				GUIBoundary.purchaseHouse(player, houseCount);
 			}
 		} catch (NullPointerException e) {
 			return;

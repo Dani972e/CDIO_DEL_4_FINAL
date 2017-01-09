@@ -305,13 +305,31 @@ public class TextInfo {
 	public static String startFieldMessage(Player player) {
 		return player.getName() + " har landet på start feltet.";
 	}
-	
+
 	public static String sameCounterThrowJailMessage(Player player) {
-		return "Desværre,  " + player.getName() +  " er fængslet for at slå tre ens slag.";
+		return "Desværre,  " + player.getName() + " er fængslet for at slå tre ens slag.";
 	}
 
-	public static String purchaseHouseMessage(Player player) {
-		return "Vil " + player.getName() + " købe et hus på " + getFieldName(player) + "?";
+	public static String purchaseHouseMessage(Player player, int houseCount) {
+		String temp = "";
+		switch (houseCount) {
+		case 0:
+			temp = "første hus";
+			break;
+		case 1:
+			temp = "anden hus";
+			break;
+		case 2:
+			temp = "tredje hus";
+			break;
+		case 3:
+			temp = "fjerde hus";
+			break;
+		case 4:
+			temp = "et hotel";
+			break;
+		}
+		return "Vil " + player.getName() + " købe " + temp + "  på " + getFieldName(player) + "?";
 	}
 
 };
