@@ -3,6 +3,7 @@ package spil.entity.field;
 import java.awt.Color;
 
 import spil.boundary.GUIBoundary;
+import spil.controller.GameBoard;
 import spil.entity.Player;
 
 /* 
@@ -16,14 +17,16 @@ public final class Street extends Ownable {
 	private int rent;
 	private int houseCount = 0;
 	private Color IDColor;
+	private GameBoard gameBoard;
 
 	/*
 	 * Territory constructor with field price and field rent.
 	 */
-	public Street(int price, int rent, Color IDColor) {
+	public Street(int price, int rent, Color IDColor, GameBoard gameBoard) {
 		super(price);
 		this.rent = rent;
 		this.IDColor = IDColor;
+		this.gameBoard = gameBoard;
 	}
 
 	/*
@@ -56,6 +59,10 @@ public final class Street extends Ownable {
 	@Override
 	public void deleteOwner() {
 		owner = null;
+	}
+
+	public Color getIDColor() {
+		return IDColor;
 	}
 
 }
