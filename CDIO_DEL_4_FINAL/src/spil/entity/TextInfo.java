@@ -322,7 +322,7 @@ public class TextInfo {
 			temp = " det første hus";
 			break;
 		case 1:
-			temp = " det anden hus";
+			temp = " det andet hus";
 			break;
 		case 2:
 			temp = "det tredje hus";
