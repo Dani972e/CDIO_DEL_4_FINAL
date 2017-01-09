@@ -37,7 +37,7 @@ public class TextInfo {
 			"Tag ind på Rådhuspladsen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér kr. 4.000.",
-			"Ryk fem felter foran.", "Ryk tre felter foran.", "Ryk tre felter tilbage.",
+			"Ryk fem felter foran.", "Ryk to felter foran.", "Ryk tre felter tilbage.",
 
 			// Gå i fængsel
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
@@ -101,7 +101,7 @@ public class TextInfo {
 			{ "Bülowsvej", "Kr. 2800",
 					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 200, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 
-			{ "Gl. Kongevej", "Kr. 2.800",
+			{ "Gl. Kongevej", "Kr. 3.200",
 					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 250, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 
 			{ "DSB Rederierne, Kalundborg/Århus", "Kr. 4.000",
@@ -120,12 +120,12 @@ public class TextInfo {
 
 			{ "Rasteplads", "Parkering", "Ta´ en pause" },
 
-			{ "Trianglen", "Kr. 4.000",
+			{ "Trianglen", "Kr. 4.400",
 					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
 
 			{ "", "Prøv lykken", "ChanceKort" },
 
-			{ "Østerbrogade", "Kr. 4.000",
+			{ "Østerbrogade", "Kr. 4.400",
 					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 350, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
 
 			{ "Grønningen", "Kr. 4.800",
