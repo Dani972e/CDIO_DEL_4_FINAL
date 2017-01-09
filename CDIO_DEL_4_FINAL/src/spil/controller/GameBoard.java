@@ -295,7 +295,7 @@ public class GameBoard {
 		for (Field field : fields) {
 			if (field instanceof spil.entity.field.Street) {
 				Color fieldColor = ((spil.entity.field.Street) field).getIDColor();
-				if (fieldColor.equals(IDColor) && ((spil.entity.field.Street) field).getOwner().equals(player)) {
+				if (fieldColor.equals(IDColor) && player.equals(((spil.entity.field.Street) field).getOwner())) {
 					return true;
 				}
 			}

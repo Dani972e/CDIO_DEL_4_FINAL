@@ -312,7 +312,7 @@ public class TextInfo {
 	}
 
 	public static String purchaseHouseDeniedMessage(Player player, Color IDColor) {
-		return player.getName() + " har ikke købt alle " + IDColor.toString() + " felter.";
+		return player.getName() + " har ikke købt alle " +  + " felter.";
 	}
 
 	public static String purchaseHouseMessage(Player player, int houseCount) {
