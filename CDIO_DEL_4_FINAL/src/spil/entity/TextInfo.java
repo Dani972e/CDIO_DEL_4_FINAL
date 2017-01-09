@@ -319,16 +319,16 @@ public class TextInfo {
 		String temp = "";
 		switch (houseCount) {
 		case 0:
-			temp = "første hus";
+			temp = " det første hus";
 			break;
 		case 1:
-			temp = "anden hus";
+			temp = " det anden hus";
 			break;
 		case 2:
-			temp = "tredje hus";
+			temp = "det tredje hus";
 			break;
 		case 3:
-			temp = "fjerde hus";
+			temp = "det fjerde hus";
 			break;
 		case 4:
 			temp = "et hotel";
