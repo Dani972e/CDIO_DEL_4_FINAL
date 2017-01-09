@@ -19,7 +19,7 @@ public class TextInfo {
 			"Modtag udbytte af Deres aktier kr. 1.000.",
 			"Grundet dyrtiden har De fået gageforhøjelse. Modtag kr. 1.000.",
 			"Modtag udbytte af Deres aktier kr. 1.000.",
-			"De modtager \" Matador-legatet for værdig trængende\", stort kr. 40.000. Ved værdig trængende forstås, at Deres formue, d.v.s. Deres kontante penge + skøder + bygninger ikke overstiger kr. 15.000.",
+			"De modtager kr. 5.000.",
 			"De har vundet i Klasselotteriet. Modtag kr. 500.",
 			"Værdien af egen avl fra nyttehaven udgør kr. 200, som De modtager af banken",
 			"Det er Deres fødselsdag. Modtag af hver medspiller kr. 200.",
