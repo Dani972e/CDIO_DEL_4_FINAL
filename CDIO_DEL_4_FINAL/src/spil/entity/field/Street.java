@@ -36,12 +36,16 @@ public final class Street extends Ownable {
 	public void landOnField(Player player) {
 		boolean isPurchased = super.purchaseField(player, price, rent);
 
-		try {
-			if (owner.equals(player) && !isPurchased) {
-				GUIBoundary.purchaseHouse(player, houseCount);
+		if (player.equals(owner) && !isPurchased) {
+
+			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
+				if (GUIBoundary.purchaseHouse(player, houseCount)) {
+					houseCount++;
+				}
+			} else {
+				GUIBoundary.print("Du har ikke købt alle samme farvede felter.");
 			}
-		} catch (NullPointerException e) {
-			return;
+
 		}
 	}
 

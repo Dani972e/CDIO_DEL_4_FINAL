@@ -289,7 +289,18 @@ public class GameBoard {
 
 	public void decPlayerCounter(Player jailedPlayer) {
 		jailedPlayers.decPlayerCounter(jailedPlayer);
+	}
 
+	public boolean isAllFieldsPurchased(Player player, Color IDColor) {
+		for (Field field : fields) {
+			if (field.getClass().getName().equals(spil.entity.field.Street.class)) {
+				Color fieldColor = ((spil.entity.field.Street) field).getIDColor();
+				if (fieldColor.equals(IDColor) && ((spil.entity.field.Street) field).getOwner().equals(player)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }
