@@ -34,8 +34,9 @@ public class ChanceCardList {
 		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[26]);
 
 		//Jail
-		for (int i = 27; i < 30; ++i)
-			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
+		chanceCardList[27] = new JailChanceCard(TextInfo.chanceCardValue[27], TextInfo.chanceCardText[27]);
+		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28]);
+		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29]);
 
 		//shuffleCards();
 	}
@@ -118,7 +119,8 @@ public class ChanceCardList {
 		} else if (card instanceof JailChanceCard) {
 			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
 			GUIBoundary.removePlayerCar(player);
-			player.setPosition(29);
+			player.setPosition(card.getEffect());
+			System.out.println("Debug: " + card.getEffect());
 			GUIBoundary.placePlayerCar(player);
 			GUIBoundary.updatePlayer(player);
 			gameBoard.landOnField(player);
