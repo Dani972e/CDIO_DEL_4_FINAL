@@ -69,7 +69,6 @@ public class GUIBoundary {
 	}
 
 	public static void removePlayerCar(Player player) {
-		System.out.println(player.getName() + " index when removing car: " + player.getPosition() + incrementGUIIndex);
 		GUI.removeCar(player.getPosition() + incrementGUIIndex, player.getName());
 	}
 
