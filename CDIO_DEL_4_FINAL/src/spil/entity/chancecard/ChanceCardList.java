@@ -38,7 +38,7 @@ public class ChanceCardList {
 		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28]);
 		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29]);
 
-		//shuffleCards();
+		shuffleCards();
 	}
 
 	public ChanceCard[] getAllCards() {
