@@ -1,8 +1,10 @@
 package spil.controller;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import desktop_codebehind.Car;
 import desktop_fields.Brewery;
@@ -20,6 +22,7 @@ import spil.entity.PlayerList;
 import spil.entity.TextInfo;
 import spil.entity.chancecard.ChanceCardList;
 import spil.entity.field.Field;
+import spil.entity.field.Ownable;
 
 public class GameBoard {
 
@@ -163,46 +166,33 @@ public class GameBoard {
 	 */
 	private ChanceCardList chanceCardList = new ChanceCardList(30, this);
 
-	private final spil.entity.field.Field[] fields = { 
-			new spil.entity.field.Empty(true),
-			new spil.entity.field.Street(1200, 50, Color.BLUE, this), 
-			new spil.entity.field.ChanceField(chanceCardList),
-			new spil.entity.field.Street(1200, 50, Color.BLUE, this), 
-			new spil.entity.field.Tax(4000, true),
-			new spil.entity.field.Shipping(4000),
-			new spil.entity.field.Street(2000, 100, Color.ORANGE, this),
+	private final spil.entity.field.Field[] fields = { new spil.entity.field.Empty(true),
+			new spil.entity.field.Street(1200, 50, Color.BLUE, this), new spil.entity.field.ChanceField(chanceCardList),
+			new spil.entity.field.Street(1200, 50, Color.BLUE, this), new spil.entity.field.Tax(4000, true),
+			new spil.entity.field.Shipping(4000), new spil.entity.field.Street(2000, 100, Color.ORANGE, this),
 			new spil.entity.field.ChanceField(chanceCardList),
 			new spil.entity.field.Street(2000, 100, Color.ORANGE, this),
 			new spil.entity.field.Street(2400, 150, Color.ORANGE, this),
 			new spil.entity.field.Jail(jailedPlayers, false),
-			new spil.entity.field.Street(2800, 200, Color.GREEN, this), 
-			new spil.entity.field.Brewery(3000),
+			new spil.entity.field.Street(2800, 200, Color.GREEN, this), new spil.entity.field.Brewery(3000),
 			new spil.entity.field.Street(2800, 200, Color.GREEN, this),
-			new spil.entity.field.Street(3200, 250, Color.GREEN, this),
-			new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(3200, 250, Color.GREEN, this), new spil.entity.field.Shipping(4000),
 			new spil.entity.field.Street(3600, 300, Color.GRAY, this),
 			new spil.entity.field.ChanceField(chanceCardList),
 			new spil.entity.field.Street(3600, 300, Color.GRAY, this),
-			new spil.entity.field.Street(4000, 350, Color.GRAY, this), 
-			new spil.entity.field.Empty(false),
-			new spil.entity.field.Street(4400, 350, Color.RED, this), 
-			new spil.entity.field.ChanceField(chanceCardList),
+			new spil.entity.field.Street(4000, 350, Color.GRAY, this), new spil.entity.field.Empty(false),
+			new spil.entity.field.Street(4400, 350, Color.RED, this), new spil.entity.field.ChanceField(chanceCardList),
 			new spil.entity.field.Street(4400, 350, Color.RED, this),
-			new spil.entity.field.Street(4800, 400, Color.RED, this), 
-			new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(4800, 400, Color.RED, this), new spil.entity.field.Shipping(4000),
 			new spil.entity.field.Street(5200, 450, Color.WHITE, this),
-			new spil.entity.field.Street(5200, 450, Color.WHITE, this),
-			new spil.entity.field.Brewery(3000),
-			new spil.entity.field.Street(5600, 500, Color.WHITE, this), 
-			new spil.entity.field.Jail(jailedPlayers, true),
+			new spil.entity.field.Street(5200, 450, Color.WHITE, this), new spil.entity.field.Brewery(3000),
+			new spil.entity.field.Street(5600, 500, Color.WHITE, this), new spil.entity.field.Jail(jailedPlayers, true),
 			new spil.entity.field.Street(6000, 550, Color.YELLOW, this),
 			new spil.entity.field.Street(6000, 550, Color.YELLOW, this),
 			new spil.entity.field.ChanceField(chanceCardList),
-			new spil.entity.field.Street(6400, 600, Color.YELLOW, this), 
-			new spil.entity.field.Shipping(4000),
+			new spil.entity.field.Street(6400, 600, Color.YELLOW, this), new spil.entity.field.Shipping(4000),
 			new spil.entity.field.ChanceField(chanceCardList),
-			new spil.entity.field.Street(7000, 700, Color.MAGENTA, this), 
-			new spil.entity.field.Tax(2000, false),
+			new spil.entity.field.Street(7000, 700, Color.MAGENTA, this), new spil.entity.field.Tax(2000, false),
 			new spil.entity.field.Street(8000, 1000, Color.MAGENTA, this), };
 
 	/*
@@ -302,6 +292,25 @@ public class GameBoard {
 
 	public void decPlayerCounter(Player jailedPlayer) {
 		jailedPlayers.decPlayerCounter(jailedPlayer);
+	}
+
+	public void promptForSale(Player player) {
+		List<String> fieldNames = new ArrayList<>();
+
+		for (int i = 0, n = fields.length; i < n; i++) {
+			if (fields[i] instanceof Ownable && player.equals(((Ownable) fields[i]).getOwner())) {
+				fieldNames.add(TextInfo.fieldText[i][0]);
+			}
+
+		}
+
+		if (fieldNames.size() > 0 && GUIBoundary.promptSale(player)) {
+			GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]));
+		}
+
+		for (String string : fieldNames) {
+			System.out.println(string);
+		}
 	}
 
 	public boolean isAllFieldsPurchased(Player player, Color IDColor) {

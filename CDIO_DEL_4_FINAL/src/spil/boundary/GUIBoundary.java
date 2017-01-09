@@ -108,4 +108,18 @@ public class GUIBoundary {
 		GUI.setHotel(fieldNumber + incrementGUIIndex, hasHotel);
 	}
 
+	public static boolean promptSale(Player player) {
+		String result = GUI.getUserButtonPressed(TextInfo.promptSaleMessage(player), TextInfo.buttonYesMessage,
+				TextInfo.buttonNoMessage);
+		if (result.equals(TextInfo.buttonYesMessage)) {
+			return true;
+		}
+		return false;
+	}
+
+	public static String showSaleMenu(Player player, String[] fieldNames) {
+		String result = GUI.getUserSelection(TextInfo.playerSaleMessage(player), fieldNames);
+		return result;
+	}
+
 }
