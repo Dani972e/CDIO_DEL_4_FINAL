@@ -43,6 +43,8 @@ public final class Street extends Ownable {
 			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
 				if (GUIBoundary.purchaseHouse(player, houseCount)) {
 					houseCount++;
+					calculateHousePrice();
+					player.removeBalance(price);
 					if (houseCount <= 4) {
 						GUIBoundary.setHouses(player.getPosition(), houseCount);
 					} else {
@@ -74,6 +76,26 @@ public final class Street extends Ownable {
 			rent = FieldInfo.yellowRents[rentIndex];
 		} else if (IDColor.equals(Color.MAGENTA)) {
 			rent = FieldInfo.magentaRents[rentIndex];
+		}
+	}
+
+	private void calculateHousePrice() {
+		if (IDColor.equals(Color.BLUE)) {
+			price = FieldInfo.blueHousePrice;
+		} else if (IDColor.equals(Color.ORANGE)) {
+			price = FieldInfo.orangeHousePrice;
+		} else if (IDColor.equals(Color.GREEN)) {
+			price = FieldInfo.greenHousePrice;
+		} else if (IDColor.equals(Color.GRAY)) {
+			price = FieldInfo.grayHousePrice;
+		} else if (IDColor.equals(Color.RED)) {
+			price = FieldInfo.redHousePrice;
+		} else if (IDColor.equals(Color.WHITE)) {
+			price = FieldInfo.whiteHousePrice;
+		} else if (IDColor.equals(Color.YELLOW)) {
+			price = FieldInfo.yellowHousePrice;
+		} else if (IDColor.equals(Color.MAGENTA)) {
+			price = FieldInfo.magentaHousePrice;
 		}
 	}
 

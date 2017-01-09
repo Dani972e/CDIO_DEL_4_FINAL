@@ -48,4 +48,20 @@ public class FieldInfo {
 
 	public static final int magentaRents[] = { 3500, 10000, 22000, 26000, 30000 };
 
+	public static final int blueHousePrice = 1000;
+
+	public static final int orangeHousePrice = 1000;
+
+	public static final int greenHousePrice = 2000;
+
+	public static final int grayHousePrice = 2000;
+
+	public static final int redHousePrice = 3000;
+
+	public static final int whiteHousePrice = 3000;
+
+	public static final int yellowHousePrice = 4000;
+
+	public static final int magentaHousePrice = 4000;
+
 }
