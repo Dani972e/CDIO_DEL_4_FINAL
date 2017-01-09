@@ -30,8 +30,8 @@ public class GUIBoundary {
 	}
 
 	public static boolean purchaseHouse(Player player, int houseCount) {
-		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount), TextInfo.buttonYesMessage,
-				TextInfo.buttonNoMessage);
+		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount),
+				TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
 		if (result.equals(TextInfo.buttonYesMessage)) {
 			return true;
 		} else {
@@ -91,6 +91,14 @@ public class GUIBoundary {
 
 	public static void showDice(int[] rollList) {
 		GUI.setDice(rollList[0], rollList[1]);
+	}
+
+	public static void setHouses(int fieldNumber, int houseCount) {
+		GUI.setHouses(fieldNumber + incrementGUIIndex, houseCount);
+	}
+	
+	public static void setHotel(int fieldNumber, boolean hasHotel) {
+		GUI.setHotel(fieldNumber, hasHotel);
 	}
 
 }

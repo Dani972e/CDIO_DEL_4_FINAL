@@ -44,6 +44,11 @@ public final class Street extends Ownable {
 			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
 				if (GUIBoundary.purchaseHouse(player, houseCount)) {
 					houseCount++;
+					if (houseCount < 3) {
+						GUIBoundary.setHouses(player.getPosition(), houseCount);
+					} else {
+						GUIBoundary.setHotel(player.getPosition(), true);
+					}
 				}
 			} else {
 				GUIBoundary.print(TextInfo.purchaseHouseDeniedMessage(player));
