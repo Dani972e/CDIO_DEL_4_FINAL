@@ -37,13 +37,13 @@ public final class Street extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		boolean isPurchased = super.purchaseField(player, price, rent);
+		calculateHousePrice();
 
 		if (player.equals(owner) && !isPurchased) {
 
 			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
-				if (GUIBoundary.purchaseHouse(player, houseCount)) {
+				if (GUIBoundary.purchaseHouse(player, houseCount, price)) {
 					houseCount++;
-					calculateHousePrice();
 					player.removeBalance(price);
 					if (houseCount <= 4) {
 						GUIBoundary.setHouses(player.getPosition(), houseCount);
