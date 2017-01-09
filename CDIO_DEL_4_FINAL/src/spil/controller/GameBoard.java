@@ -173,7 +173,7 @@ public class GameBoard {
 			new spil.entity.field.Street(2000, 100, Color.ORANGE, this),
 			new spil.entity.field.ChanceField(chanceCardList),
 			new spil.entity.field.Street(2000, 100, Color.ORANGE, this),
-			new spil.entity.field.Street(2400, 100, Color.ORANGE, this),
+			new spil.entity.field.Street(2400, 150, Color.ORANGE, this),
 			new spil.entity.field.Jail(jailedPlayers, false),
 			new spil.entity.field.Street(2800, 200, Color.GREEN, this), 
 			new spil.entity.field.Brewery(3000),
