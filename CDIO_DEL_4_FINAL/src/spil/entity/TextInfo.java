@@ -334,7 +334,7 @@ public class TextInfo {
 			temp = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + "for " + price + " Kr. ?";
+		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + " for " + price + " Kr. ?";
 	}
 
 };
