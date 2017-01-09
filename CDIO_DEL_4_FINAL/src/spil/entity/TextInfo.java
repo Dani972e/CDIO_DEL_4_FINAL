@@ -37,7 +37,7 @@ public class TextInfo {
 			"Tag ind på Rådhuspladsen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da kr. 4.000.",
 			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér kr. 4.000.",
-			"Ryk tre felter foran.", "Ryk tre felter foran.", "Ryk tre felter tilbage.",
+			"Ryk fem felter foran.", "Ryk tre felter foran.", "Ryk tre felter tilbage.",
 
 			// Gå i fængsel
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke kr. 4.000.",
@@ -319,10 +319,10 @@ public class TextInfo {
 		String temp = "";
 		switch (houseCount) {
 		case 0:
-			temp = " det første hus";
+			temp = "det første hus";
 			break;
 		case 1:
-			temp = " det andet hus";
+			temp = "det andet hus";
 			break;
 		case 2:
 			temp = "det tredje hus";

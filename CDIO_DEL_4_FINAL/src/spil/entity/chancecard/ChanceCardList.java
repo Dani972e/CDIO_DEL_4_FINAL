@@ -1,5 +1,6 @@
 package spil.entity.chancecard;
 
+import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.controller.GameBoard;
 import spil.entity.Player;
@@ -116,7 +117,9 @@ public class ChanceCardList {
 			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 
 		} else if (card instanceof JailChanceCard) {
+			GUIBoundary.removePlayerCar(player);
 			player.setPosition(card.getEffect());
+			GUIBoundary.placePlayerCar(player);
 			gameBoard.landOnField(player);
 			GUIBoundary.updatePlayer(player);
 			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
@@ -126,8 +129,10 @@ public class ChanceCardList {
 		else if (card instanceof PlaceChanceCard) {
 			while (player.getPosition() != card.getEffect()) {
 				System.out.println(player.getName() + " DEBUG PLACE " + card.getEffect() + "/n" + card.getDesc());
+				GUIBoundary.removePlayerCar(player);
 				gameBoard.movePlayer(player, 1);
 				GUIBoundary.updatePlayer(player);
+				
 			}
 			gameBoard.landOnField(player);
 

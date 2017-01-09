@@ -98,7 +98,7 @@ public class GUIBoundary {
 	}
 	
 	public static void setHotel(int fieldNumber, boolean hasHotel) {
-		GUI.setHotel(fieldNumber, hasHotel);
+		GUI.setHotel(fieldNumber + incrementGUIIndex, hasHotel);
 	}
 
 }
