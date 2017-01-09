@@ -1,7 +1,5 @@
 package spil.entity;
 
-import java.awt.Color;
-
 /*
  * TextBoundary is a general class that holds all the text information of the system.
  * There are variable Strings that are used throughout the game, as well as specific methods
@@ -313,6 +311,10 @@ public class TextInfo {
 
 	public static String purchaseHouseDeniedMessage(Player player) {
 		return player.getName() + " har ikke købt alle felter med denne farve.";
+	}
+
+	public static String purchaseHouseNotEnoughMoneyMessage(Player player, int price) {
+		return player.getName() + " har ikke nok penge til at købe huset for " + price + " Kr.";
 	}
 
 	public static String purchaseHouseMessage(Player player, int houseCount, int price) {

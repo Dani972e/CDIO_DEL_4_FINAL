@@ -33,7 +33,14 @@ public class GUIBoundary {
 		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount, price),
 				TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
 		if (result.equals(TextInfo.buttonYesMessage)) {
-			return true;
+
+			if (player.getBalance() > price) {
+				return true;
+			} else {
+				GUIBoundary.print(TextInfo.purchaseHouseNotEnoughMoneyMessage(player, price));
+				return false;
+			}
+
 		} else {
 			return false;
 		}
