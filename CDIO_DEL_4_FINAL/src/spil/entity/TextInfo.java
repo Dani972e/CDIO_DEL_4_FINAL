@@ -311,8 +311,8 @@ public class TextInfo {
 		return "Desværre,  " + player.getName() + " er fængslet for at slå tre ens slag.";
 	}
 
-	public static String purchaseHouseDeniedMessage(Player player, Color IDColor) {
-		return player.getName() + " har ikke købt alle " +  + " felter.";
+	public static String purchaseHouseDeniedMessage(Player player) {
+		return player.getName() + " har ikke købt alle felter med denne farve.";
 	}
 
 	public static String purchaseHouseMessage(Player player, int houseCount) {

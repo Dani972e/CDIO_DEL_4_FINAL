@@ -46,7 +46,7 @@ public final class Street extends Ownable {
 					houseCount++;
 				}
 			} else {
-				GUIBoundary.print(TextInfo.purchaseHouseDeniedMessage(player, IDColor));
+				GUIBoundary.print(TextInfo.purchaseHouseDeniedMessage(player));
 			}
 
 		}

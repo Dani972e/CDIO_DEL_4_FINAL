@@ -292,13 +292,28 @@ public class GameBoard {
 	}
 
 	public boolean isAllFieldsPurchased(Player player, Color IDColor) {
+
+		int fieldColorCount = 0;
+		int playerColorCount = 0;
+
+		for (Field field : fields) {
+			if (field instanceof spil.entity.field.Street) {
+				Color fieldColor = ((spil.entity.field.Street) field).getIDColor();
+				if (fieldColor.equals(IDColor))
+					fieldColorCount++;
+			}
+		}
+
 		for (Field field : fields) {
 			if (field instanceof spil.entity.field.Street) {
 				Color fieldColor = ((spil.entity.field.Street) field).getIDColor();
 				if (fieldColor.equals(IDColor) && player.equals(((spil.entity.field.Street) field).getOwner())) {
-					return true;
+					playerColorCount++;
 				}
 			}
+			System.out.println("fieldColorCount: " + fieldColorCount + " ;;; playerColorCount: " + playerColorCount);
+			if (fieldColorCount == playerColorCount)
+				return true;
 		}
 		return false;
 	}
