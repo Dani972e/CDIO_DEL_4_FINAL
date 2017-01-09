@@ -135,10 +135,6 @@ public class ChanceCardList {
 				
 			}
 			
-			GUIBoundary.removePlayerCar(player);
-			gameBoard.movePlayer(player, 1);
-			GUIBoundary.updatePlayer(player);
-			
 			GUIBoundary.placePlayerCar(player);
 			gameBoard.landOnField(player);
 
