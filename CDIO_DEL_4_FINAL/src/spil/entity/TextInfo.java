@@ -1,5 +1,7 @@
 package spil.entity;
 
+import java.awt.Color;
+
 /*
  * TextBoundary is a general class that holds all the text information of the system.
  * There are variable Strings that are used throughout the game, as well as specific methods
@@ -18,8 +20,7 @@ public class TextInfo {
 			"De modtager Deres aktieudbytte. Modtag kr. 1.000 af banken.", "Modtag udbytte af Deres aktier kr. 1.000.",
 			"Modtag udbytte af Deres aktier kr. 1.000.",
 			"Grundet dyrtiden har De fået gageforhøjelse. Modtag kr. 1.000.",
-			"Modtag udbytte af Deres aktier kr. 1.000.",
-			"De modtager kr. 5.000.",
+			"Modtag udbytte af Deres aktier kr. 1.000.", "De modtager kr. 5.000.",
 			"De har vundet i Klasselotteriet. Modtag kr. 500.",
 			"Værdien af egen avl fra nyttehaven udgør kr. 200, som De modtager af banken",
 			"Det er Deres fødselsdag. Modtag af hver medspiller kr. 200.",
@@ -310,6 +311,10 @@ public class TextInfo {
 		return "Desværre,  " + player.getName() + " er fængslet for at slå tre ens slag.";
 	}
 
+	public static String purchaseHouseDeniedMessage(Player player, Color IDColor) {
+		return player.getName() + " har ikke købt alle " + IDColor.toString() + " felter.";
+	}
+
 	public static String purchaseHouseMessage(Player player, int houseCount) {
 		String temp = "";
 		switch (houseCount) {
@@ -329,7 +334,7 @@ public class TextInfo {
 			temp = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + temp + "  på " + getFieldName(player) + "?";
+		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + "?";
 	}
 
 };

@@ -5,6 +5,7 @@ import java.awt.Color;
 import spil.boundary.GUIBoundary;
 import spil.controller.GameBoard;
 import spil.entity.Player;
+import spil.entity.TextInfo;
 
 /* 
  * final class so nobody accidently inherits from this class.
@@ -38,12 +39,14 @@ public final class Street extends Ownable {
 
 		if (player.equals(owner) && !isPurchased) {
 
+			System.out.println("DEBUG: " + IDColor.toString());
+
 			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
 				if (GUIBoundary.purchaseHouse(player, houseCount)) {
 					houseCount++;
 				}
 			} else {
-				GUIBoundary.print("Du har ikke købt alle samme farvede felter.");
+				GUIBoundary.print(TextInfo.purchaseHouseDeniedMessage(player, IDColor));
 			}
 
 		}
