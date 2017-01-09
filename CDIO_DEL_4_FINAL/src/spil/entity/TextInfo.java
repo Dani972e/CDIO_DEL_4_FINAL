@@ -315,7 +315,7 @@ public class TextInfo {
 		return player.getName() + " har ikke købt alle felter med denne farve.";
 	}
 
-	public static String purchaseHouseMessage(Player player, int houseCount) {
+	public static String purchaseHouseMessage(Player player, int houseCount, int price) {
 		String temp = "";
 		switch (houseCount) {
 		case 0:
@@ -334,7 +334,7 @@ public class TextInfo {
 			temp = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + "?";
+		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + "for " + price + " Kr. ?";
 	}
 
 };

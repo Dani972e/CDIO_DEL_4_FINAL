@@ -29,8 +29,8 @@ public class GUIBoundary {
 		return false;
 	}
 
-	public static boolean purchaseHouse(Player player, int houseCount) {
-		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount),
+	public static boolean purchaseHouse(Player player, int houseCount, int price) {
+		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount, price),
 				TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
 		if (result.equals(TextInfo.buttonYesMessage)) {
 			return true;
@@ -96,7 +96,7 @@ public class GUIBoundary {
 	public static void setHouses(int fieldNumber, int houseCount) {
 		GUI.setHouses(fieldNumber + incrementGUIIndex, houseCount);
 	}
-	
+
 	public static void setHotel(int fieldNumber, boolean hasHotel) {
 		GUI.setHotel(fieldNumber + incrementGUIIndex, hasHotel);
 	}
