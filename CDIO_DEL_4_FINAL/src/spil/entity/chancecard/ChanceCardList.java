@@ -18,7 +18,7 @@ public class ChanceCardList {
 		chanceCardList = new ChanceCard[numberOfChanceCards];
 
 		//Bonus and pay
-		for (int i = 0; i < 12; ++i)
+		for (int i = 1; i < 12; ++i)
 			chanceCardList[i] = new BonusChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
 		chanceCardList[12] = new PayChanceCard(TextInfo.chanceCardValue[12], TextInfo.chanceCardText[12]);
 
@@ -37,7 +37,7 @@ public class ChanceCardList {
 		for (int i = 27; i < 30; ++i)
 			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
 
-		shuffleCards();
+		//shuffleCards();
 	}
 
 	public ChanceCard[] getAllCards() {
@@ -118,10 +118,10 @@ public class ChanceCardList {
 		} else if (card instanceof JailChanceCard) {
 			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
 			GUIBoundary.removePlayerCar(player);
-			player.setPosition(card.getEffect());
+			player.setPosition(29);
 			GUIBoundary.placePlayerCar(player);
-			gameBoard.landOnField(player);
 			GUIBoundary.updatePlayer(player);
+			gameBoard.landOnField(player);
 
 		}
 
