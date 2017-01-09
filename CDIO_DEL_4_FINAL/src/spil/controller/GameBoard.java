@@ -324,7 +324,6 @@ public class GameBoard {
 					playerColorCount++;
 				}
 			}
-			System.out.println("fieldColorCount: " + fieldColorCount + " ;;; playerColorCount: " + playerColorCount);
 			if (fieldColorCount == playerColorCount)
 				return true;
 		}
