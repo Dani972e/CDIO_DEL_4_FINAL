@@ -6,8 +6,7 @@ import spil.boundary.GUIBoundary;
 public class PlayerList {
 
 	/*
-	 * Upper bound and lower bound variables for the amount of Players this
-	 * class can maintain.
+	 * Upper bound and lower bound variables for the amount of Players this class can maintain.
 	 */
 	private final int MAX_PLAYER_COUNT = 6;
 	private final int MIN_PLAYER_COUNT = 2;
@@ -18,8 +17,8 @@ public class PlayerList {
 	private Player[] playerList;
 
 	/*
-	 * Class constructor, taking the amount of Players in the game, as well as
-	 * common variables for the Player object.
+	 * Class constructor, taking the amount of Players in the game, 
+	 * as well as common variables for the Player object.
 	 */
 	public PlayerList(int playerCount, int maxCoinAmount, int minCoinAmount, int coins, int position, Car[] cars) {
 
@@ -32,17 +31,18 @@ public class PlayerList {
 		playerList = new Player[playerCount];
 
 		for (int i = 0; i < playerCount; i++) {
-			playerList[i] = new Player(TextInfo.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins, position);
+			playerList[i] = new Player(TextInfo.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins,
+					position);
 			GUIBoundary.addPlayer(playerList[i], cars[i]);
 		}
 	}
 
 	/*
-	 * Sets all Player objects Cars to the initial position.
+	 * Sets all Player vehicles to the initial start position.
 	 */
-	public void setHomeCars() {
+	public void setStartVehicles() {
 		for (Player player : playerList) {
-			GUIBoundary.placePlayerCar(player);
+			GUIBoundary.setPlayerVehicle(player);
 		}
 	}
 

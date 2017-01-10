@@ -55,12 +55,8 @@ public class TextInfo {
 			// Gå i fængsel
 			30, 30, 30 };
 
-	private TextInfo() {
-
-	}
-
 	public static final String TITLE = "Treasure Hunt 3";
-	public static final String VERSION = "v0.00";
+	public static final String VERSION = "v1.00";
 
 	public static final String[][] fieldText = {
 
@@ -328,34 +324,63 @@ public class TextInfo {
 	}
 
 	public static String purchaseHouseMessage(Player player, int houseCount, int housePrice) {
-		String temp = "";
+		String houseString = "";
 		switch (houseCount) {
 		case 0:
-			temp = "det første hus";
+			houseString = "det første hus";
 			break;
 		case 1:
-			temp = "det andet hus";
+			houseString = "det andet hus";
 			break;
 		case 2:
-			temp = "det tredje hus";
+			houseString = "det tredje hus";
 			break;
 		case 3:
-			temp = "det fjerde hus";
+			houseString = "det fjerde hus";
 			break;
 		case 4:
-			temp = "et hotel";
+			houseString = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + " for " + housePrice + " Kr. ?";
+		return "Vil " + player.getName() + " købe " + houseString + " på " + getFieldName(player) + " for " + housePrice
+				+ " Kr. ?";
 	}
 
 	public static String streetSoldMessage(Player player, String fieldName, int houseCount, int price) {
-		return player.getName() + " har solgt grunden " + fieldName + " med " + houseCount + " huse for " + price
-				+ " kr.";
+		String houseString = "";
+		switch (houseCount) {
+		case 0:
+			houseString = "ingen huse";
+			break;
+		case 1:
+			houseString = houseCount + " hus";
+			break;
+		case 2:
+		case 3:
+		case 4:
+			houseString = houseCount + " huse";
+			break;
+		case 5:
+			houseString = "et hotel";
+			break;
+		}
+		return player.getName() + " har solgt grunden " + fieldName + " med " + houseString + " for " + price + " kr.";
 	}
 
 	public static String ownableSoldMessage(Player player, String fieldName, int price) {
 		return player.getName() + " har solgt grunden " + fieldName + " for " + price + " kr.";
+	}
+
+	public static String sellFieldDeniedMessage(Player player) {
+		return player.getName() + " valgte ikke at sælge en grund.";
+	}
+
+	public static String pickCardMessage(Player player, String desc) {
+		return player.getName() + " træk kortet \"" + desc + "\"";
+	}
+
+	private TextInfo() {
+
 	}
 
 };

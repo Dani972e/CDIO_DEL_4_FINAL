@@ -23,7 +23,7 @@ public class testChanceField {
 	@Before
 	public void setUp() throws Exception {
 		gameBoard = new GameBoard();
-		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueCars());
+		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueVehicles());
 		gameBoard.setPlayerList(playerList);
 
 	}

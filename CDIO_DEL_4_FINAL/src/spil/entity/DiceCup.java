@@ -9,16 +9,18 @@ public class DiceCup {
 	private final int MIN_DIE_COUNT = 2;
 
 	/*
-	 * Array holding all the Die objects.
+	 * Array holding all the Die objects and roll values.
 	 */
 	private Die[] diceList;
 	private int[] rollList;
+
+	/* Counter for the amount of equal throws */
 	private int sameThrowCounter = 0;
 
 	/*
 	 * Constructor that uses the dieCount variable as the amount of Dice that
 	 * the above array should hold. maxFaceValue is the maximum faceValue of all
-	 * the dice. Initializes the diceList.
+	 * the dice. Initializes the diceList and rollList objects.
 	 */
 	public DiceCup(int dieCount, int maxFaceValue) {
 
@@ -46,6 +48,10 @@ public class DiceCup {
 		return rollList;
 	}
 
+	/*
+	 * Method that checks whether a player has thrown the same
+	 * value on the two dice.
+	 */
 	public boolean checkRollEquality(boolean increaseCounter) {
 		for (int i = 0, n = rollList.length; i < n; i++) {
 			if ((i + 1) < n) {
@@ -60,10 +66,17 @@ public class DiceCup {
 		return true;
 	}
 
+	/*
+	 * Reset method for the equal throw counter. 
+	 */
 	public void resetSameThrowCounter() {
 		sameThrowCounter = 0;
 	}
 
+	/*
+	 * Method that checks whether the player needs to be jailed
+	 * or not according to the equal throw count.
+	 */
 	public boolean sameThrowJail(int toJailIndex) {
 		if (sameThrowCounter == toJailIndex) {
 			return true;

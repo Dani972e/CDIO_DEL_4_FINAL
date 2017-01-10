@@ -87,27 +87,26 @@ public class ChanceCardList {
 			System.out.println("DEBUG");
 
 		if (card instanceof BonusChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
 			player.addBalance(card.getEffect());
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof TaxChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
 			player.removeBalance(card.getEffect());
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof MoveChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
-
+			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
 			GUIBoundary.removePlayerCar(player);
 			gameBoard.movePlayer(player, card.getEffect());
-			GUIBoundary.placePlayerCar(player);
+			GUIBoundary.setPlayerVehicle(player);
 
 			gameBoard.landOnField(player);
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof PayChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
 			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i)
 				if (!player.equals(gameBoard.getPlayerList().getPlayer(i))
 						&& gameBoard.getPlayerList().getPlayer(i) == null) {
@@ -115,33 +114,28 @@ public class ChanceCardList {
 					player.addBalance(card.getEffect());
 					GUIBoundary.updatePlayer(gameBoard.getPlayerList().getPlayer(i));
 				}
-
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof JailChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
 			GUIBoundary.removePlayerCar(player);
 			player.setPosition(card.getEffect());
 			System.out.println("Debug: " + card.getEffect());
-			GUIBoundary.placePlayerCar(player);
+			GUIBoundary.setPlayerVehicle(player);
 			GUIBoundary.updatePlayer(player);
 			gameBoard.landOnField(player);
-
 		}
 
 		else if (card instanceof PlaceChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc());
+			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
 			while (player.getPosition() != card.getEffect()) {
 				System.out.println(player.getName() + " DEBUG PLACE " + card.getEffect() + "/n" + card.getDesc());
 				GUIBoundary.removePlayerCar(player);
 				gameBoard.movePlayer(player, 1);
 				GUIBoundary.updatePlayer(player);
-
 			}
-
-			GUIBoundary.placePlayerCar(player);
+			GUIBoundary.setPlayerVehicle(player);
 			gameBoard.landOnField(player);
-
 		}
 	}
 

@@ -71,7 +71,7 @@ public class GUIBoundary {
 		GUI.setBalance(player.getName(), player.getBalance());
 	}
 
-	public static void placePlayerCar(Player player) {
+	public static void setPlayerVehicle(Player player) {
 		GUI.setCar(player.getPosition() + incrementGUIIndex, player.getName());
 	}
 

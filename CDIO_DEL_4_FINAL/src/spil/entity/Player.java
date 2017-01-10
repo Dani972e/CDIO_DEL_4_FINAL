@@ -12,9 +12,8 @@ public class Player {
 	private int latestRoll;
 
 	/*
-	 * The Player classes personal
-	 * BankAccount instance. Serves
-	 * as a coin manager.
+	 * The Player classes personal BankAccount instance. 
+	 * Serves as a balance manager.
 	 */
 	private BankAccount acc;
 
@@ -29,24 +28,21 @@ public class Player {
 	}
 
 	/*
-	 * Adds the specified balance to the
-	 * Players bank account.
+	 * Adds the specified balance to the Players bank account.
 	 */
 	public void addBalance(int amount) {
 		acc.addBalance(amount);
 	}
 
 	/*
-	 * Removes the specified balance in the
-	 * Players bank account.
+	 * Removes the specified balance in the Players bank account.
 	 */
 	public void removeBalance(int amount) {
 		acc.removeBalance(amount);
 	}
 
 	/*
-	 * Returns whether the Player is
-	 * bankrupt or not.
+	 * Returns whether the Player is bankrupt or not.
 	 */
 	public boolean isBankrupt() {
 		return acc.isBankrupt();
