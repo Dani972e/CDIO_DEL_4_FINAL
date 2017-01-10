@@ -222,10 +222,10 @@ public class GameBoard {
 		return playerList;
 	}
 
-	public Field[] getAllFields(){
+	public Field[] getAllFields() {
 		return fields;
 	}
-	
+
 	/*
 	 * Method that shows all the graphical fields.
 	 */
@@ -300,10 +300,16 @@ public class GameBoard {
 
 	public void promptForSale(Player player) {
 		List<String> fieldNames = new ArrayList<>();
+		List<Integer> houseCountValues = new ArrayList<>();
 
 		for (int i = 0, n = fields.length; i < n; i++) {
 			if (fields[i] instanceof Ownable && player.equals(((Ownable) fields[i]).getOwner())) {
 				fieldNames.add(TextInfo.fieldText[i][0]);
+
+				if (fields[i].getClass().equals(spil.entity.field.Street.class)) {
+					// ----- fix
+					houseCountValues.add(((spil.entity.field.Street) fields[i]).getHouseCount());
+				}
 			}
 
 		}
@@ -311,7 +317,8 @@ public class GameBoard {
 		String soldFieldName = "";
 
 		if (fieldNames.size() > 0 && GUIBoundary.promptSale(player)) {
-			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]));
+			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]),
+					houseCountValues.toArray(new Integer[houseCountValues.size()]));
 			int soldFieldIndex = 0;
 
 			for (int i = 0, n = guiFields.length; i < n; i++) {

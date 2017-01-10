@@ -117,8 +117,11 @@ public class GUIBoundary {
 		return false;
 	}
 
-	public static String showSaleMenu(Player player, String[] fieldNames) {
+	public static String showSaleMenu(Player player, String[] fieldNames, Integer[] houseCountValues) {
+		
+		
 		String result = GUI.getUserSelection(TextInfo.playerSaleMessage(player), fieldNames);
+		
 		return result;
 	}
 
