@@ -3,7 +3,6 @@ package spil.entity.field;
 import java.util.ArrayList;
 import java.util.List;
 
-import spil.entity.FieldInfo;
 import spil.entity.Player;
 
 /* 

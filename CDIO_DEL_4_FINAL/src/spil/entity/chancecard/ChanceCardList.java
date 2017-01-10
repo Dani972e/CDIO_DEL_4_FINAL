@@ -1,6 +1,5 @@
 package spil.entity.chancecard;
 
-import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.controller.GameBoard;
 import spil.entity.Player;
@@ -134,12 +133,11 @@ public class ChanceCardList {
 				GUIBoundary.removePlayerCar(player);
 				gameBoard.movePlayer(player, 1);
 				GUIBoundary.updatePlayer(player);
-				
+
 			}
-			
+
 			GUIBoundary.placePlayerCar(player);
 			gameBoard.landOnField(player);
-
 
 		}
 	}
