@@ -29,15 +29,15 @@ public class GUIBoundary {
 		return false;
 	}
 
-	public static boolean purchaseHouse(Player player, int houseCount, int price) {
-		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount, price),
+	public static boolean purchaseHouse(Player player, int houseCount, int housePrice) {
+		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount, housePrice),
 				TextInfo.buttonYesMessage, TextInfo.buttonNoMessage);
 		if (result.equals(TextInfo.buttonYesMessage)) {
 
-			if (player.getBalance() > price) {
+			if (player.getBalance() > housePrice) {
 				return true;
 			} else {
-				GUIBoundary.print(TextInfo.purchaseHouseNotEnoughMoneyMessage(player, price));
+				GUIBoundary.print(TextInfo.purchaseHouseNotEnoughMoneyMessage(player, housePrice));
 				return false;
 			}
 
