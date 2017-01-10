@@ -119,7 +119,7 @@ public class ChanceCardList {
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof JailChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 			GUIBoundary.removePlayerCar(player);
 			player.setPosition(card.getEffect());
 			System.out.println("Debug: " + card.getEffect());
@@ -130,7 +130,7 @@ public class ChanceCardList {
 		}
 
 		else if (card instanceof PlaceChanceCard) {
-			GUIBoundary.print(player.getName() + " : " + card.getDesc() + " [NOT IMPLEMENTED YET]");
+			GUIBoundary.print(player.getName() + " : " + card.getDesc());
 			while (player.getPosition() != card.getEffect()) {
 				System.out.println(player.getName() + " DEBUG PLACE " + card.getEffect() + "/n" + card.getDesc());
 				GUIBoundary.removePlayerCar(player);
