@@ -79,7 +79,7 @@ public final class Shipping extends Ownable {
 	@Override
 	public void sellField(Player player, String fieldName) {
 		owner = null;
-
+//Exeption index:2, Size:1 
 		for (int i = 0, n = ownerList.size(); i < n; i++) {
 			if (player.equals(ownerList.get(i))) {
 				ownerList.remove(i);
