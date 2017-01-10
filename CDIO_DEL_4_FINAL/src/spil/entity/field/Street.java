@@ -101,7 +101,7 @@ public final class Street extends Ownable {
 	}
 
 	@Override
-	public void sellField(Player player, String fieldName) {
+	public void sellField(Player player, String fieldName, int fieldIndex) {
 		deleteOwner();
 
 		int balance = 0;
@@ -119,8 +119,14 @@ public final class Street extends Ownable {
 		player.addBalance(balance);
 
 		GUIBoundary.print(TextInfo.streetSoldMessage(player, fieldName, houseCount, balance));
+
+		if (houseCount == 4) {
+			GUIBoundary.setHotel(fieldIndex, false);
+		} else {
+			GUIBoundary.setHouses(fieldIndex, 0);
+		}
+
 		houseCount = 0;
-		GUIBoundary.setHouses(0, 0);
 		GUIBoundary.updatePlayer(player);
 	}
 

@@ -59,7 +59,7 @@ public abstract class Ownable extends Field {
 
 	}
 
-	public void sellField(Player player, String fieldName) {
+	public void sellField(Player player, String fieldName, int fieldIndex) {
 		owner = null;
 		int balance = price / 2;
 		player.addBalance(balance);

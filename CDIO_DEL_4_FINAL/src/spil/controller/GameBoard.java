@@ -316,11 +316,11 @@ public class GameBoard {
 		}
 
 		String soldFieldName = "";
+		int soldFieldIndex = 0;
 
 		if (fieldNames.size() > 0 && GUIBoundary.promptSale(player)) {
 			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]),
 					houseCountValues.toArray(new Integer[houseCountValues.size()]));
-			int soldFieldIndex = 0;
 
 			for (int i = 0, n = guiFields.length; i < n; i++) {
 				if (TextInfo.fieldText[i][0].equals(soldFieldName)) {
@@ -334,13 +334,16 @@ public class GameBoard {
 
 			if (fields[soldFieldIndex] instanceof Ownable) {
 				if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Street.class)) {
-					((spil.entity.field.Street) fields[soldFieldIndex]).sellField(player, soldFieldName);
+					((spil.entity.field.Street) fields[soldFieldIndex]).sellField(player, soldFieldName,
+							soldFieldIndex);
 
 				} else if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Shipping.class)) {
-					((spil.entity.field.Shipping) fields[soldFieldIndex]).sellField(player, soldFieldName);
+					((spil.entity.field.Shipping) fields[soldFieldIndex]).sellField(player, soldFieldName,
+							soldFieldIndex);
 
 				} else {
-					((spil.entity.field.Ownable) fields[soldFieldIndex]).sellField(player, soldFieldName);
+					((spil.entity.field.Ownable) fields[soldFieldIndex]).sellField(player, soldFieldName,
+							soldFieldIndex);
 
 				}
 			}
