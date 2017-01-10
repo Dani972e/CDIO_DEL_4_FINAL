@@ -304,13 +304,32 @@ public class GameBoard {
 
 		}
 
+		String soldFieldName = "";
+
 		if (fieldNames.size() > 0 && GUIBoundary.promptSale(player)) {
-			GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]));
+			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]));
+			int soldFieldIndex = 0;
+
+			for (int i = 0, n = guiFields.length; i < n; i++) {
+				if (TextInfo.fieldText[i][0].equals(soldFieldName)) {
+					soldFieldIndex = i;
+					break;
+				}
+			}
+
+			// DEBUG
+			System.out.println("DEBUG: Field index: " + soldFieldIndex);
+
+			if (fields[soldFieldIndex] instanceof Ownable) {
+				if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Street.class)) {
+					((spil.entity.field.Street) fields[soldFieldIndex]).sellField(player, soldFieldName);
+				} else {
+					((spil.entity.field.Ownable) fields[soldFieldIndex]).sellField(player, soldFieldName);
+				}
+			}
+
 		}
 
-		for (String string : fieldNames) {
-			System.out.println(string);
-		}
 	}
 
 	public boolean isAllFieldsPurchased(Player player, Color IDColor) {

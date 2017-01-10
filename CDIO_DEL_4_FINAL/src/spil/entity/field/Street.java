@@ -20,12 +20,14 @@ public final class Street extends Ownable {
 	private int houseCount = 0;
 	private Color IDColor;
 	private GameBoard gameBoard;
+	private int initialFieldPrice;
 
 	/*
 	 * Territory constructor with field price and field rent.
 	 */
 	public Street(int price, int rent, Color IDColor, GameBoard gameBoard) {
 		super(price);
+		this.initialFieldPrice = price;
 		this.rent = rent;
 		this.IDColor = IDColor;
 		this.gameBoard = gameBoard;
@@ -97,6 +99,29 @@ public final class Street extends Ownable {
 		} else if (IDColor.equals(Color.MAGENTA)) {
 			price = FieldInfo.magentaHousePrice;
 		}
+	}
+
+	@Override
+	public void sellField(Player player, String fieldName) {
+		deleteOwner();
+		calculateHousePrice();
+
+		int balance = 0;
+		int halfHousePrice = price / 2;
+
+		for (int i = 0; i < houseCount; i++) {
+			balance += halfHousePrice;
+		}
+
+		balance += initialFieldPrice / 2;
+
+		// DEBUG
+		System.out.println("DEBUG: houseCount: " + houseCount + " | halfHousePrice: " + halfHousePrice);
+		System.out.println("DEBUG: Final balance to get back: " + balance);
+		player.addBalance(balance);
+
+		GUIBoundary.print(TextInfo.streetSoldMessage(player, fieldName, houseCount, balance));
+		GUIBoundary.updatePlayer(player);
 	}
 
 	/*

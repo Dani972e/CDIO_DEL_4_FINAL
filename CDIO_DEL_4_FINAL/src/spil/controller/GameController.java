@@ -79,7 +79,6 @@ public class GameController {
 	private void playRound(Player currentPlayer) {
 		GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
 
-		// TEMPORARY
 		gameBoard.promptForSale(currentPlayer);
 		
 		int[] rollList = diceCup.rollDice(currentPlayer);

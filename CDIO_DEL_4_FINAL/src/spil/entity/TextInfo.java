@@ -62,8 +62,8 @@ public class TextInfo {
 	public static final String TITLE = "Treasure Hunt 3";
 	public static final String VERSION = "v0.00";
 
-	public static final String[][] fieldText = { 
-			
+	public static final String[][] fieldText = {
+
 			{ "Start", "Modtag 4.000", "Hvergang De passerer modtag kr. 4.000" },
 
 			{ "Rødovrevej", "Kr. 1.200",
@@ -322,7 +322,7 @@ public class TextInfo {
 	public static String promptSaleMessage(Player player) {
 		return "Vil " + player.getName() + " sælge en grund?";
 	}
-	
+
 	public static String playerSaleMessage(Player player) {
 		return "Hvilken grund vil " + player.getName() + " sælge?";
 	}
@@ -347,6 +347,15 @@ public class TextInfo {
 			break;
 		}
 		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + " for " + price + " Kr. ?";
+	}
+
+	public static String streetSoldMessage(Player player, String fieldName, int houseCount, int price) {
+		return player.getName() + " har solgt grunden " + fieldName + " med " + houseCount + " huse for " + price
+				+ " kr.";
+	}
+
+	public static String ownableSoldMessage(Player player, String fieldName, int price) {
+		return player.getName() + " har solgt grunden " + fieldName + " for " + price + " kr.";
 	}
 
 };

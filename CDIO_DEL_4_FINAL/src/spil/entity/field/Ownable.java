@@ -59,6 +59,18 @@ public abstract class Ownable extends Field {
 
 	}
 
+	public void sellField(Player player, String fieldName) {
+		owner = null;
+		int balance = price / 2;
+		player.addBalance(balance);
+
+		// DEBUG
+		System.out.println("DEBUG: Field sold.");
+
+		GUIBoundary.print(TextInfo.ownableSoldMessage(player, fieldName, balance));
+		GUIBoundary.updatePlayer(player);
+	}
+
 	/*
 	 * Returns the owner of the particular field.
 	 */
