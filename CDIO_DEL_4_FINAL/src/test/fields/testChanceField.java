@@ -35,28 +35,12 @@ public class testChanceField {
 		chanceCardList=null;
 		playerList=null;
 	}
-
+	
 	@Test
 	public final void testLandOnField() {
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 		
-		Field[] allFields = gameBoard.getAllFields();
-		
-		actualPlayer.setPosition(2); //ChanceField
-		gameBoard.landOnField(actualPlayer);
-		
-		int expected = 29;
-		
-		ChanceField actualField = (ChanceField) allFields[2];
-		
-		int actual = actualField.getPickedCard().getUniqueID();
-		
-		assertEquals("False " + expected + actual, expected, actual);
-	}
-	
-	@Test
-	public final void testLandOnField2() {
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
+		chanceCardList.shuffleCards();
 		
 		ChanceCard[] cards = chanceCardList.getAllCards();
 		Field[] allFields = gameBoard.getAllFields();
