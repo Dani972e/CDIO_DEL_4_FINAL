@@ -37,7 +37,7 @@ public class testChanceField {
 
 	@Test
 	public final void testLandOnField() {
-		chanceCardList=new ChanceCardList(30, gameBoard, false);
+		chanceCardList=new ChanceCardList(30, gameBoard);
 		
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
@@ -58,7 +58,7 @@ public class testChanceField {
 
 	@Test
 	public final void testLandOnField2() {
-		chanceCardList=new ChanceCardList(30, gameBoard, false);
+		chanceCardList=new ChanceCardList(30, gameBoard);
 		
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 

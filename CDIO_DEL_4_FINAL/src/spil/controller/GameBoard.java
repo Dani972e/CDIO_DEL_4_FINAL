@@ -164,7 +164,7 @@ public class GameBoard {
 	/*
 	 * Array that holds all the functional fields.
 	 */
-	private ChanceCardList chanceCardList = new ChanceCardList(30, this, true);
+	private ChanceCardList chanceCardList = new ChanceCardList(30, this);
 
 	private final spil.entity.field.Field[] fields = { new spil.entity.field.Empty(true),
 			new spil.entity.field.Street(1200, 50, Color.BLUE, this), new spil.entity.field.ChanceField(chanceCardList),
@@ -213,6 +213,10 @@ public class GameBoard {
 					.secondaryColor(FieldInfo.carColors[5][1]).build(), };
 
 	private PlayerList playerList;
+	
+	public void shuffleCards(){
+		chanceCardList.shuffleCards();
+	}
 
 	public void setPlayerList(PlayerList playerList) {
 		this.playerList = playerList;

@@ -11,7 +11,7 @@ public class ChanceCardList {
 
 	private ChanceCard[] chanceCardList;
 
-	public ChanceCardList(int numberOfChanceCards, GameBoard gameBoard, boolean mix) {
+	public ChanceCardList(int numberOfChanceCards, GameBoard gameBoard) {
 		this.gameBoard = gameBoard;
 
 		chanceCardList = new ChanceCard[numberOfChanceCards];
@@ -37,8 +37,6 @@ public class ChanceCardList {
 		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28], 28);
 		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29], 29);
 
-		if(mix)
-			shuffleCards();
 	}
 
 	public ChanceCard[] getAllCards() {

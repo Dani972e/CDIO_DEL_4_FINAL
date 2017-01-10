@@ -35,6 +35,8 @@ public class GameController {
 
 		GUIBoundary.print(TextInfo.playerAmountMessage(playerAmount));
 
+		gameBoard.shuffleCards();
+		
 		initGameLoop();
 	}
 
