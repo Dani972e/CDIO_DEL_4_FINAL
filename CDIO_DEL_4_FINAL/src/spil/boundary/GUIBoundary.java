@@ -131,6 +131,8 @@ public class GUIBoundary {
 
 		String result = GUI.getUserSelection(TextInfo.playerSaleMessage(player), finalSalesText);
 
+		result = result.substring(0, result.length() - 4);
+
 		return result;
 	}
 
