@@ -23,7 +23,7 @@ public class testChanceField {
 	@Before
 	public void setUp() throws Exception {
 		gameBoard = new GameBoard();
-		playerList = new PlayerList(6, 10000000, 0, 30000, 1, gameBoard.getRandomUniqueCars());
+		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueCars());
 		gameBoard.setPlayerList(playerList);
 
 	}
@@ -38,7 +38,7 @@ public class testChanceField {
 	@Test
 	public final void testLandOnField() {
 		chanceCardList=new ChanceCardList(30, gameBoard);
-		
+
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
 		ChanceCard[] cards = chanceCardList.getAllCards();
@@ -59,22 +59,26 @@ public class testChanceField {
 	@Test
 	public final void testLandOnField2() {
 		chanceCardList=new ChanceCardList(30, gameBoard);
-		
+
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
 		ChanceCard[] cards = chanceCardList.getAllCards();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(2); //ChanceField
-		int actual;
-		int expected;
+		int actual = 0;
 
-		for (int i=0; i<30; i++){
-			gameBoard.landOnField(actualPlayer);
-			ChanceField actualField = (ChanceField) allFields[2];
-			actual = actualField.getPickedCard().getUniqueID();
-			expected = cards[cards.length-1].getUniqueID();
-			assertEquals("Fail ", expected, actual);
+		for (int i=0; i<30; ++i){
+			try{
+				actualPlayer.setPosition(2); //ChanceField
+				System.out.println(i);
+				gameBoard.landOnField(actualPlayer);
+				ChanceField actualField = (ChanceField) allFields[2];
+				actual=actualField.getPickedCard().getUniqueID();
+			}catch (Exception e){
+				fail("Exception with the card id: " + actual + " " +e);
+			}
+
 
 		}
 

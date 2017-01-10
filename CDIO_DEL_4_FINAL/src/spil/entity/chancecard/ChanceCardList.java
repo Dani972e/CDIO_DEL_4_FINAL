@@ -17,7 +17,7 @@ public class ChanceCardList {
 		chanceCardList = new ChanceCard[numberOfChanceCards];
 
 		//Bonus and pay
-		for (int i = 1; i < 12; ++i)
+		for (int i = 0; i < 12; ++i)
 			chanceCardList[i] = new BonusChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 		chanceCardList[12] = new PayChanceCard(TextInfo.chanceCardValue[12], TextInfo.chanceCardText[12], 12);
 
