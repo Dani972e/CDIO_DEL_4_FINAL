@@ -2,12 +2,12 @@ package spil.entity.chancecard;
 
 public class JailChanceCard extends ChanceCard {
 
-	public JailChanceCard(int effect, String desc) {
-		super(effect, desc);
+	public JailChanceCard(int effect, String desc, int uniqueID)  {
+		super(effect, desc, uniqueID);
 	}
 
 	public String toString() {
-		return "Jail";
+		return "Jail " + this.desc;
 	}
 
 }

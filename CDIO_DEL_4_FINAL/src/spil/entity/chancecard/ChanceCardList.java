@@ -18,26 +18,26 @@ public class ChanceCardList {
 
 		//Bonus and pay
 		for (int i = 1; i < 12; ++i)
-			chanceCardList[i] = new BonusChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
-		chanceCardList[12] = new PayChanceCard(TextInfo.chanceCardValue[12], TextInfo.chanceCardText[12]);
+			chanceCardList[i] = new BonusChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
+		chanceCardList[12] = new PayChanceCard(TextInfo.chanceCardValue[12], TextInfo.chanceCardText[12], 12);
 
 		//Tax
 		for (int i = 13; i < 21; ++i)
-			chanceCardList[i] = new TaxChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
+			chanceCardList[i] = new TaxChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 		//Place and move
 		for (int i = 21; i < 24; ++i)
-			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i]);
-		chanceCardList[24] = new MoveChanceCard(TextInfo.chanceCardValue[24], TextInfo.chanceCardText[24]);
-		chanceCardList[25] = new MoveChanceCard(TextInfo.chanceCardValue[25], TextInfo.chanceCardText[25]);
-		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[26]);
+			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
+		chanceCardList[24] = new MoveChanceCard(TextInfo.chanceCardValue[24], TextInfo.chanceCardText[24], 24);
+		chanceCardList[25] = new MoveChanceCard(TextInfo.chanceCardValue[25], TextInfo.chanceCardText[25], 24);
+		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[26], 24);
 
 		//Jail
-		chanceCardList[27] = new JailChanceCard(TextInfo.chanceCardValue[27], TextInfo.chanceCardText[27]);
-		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28]);
-		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29]);
+		chanceCardList[27] = new JailChanceCard(TextInfo.chanceCardValue[27], TextInfo.chanceCardText[27], 27);
+		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28], 28);
+		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29], 29);
 
-		shuffleCards();
+		//shuffleCards();
 	}
 
 	public ChanceCard[] getAllCards() {
@@ -57,13 +57,15 @@ public class ChanceCardList {
 		chanceCardList = temp;
 	}
 
-	public void pickOneCard(Player player) {
+	public ChanceCard pickOneCard(Player player) {
 
 		int newIndex;
 
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
+		
+		ChanceCard pickedCard = chanceCardList[chanceCardList.length - 1];
 
-		useEffect(player, chanceCardList[chanceCardList.length - 1]); // Activate
+		useEffect(player, pickedCard); // Activate
 
 		for (int i = 0; i < temp.length; ++i) {
 			newIndex = i + 2; // use shift number to make the new position
@@ -76,6 +78,8 @@ public class ChanceCardList {
 		}
 
 		chanceCardList = temp;
+		
+		return pickedCard;
 	}
 
 	private void useEffect(Player player, ChanceCard card) {

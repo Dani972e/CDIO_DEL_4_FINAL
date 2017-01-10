@@ -2,8 +2,8 @@ package spil.entity.chancecard;
 
 public class PayChanceCard extends ChanceCard {
 
-	public PayChanceCard(int effect, String desc) {
-		super(effect, desc);
+	public PayChanceCard(int effect, String desc, int uniqueID) {
+		super(effect, desc, effect);
 	}
 
 	public String toString() {
