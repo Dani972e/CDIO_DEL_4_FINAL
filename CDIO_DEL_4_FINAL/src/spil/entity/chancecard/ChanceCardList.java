@@ -11,7 +11,7 @@ public class ChanceCardList {
 
 	private ChanceCard[] chanceCardList;
 
-	public ChanceCardList(int numberOfChanceCards, GameBoard gameBoard) {
+	public ChanceCardList(int numberOfChanceCards, GameBoard gameBoard, boolean mix) {
 		this.gameBoard = gameBoard;
 
 		chanceCardList = new ChanceCard[numberOfChanceCards];
@@ -37,7 +37,8 @@ public class ChanceCardList {
 		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28], 28);
 		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29], 29);
 
-		shuffleCards();
+		if(mix)
+			shuffleCards();
 	}
 
 	public ChanceCard[] getAllCards() {
@@ -62,7 +63,7 @@ public class ChanceCardList {
 		int newIndex;
 
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
-		
+
 		ChanceCard pickedCard = chanceCardList[chanceCardList.length - 1];
 
 		useEffect(player, pickedCard); // Activate
@@ -78,7 +79,7 @@ public class ChanceCardList {
 		}
 
 		chanceCardList = temp;
-		
+
 		return pickedCard;
 	}
 
