@@ -327,7 +327,7 @@ public class TextInfo {
 		return "Hvilken grund vil " + player.getName() + " sælge?";
 	}
 
-	public static String purchaseHouseMessage(Player player, int houseCount, int price) {
+	public static String purchaseHouseMessage(Player player, int houseCount, int housePrice) {
 		String temp = "";
 		switch (houseCount) {
 		case 0:
@@ -346,7 +346,7 @@ public class TextInfo {
 			temp = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + " for " + price + " Kr. ?";
+		return "Vil " + player.getName() + " købe " + temp + " på " + getFieldName(player) + " for " + housePrice + " Kr. ?";
 	}
 
 	public static String streetSoldMessage(Player player, String fieldName, int houseCount, int price) {
