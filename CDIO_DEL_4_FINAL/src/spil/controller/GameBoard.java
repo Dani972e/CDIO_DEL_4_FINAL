@@ -222,6 +222,10 @@ public class GameBoard {
 		return playerList;
 	}
 
+	public Field[] getAllFields(){
+		return fields;
+	}
+	
 	/*
 	 * Method that shows all the graphical fields.
 	 */
