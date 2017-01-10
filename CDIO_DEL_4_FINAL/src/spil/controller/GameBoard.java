@@ -307,8 +307,9 @@ public class GameBoard {
 				fieldNames.add(TextInfo.fieldText[i][0]);
 
 				if (fields[i].getClass().equals(spil.entity.field.Street.class)) {
-					// ----- fix
 					houseCountValues.add(((spil.entity.field.Street) fields[i]).getHouseCount());
+				} else {
+					houseCountValues.add(null);
 				}
 			}
 

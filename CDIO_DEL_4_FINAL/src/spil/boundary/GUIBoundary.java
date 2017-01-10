@@ -118,10 +118,19 @@ public class GUIBoundary {
 	}
 
 	public static String showSaleMenu(Player player, String[] fieldNames, Integer[] houseCountValues) {
-		
-		
-		String result = GUI.getUserSelection(TextInfo.playerSaleMessage(player), fieldNames);
-		
+
+		String[] finalSalesText = new String[fieldNames.length];
+
+		for (int i = 0, n = finalSalesText.length; i < n; i++) {
+			if (houseCountValues[i] != null) {
+				finalSalesText[i] = fieldNames[i] + " : " + houseCountValues[i];
+			} else {
+				finalSalesText[i] = fieldNames[i];
+			}
+		}
+
+		String result = GUI.getUserSelection(TextInfo.playerSaleMessage(player), finalSalesText);
+
 		return result;
 	}
 
