@@ -119,6 +119,7 @@ public final class Street extends Ownable {
 		player.addBalance(balance);
 
 		GUIBoundary.print(TextInfo.streetSoldMessage(player, fieldName, houseCount, balance));
+		houseCount = 0;
 		GUIBoundary.setHouses(0, 0);
 		GUIBoundary.updatePlayer(player);
 	}
