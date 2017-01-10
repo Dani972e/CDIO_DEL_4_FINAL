@@ -53,6 +53,7 @@ public final class Shipping extends Ownable {
 
 		if (super.purchaseField(player, price, rent)) {
 			ownerList.add(player);
+			owner = player;
 		}
 	}
 
