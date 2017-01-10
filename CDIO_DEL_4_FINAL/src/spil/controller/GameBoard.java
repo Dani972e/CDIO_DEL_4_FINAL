@@ -213,8 +213,8 @@ public class GameBoard {
 					.secondaryColor(FieldInfo.carColors[5][1]).build(), };
 
 	private PlayerList playerList;
-	
-	public void shuffleCards(){
+
+	public void shuffleCards() {
 		chanceCardList.shuffleCards();
 	}
 
@@ -332,9 +332,6 @@ public class GameBoard {
 					break;
 				}
 			}
-
-			// DEBUG
-			System.out.println("DEBUG: Field index: " + soldFieldIndex);
 
 			if (fields[soldFieldIndex] instanceof Ownable) {
 				if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Street.class)) {

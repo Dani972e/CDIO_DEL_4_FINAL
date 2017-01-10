@@ -113,9 +113,6 @@ public final class Street extends Ownable {
 
 		balance += price / 2;
 
-		// DEBUG
-		System.out.println("DEBUG: houseCount: " + houseCount + " | halfHousePrice: " + halfHousePrice);
-		System.out.println("DEBUG: Final balance to get back: " + balance);
 		player.addBalance(balance);
 
 		GUIBoundary.print(TextInfo.streetSoldMessage(player, fieldName, houseCount, balance));
