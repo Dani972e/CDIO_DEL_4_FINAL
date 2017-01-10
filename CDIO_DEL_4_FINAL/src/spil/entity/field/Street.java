@@ -20,17 +20,17 @@ public final class Street extends Ownable {
 	private int houseCount = 0;
 	private Color IDColor;
 	private GameBoard gameBoard;
-	private int initialFieldPrice;
+	private int housePrice;
 
 	/*
 	 * Territory constructor with field price and field rent.
 	 */
 	public Street(int price, int rent, Color IDColor, GameBoard gameBoard) {
 		super(price);
-		this.initialFieldPrice = price;
 		this.rent = rent;
 		this.IDColor = IDColor;
 		this.gameBoard = gameBoard;
+		calculateHousePrice();
 	}
 
 	/*
@@ -39,7 +39,6 @@ public final class Street extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		boolean isPurchased = super.purchaseField(player, price, rent);
-		calculateHousePrice();
 
 		if (player.equals(owner) && !isPurchased) {
 
@@ -83,37 +82,36 @@ public final class Street extends Ownable {
 
 	private void calculateHousePrice() {
 		if (IDColor.equals(Color.BLUE)) {
-			price = FieldInfo.blueHousePrice;
+			housePrice = FieldInfo.blueHousePrice;
 		} else if (IDColor.equals(Color.ORANGE)) {
-			price = FieldInfo.orangeHousePrice;
+			housePrice = FieldInfo.orangeHousePrice;
 		} else if (IDColor.equals(Color.GREEN)) {
-			price = FieldInfo.greenHousePrice;
+			housePrice = FieldInfo.greenHousePrice;
 		} else if (IDColor.equals(Color.GRAY)) {
-			price = FieldInfo.grayHousePrice;
+			housePrice = FieldInfo.grayHousePrice;
 		} else if (IDColor.equals(Color.RED)) {
-			price = FieldInfo.redHousePrice;
+			housePrice = FieldInfo.redHousePrice;
 		} else if (IDColor.equals(Color.WHITE)) {
-			price = FieldInfo.whiteHousePrice;
+			housePrice = FieldInfo.whiteHousePrice;
 		} else if (IDColor.equals(Color.YELLOW)) {
-			price = FieldInfo.yellowHousePrice;
+			housePrice = FieldInfo.yellowHousePrice;
 		} else if (IDColor.equals(Color.MAGENTA)) {
-			price = FieldInfo.magentaHousePrice;
+			housePrice = FieldInfo.magentaHousePrice;
 		}
 	}
 
 	@Override
 	public void sellField(Player player, String fieldName) {
 		deleteOwner();
-		calculateHousePrice();
 
 		int balance = 0;
-		int halfHousePrice = price / 2;
+		int halfHousePrice = housePrice / 2;
 
 		for (int i = 0; i < houseCount; i++) {
 			balance += halfHousePrice;
 		}
 
-		balance += initialFieldPrice / 2;
+		balance += price / 2;
 
 		// DEBUG
 		System.out.println("DEBUG: houseCount: " + houseCount + " | halfHousePrice: " + halfHousePrice);

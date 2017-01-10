@@ -323,8 +323,13 @@ public class GameBoard {
 			if (fields[soldFieldIndex] instanceof Ownable) {
 				if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Street.class)) {
 					((spil.entity.field.Street) fields[soldFieldIndex]).sellField(player, soldFieldName);
+
+				} else if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Shipping.class)) {
+					((spil.entity.field.Shipping) fields[soldFieldIndex]).sellField(player, soldFieldName);
+
 				} else {
 					((spil.entity.field.Ownable) fields[soldFieldIndex]).sellField(player, soldFieldName);
+
 				}
 			}
 
