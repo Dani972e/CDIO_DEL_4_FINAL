@@ -172,7 +172,7 @@ public class TextInfo {
 			+ "!\n\nDette er et matador-lignende spil, hvor du kommer til at rafle med to terninger"
 			+ " og derefter lander du på et felt. Der findes felter der har forskellige effekter på spilleren samt nogle der kan købes. "
 			+ "Hvis du går bankerot er du ude af spillet. Spillet bliver ved indtil der kun er en spiller tilbage, som så er vinderen"
-			+ "af hele spillet. " + "\n\nVælg venligst antallet af spillere.";
+			+ " af hele spillet. " + "\n\nVælg venligst antallet af spillere.";
 
 	public static final String[] btnArray = { "2", "3", "4", "5", "6" };
 
