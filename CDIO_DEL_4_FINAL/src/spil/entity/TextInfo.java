@@ -241,7 +241,7 @@ public class TextInfo {
 
 	public static String fleetOwnedMessage(Player player, Player owner, int sameOwnerCount, int rent) {
 		return landMessage(player) + "Dette felt er ejet af " + owner.getName() + ", som ejer " + sameOwnerCount
-				+ " flåde felter. Derfor skal " + player.getName() + " betale en rente på " + rent + ".";
+				+ " flåde felter. Derfor skal " + player.getName() + " betale en rente på Kr. " + rent + ".";
 	}
 
 	public static String removePlayerMessage(Player player) {
@@ -257,7 +257,7 @@ public class TextInfo {
 	}
 
 	public static String insufficientBalance(Player player, int price) {
-		return player.getName() + " har ikke nok penge til at købe feltet for " + price + " kr!";
+		return player.getName() + " har ikke nok penge til at købe feltet for Kr. " + price + ".";
 	}
 
 	public static String getFieldName(Player player) {
@@ -335,8 +335,8 @@ public class TextInfo {
 			houseString = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + houseString + " på " + getFieldName(player) + " for " + housePrice
-				+ " Kr. ?";
+		return "Vil " + player.getName() + " købe " + houseString + " på " + getFieldName(player) + " for Kr. "
+				+ housePrice + "?";
 	}
 
 	public static String streetSoldMessage(Player player, String fieldName, int houseCount, int price) {
@@ -357,11 +357,11 @@ public class TextInfo {
 			houseString = "et hotel";
 			break;
 		}
-		return player.getName() + " har solgt grunden " + fieldName + " med " + houseString + " for " + price + " kr.";
+		return player.getName() + " har solgt grunden " + fieldName + " med " + houseString + " for Kr. " + price + ".";
 	}
 
 	public static String ownableSoldMessage(Player player, String fieldName, int price) {
-		return player.getName() + " har solgt grunden " + fieldName + " for " + price + " kr.";
+		return player.getName() + " har solgt grunden " + fieldName + " for Kr. " + price + ".";
 	}
 
 	public static String sellFieldDeniedMessage(Player player) {
