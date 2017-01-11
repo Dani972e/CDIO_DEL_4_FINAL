@@ -17,8 +17,10 @@ public class testChanceField {
 
 	private static final int numberOfChanceCards=30;
 	private static PlayerList playerList;
+	private static Player actualPlayer;
 	private static GameBoard gameBoard;
 	private static ChanceCardList chanceCardList;
+	private static Field[] allFields;
 
 	@Before
 	public void setUp() throws Exception {
@@ -26,7 +28,8 @@ public class testChanceField {
 		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueVehicles());
 		gameBoard.setPlayerList(playerList);
 		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
-
+		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
+		allFields = gameBoard.getAllFields();
 	}
 
 	@After
@@ -34,14 +37,13 @@ public class testChanceField {
 		gameBoard=null;
 		chanceCardList=null;
 		playerList=null;
+		actualPlayer=null;
+		allFields=null;
 	}
 
 	@Test
 	public final void testLandOnFieldPos2() {
 		int pos = 2;
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
-		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
@@ -54,14 +56,11 @@ public class testChanceField {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
-	
+
+
 	@Test
 	public final void testLandOnFieldPos7() {
 		int pos = 7;
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
-		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
@@ -74,13 +73,10 @@ public class testChanceField {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
+
 	@Test
 	public final void testLandOnFieldPos17() {
 		int pos = 17;
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
-		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
@@ -93,13 +89,10 @@ public class testChanceField {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
+
 	@Test
 	public final void testLandOnFieldPos22() {
 		int pos = 22;
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
-		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
@@ -112,13 +105,10 @@ public class testChanceField {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
+
 	@Test
 	public final void testLandOnFieldPos33() {
 		int pos = 33;
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
-		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
@@ -131,13 +121,10 @@ public class testChanceField {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
+
 	@Test
 	public final void testLandOnFieldPos36() {
 		int pos = 36;
-		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
-		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
@@ -153,8 +140,6 @@ public class testChanceField {
 
 	@Test
 	public final void testLandOnFieldAllCards() {
-		chanceCardList=new ChanceCardList(30, gameBoard);
-
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
 		Field[] allFields = gameBoard.getAllFields();
