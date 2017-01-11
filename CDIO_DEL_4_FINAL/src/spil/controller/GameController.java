@@ -155,9 +155,9 @@ public class GameController {
 		if (currentPlayer.isBankrupt()) {
 			GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 			GUIBoundary.removePlayerCar(currentPlayer);
-			gameBoard.deleteFieldOwners(currentPlayer);
 			// DEBUG: Not done yet. 
 			gameBoard.deletePlayerHouses(currentPlayer);
+			gameBoard.deleteFieldOwners(currentPlayer);
 			playerList.removePlayer(currentPlayer);
 			return true;
 		}
