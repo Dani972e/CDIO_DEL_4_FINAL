@@ -9,6 +9,7 @@ import org.junit.Test;
 import spil.controller.GameBoard;
 import spil.entity.Player;
 import spil.entity.PlayerList;
+import spil.entity.chancecard.ChanceCard;
 import spil.entity.chancecard.ChanceCardList;
 
 public class testChanceCard {
@@ -22,7 +23,7 @@ public class testChanceCard {
 	@Before
 	public void setUp() throws Exception {
 		gameBoard = new GameBoard();
-		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueVehicles());
+		playerList = new PlayerList(6, 10000000, 0, 1000, 0, gameBoard.getRandomUniqueVehicles());
 		gameBoard.setPlayerList(playerList);
 		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
 		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
@@ -85,8 +86,6 @@ public class testChanceCard {
 		int actual = actualPlayer.getBalance();
 
 		assertEquals(expected, actual);
-
-		System.out.println(actualPlayer.getBalance());
 	}
 
 	@Test
@@ -99,8 +98,54 @@ public class testChanceCard {
 		int actual = actualPlayer.getBalance();
 
 		assertEquals(expected, actual);
-
-		System.out.println(actualPlayer.getBalance());
 	}
 
+
+	/*
+	 * Testing 2 MoveChanceCard Effect
+	 * Index 24 and 25
+	 */
+	@Test
+	public final void testMoveEffect() {
+
+		int expected = 5;
+
+		chanceCardList.pickOneSpecialCard(actualPlayer, 24);
+
+		int actual = actualPlayer.getPosition();
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public final void testMoveEffect2() {
+
+		int expected = 4;
+
+		System.out.println(actualPlayer.getPosition());
+
+		ChanceCard pickedcard=chanceCardList.pickOneSpecialCard(actualPlayer, 25);
+
+		System.out.println(pickedcard.getEffect());
+
+		int actual = actualPlayer.getPosition();
+
+		System.out.println(actualPlayer.getPosition());
+
+		assertEquals(expected, actual);
+	}
+
+	//Array Exception
+	@Test
+	public final void testMoveEffect3() {
+
+		int expected = 1;
+
+		gameBoard.movePlayer(actualPlayer, 38);
+		chanceCardList.pickOneSpecialCard(actualPlayer, 26);
+
+		int actual = actualPlayer.getPosition();
+
+		assertEquals(expected, actual);
+	}
 }

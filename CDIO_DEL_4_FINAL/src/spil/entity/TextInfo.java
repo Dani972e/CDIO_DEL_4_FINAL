@@ -35,7 +35,7 @@ public class TextInfo {
 			"Tag ind på Rådhuspladsen. Hvis De passerer \"Start\", indkassér da Kr. 4.000.",
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da Kr. 4.000.",
 			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér Kr. 4.000.",
-			"Ryk fem felter foran.", "Ryk to felter foran.", "Ryk tre felter foran.",
+			"Ryk fem felter foran.", "Ryk fire felter foran.", "Ryk tre felter foran.",
 
 			// Gå i fængsel
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke Kr. 4.000.",
@@ -50,7 +50,7 @@ public class TextInfo {
 			200, 1000, 3000, 3000, 2000, 1000, 1000, 200,
 
 			// Ryk til felt
-			39, 24, 11, 5, 2, 3,
+			39, 24, 11, 5, 4, 3,
 
 			// Gå i fængsel
 			30, 30, 30 };
