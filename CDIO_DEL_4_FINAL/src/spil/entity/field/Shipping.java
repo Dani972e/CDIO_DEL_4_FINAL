@@ -48,6 +48,9 @@ public final class Shipping extends Ownable {
 		} else {
 			sameOwnerCount -= 1;
 		}
+		for (int i = 0; i < ownerList.size(); i++) {
+			System.out.println(i + ": " + ownerList.get(i).getName());
+		}
 
 		rent = rents[sameOwnerCount];
 
@@ -67,6 +70,10 @@ public final class Shipping extends Ownable {
 			return 0;
 		}
 
+		for (int i = 0; i < ownerList.size(); i++) {
+			System.out.println(i + ": " + ownerList.get(i).getName());
+		}
+
 		int count = 0;
 
 		if (ownerList.size() > 0) {
@@ -84,6 +91,7 @@ public final class Shipping extends Ownable {
 		for (int i = 0; i < ownerList.size(); i++) {
 			if (player.equals(ownerList.get(i))) {
 				ownerList.remove(i);
+				break;
 			}
 		}
 
