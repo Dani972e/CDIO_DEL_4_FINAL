@@ -15,7 +15,7 @@ public final class Brewery extends Ownable {
 
 	/*
 	 * ArrayList object to keep track of Players who own instances of the
-	 * LaborCamp field.
+	 * Brewery field.
 	 */
 	private static List<Player> ownerList = new ArrayList<Player>();
 
@@ -32,7 +32,7 @@ public final class Brewery extends Ownable {
 	}
 
 	/*
-	 * If a Player lands on a LaborCamp field, the amount of LaborCamp fields
+	 * If a Player lands on a Brewery field, the amount of Brewery fields
 	 * with the same owner is calculated which then is used to calculate the
 	 * rent of the field. Asks the Player whether they want to purchase the
 	 * field or not.
@@ -47,6 +47,11 @@ public final class Brewery extends Ownable {
 		}
 	}
 
+	/*
+	 * This method is invoked when this field is being sold. 
+	 * It essentially resets the owner as well as giving the player
+	 * balance back.
+	 */
 	@Override
 	public void sellField(Player player, String fieldName, int fieldIndex) {
 		owner = null;
@@ -64,7 +69,7 @@ public final class Brewery extends Ownable {
 	}
 
 	/*
-	 * Returns the amount of LaborCamp fields with the same owner, of this
+	 * Returns the amount of Brewery fields with the same owner, of this
 	 * specific field.
 	 */
 	private int getSameOwnerCount() {

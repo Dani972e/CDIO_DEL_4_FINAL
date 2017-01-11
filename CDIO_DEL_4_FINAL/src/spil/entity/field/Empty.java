@@ -6,6 +6,10 @@ import spil.entity.TextInfo;
 
 public class Empty extends Field {
 
+	/*
+	 * Boolean variable that controls whether the field
+	 * is a start field or not.
+	 */
 	private boolean isStart;
 
 	public Empty(boolean isStart) {
