@@ -7,8 +7,10 @@ import spil.entity.TextInfo;
 
 public class ChanceCardList {
 
+	/*
+	 * 
+	 */
 	private GameBoard gameBoard;
-
 	private ChanceCard[] chanceCardList;
 
 	public ChanceCardList(int numberOfChanceCards, GameBoard gameBoard) {
@@ -78,15 +80,15 @@ public class ChanceCardList {
 
 		return pickedCard;
 	}
-	
-/*
- * Just a Method to test one card with an index
- */
+
+	/*
+	 * Just a Method to test one card with an index
+	 */
 	public ChanceCard pickOneSpecialCard(Player player, int cardID) {
 
-		if(cardID>=chanceCardList.length) //Array Exception
-			cardID=29;
-		
+		if (cardID >= chanceCardList.length) //Array Exception
+			cardID = 29;
+
 		int newIndex;
 
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
