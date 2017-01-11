@@ -21,6 +21,7 @@ public final class Street extends Ownable {
 	private Color IDColor;
 	private GameBoard gameBoard;
 	private int housePrice;
+	private int initialRent;
 
 	/*
 	 * Territory constructor with field price and field rent.
@@ -30,6 +31,7 @@ public final class Street extends Ownable {
 		this.rent = rent;
 		this.IDColor = IDColor;
 		this.gameBoard = gameBoard;
+		initialRent = rent;
 		calculateHousePrice();
 	}
 
@@ -40,6 +42,8 @@ public final class Street extends Ownable {
 	public void landOnField(Player player) {
 		if (houseCount > 0) {
 			calculateRent(houseCount - 1);
+		} else {
+			this.rent = initialRent;
 		}
 
 		boolean isPurchased = super.purchaseField(player, price, rent);
