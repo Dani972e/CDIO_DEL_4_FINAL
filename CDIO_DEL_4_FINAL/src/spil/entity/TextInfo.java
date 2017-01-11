@@ -72,7 +72,7 @@ public class TextInfo {
 
 			{ "Indkomstskat", "10% el. Kr 4.000.", "10% af dine samlede pengebeholdning eller kr. 4.000" },
 
-			{ "SFL-Færgerne", "Kr. 4.000",
+			{ "Gedser Havn", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 
 			{ "Roskildevej", "Kr. 2.000",
@@ -100,7 +100,7 @@ public class TextInfo {
 			{ "Gl. Kongevej", "Kr. 3.200",
 					"Bygge pris = Kr. 2.000, Pris for at lande på grunden: uden hus = kr. 250, 1 hus = kr. 1.000, 2 huse = Kr. 3.000, 3 huse = Kr. 9.000, 4 huse = Kr. 12.500, Hotel = Kr. 15.000." },
 
-			{ "DSB Rederierne, Kalundborg/Århus", "Kr. 4.000",
+			{ "Rødby - Puttgarden", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 
 			{ "Bernstoffsvej", "Kr. 3.600",
@@ -127,7 +127,7 @@ public class TextInfo {
 			{ "Grønningen", "Kr. 4.800",
 					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 400, 1 hus = kr. 1.800, 2 huse = Kr. 5.000, 3 huse = Kr. 14.000, 4 huse = Kr. 17.500, Hotel = Kr. 21.000." },
 
-			{ "DFDS Seaways", "Kr. 4.000",
+			{ "Hundested Havn", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 
 			{ "Bredgade", "Kr. 5.200",
@@ -136,7 +136,7 @@ public class TextInfo {
 			{ "Kgs. Nytorv", "Kr. 5.200",
 					"Bygge pris = Kr. 3.000, Pris for at lande på grunden: uden hus = kr. 450, 1 hus = kr. 2.200, 2 huse = Kr. 6.600, 3 huse = Kr. 16.000, 4 huse = Kr. 19.500, Hotel = Kr. 23.000." },
 
-			{ "Bryghuset", "Kr. 3.000",
+			{ "Kroen", "Kr. 3.000",
 					"Hvis én virksomhed ejes, betales 100 gange så meget som øjnene viser. Hvis begge Breweries ejes, betales 200 gange så meget som øjnene viser." },
 
 			{ "Østergade", "Kr. 5.600",
@@ -155,7 +155,7 @@ public class TextInfo {
 			{ "Nygade", "Kr. 6.400",
 					"Bygge pris = Kr. 4.000, Pris for at lande på grunden: uden hus = kr. 600, 1 hus = kr. 2.600, 2 huse = Kr. 7.800, 3 huse = Kr. 18.000, 4 huse = Kr. 22.000, Hotel = Kr. 25.000." },
 
-			{ "DSB Rederierne", "Kr. 4.000",
+			{ "Bornholmerfærgen", "Kr. 4.000",
 					"Pris for at lande på grunden: ét rederi ejes = kr. 500, to rederier ejes = Kr. 1.000, tre rederier ejes = 2.000, fire rederier ejes = Kr. 4.000" },
 
 			{ "", "Prøv lykken", "ChanceKort" },
