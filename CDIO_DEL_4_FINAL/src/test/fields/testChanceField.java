@@ -41,7 +41,7 @@ public class testChanceField {
 
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
-		ChanceCard[] cards = chanceCardList.getAllCards();
+		ChanceCard[] cards = chanceCardList.getChanceCardList();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(2); //ChanceField
@@ -63,7 +63,7 @@ public class testChanceField {
 
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
-		ChanceCard[] cards = chanceCardList.getAllCards();
+		ChanceCard[] cards = chanceCardList.getChanceCardList();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(7); //ChanceField
@@ -84,7 +84,7 @@ public class testChanceField {
 
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
-		ChanceCard[] cards = chanceCardList.getAllCards();
+		ChanceCard[] cards = chanceCardList.getChanceCardList();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(17); //ChanceField
@@ -105,7 +105,7 @@ public class testChanceField {
 
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
-		ChanceCard[] cards = chanceCardList.getAllCards();
+		ChanceCard[] cards = chanceCardList.getChanceCardList();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(22); //ChanceField
@@ -126,7 +126,7 @@ public class testChanceField {
 
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
-		ChanceCard[] cards = chanceCardList.getAllCards();
+		ChanceCard[] cards = chanceCardList.getChanceCardList();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(33); //ChanceField
@@ -147,7 +147,7 @@ public class testChanceField {
 
 		Player actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
-		ChanceCard[] cards = chanceCardList.getAllCards();
+		ChanceCard[] cards = chanceCardList.getChanceCardList();
 		Field[] allFields = gameBoard.getAllFields();
 
 		actualPlayer.setPosition(36); //ChanceField
