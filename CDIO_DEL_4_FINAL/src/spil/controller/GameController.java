@@ -87,11 +87,11 @@ public class GameController {
 	* etc.
 	*/
 	private void playRound(Player currentPlayer) {
-		/* Prints roll starting message */
-		GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
-
 		/* Prompts the player for the possible sale of a field */
 		gameBoard.promptForSale(currentPlayer);
+		
+		/* Prints roll starting message */
+		GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
 
 		/*
 		 * Get both the individual rolls and the total roll from
