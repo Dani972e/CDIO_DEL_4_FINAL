@@ -87,9 +87,12 @@ public class GameController {
 	* etc.
 	*/
 	private void playRound(Player currentPlayer) {
+		/* Notifying the player about a new round. */
+		GUIBoundary.print(TextInfo.nextRoundMessage(currentPlayer));
+
 		/* Prompts the player for the possible sale of a field */
 		gameBoard.promptForSale(currentPlayer);
-		
+
 		/* Prints roll starting message */
 		GUIBoundary.print(TextInfo.rollInfoMessage(currentPlayer));
 
