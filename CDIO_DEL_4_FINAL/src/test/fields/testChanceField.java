@@ -47,7 +47,7 @@ public class testChanceField {
 		actualPlayer.setPosition(2); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = cards[29].getUniqueID();
+		int expected = cards[cards.length-1].getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[2];
 
@@ -69,7 +69,7 @@ public class testChanceField {
 		actualPlayer.setPosition(7); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = cards[29].getUniqueID();
+		int expected = cards[cards.length-1].getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[7];
 
@@ -90,7 +90,7 @@ public class testChanceField {
 		actualPlayer.setPosition(17); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = cards[29].getUniqueID();
+		int expected = cards[cards.length-1].getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[17];
 
@@ -111,7 +111,7 @@ public class testChanceField {
 		actualPlayer.setPosition(22); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = cards[29].getUniqueID();
+		int expected = cards[cards.length-1].getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[22];
 
@@ -132,7 +132,7 @@ public class testChanceField {
 		actualPlayer.setPosition(33); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = cards[29].getUniqueID();
+		int expected = cards[cards.length-1].getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[33];
 
@@ -153,7 +153,7 @@ public class testChanceField {
 		actualPlayer.setPosition(36); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = cards[29].getUniqueID();
+		int expected = cards[cards.length-1].getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[36];
 
