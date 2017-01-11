@@ -442,18 +442,11 @@ public class GameBoard {
 		 * the amount of house built on them, if it is a street object.
 		 */
 		List<String> fieldNames = new ArrayList<>();
-		List<Integer> houseCountValues = new ArrayList<>();
 
 		/* Get all the purchased field names and the number of house on them */
 		for (int i = 0, n = fields.length; i < n; i++) {
 			if (fields[i] instanceof Ownable && player.equals(((Ownable) fields[i]).getOwner())) {
 				fieldNames.add(TextInfo.fieldText[i][0]);
-
-				if (fields[i].getClass().equals(spil.entity.field.Street.class)) {
-					houseCountValues.add(((spil.entity.field.Street) fields[i]).getHouseCount());
-				} else {
-					houseCountValues.add(null);
-				}
 			}
 		}
 
@@ -465,8 +458,7 @@ public class GameBoard {
 		 * let the player select the specified owned field that they want to sell.
 		 */
 		if (fieldNames.size() > 0 && GUIBoundary.promptSale(player)) {
-			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]),
-					houseCountValues.toArray(new Integer[houseCountValues.size()]));
+			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]));
 
 			/* Find index of the field to be sold */
 			for (int i = 0, n = guiFields.length; i < n; i++) {
