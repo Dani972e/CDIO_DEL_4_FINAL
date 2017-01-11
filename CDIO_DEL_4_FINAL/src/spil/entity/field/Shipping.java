@@ -48,14 +48,15 @@ public final class Shipping extends Ownable {
 		} else {
 			sameOwnerCount -= 1;
 		}
+		for (int i = 0; i < ownerList.size(); i++) {
+			System.out.println(i + ": " + ownerList.get(i).getName());
+		}
 
 		rent = rents[sameOwnerCount];
 
 		if (super.purchaseField(player, price, rent)) {
 			ownerList.add(player);
 			owner = player;
-		} else if (owner != null) {
-			GUIBoundary.print(TextInfo.fleetOwnedMessage(player, owner, sameOwnerCount, rent));
 		}
 
 	}
@@ -67,6 +68,10 @@ public final class Shipping extends Ownable {
 	private int getSameOwnerCount() {
 		if (owner == null) {
 			return 0;
+		}
+
+		for (int i = 0; i < ownerList.size(); i++) {
+			System.out.println(i + ": " + ownerList.get(i).getName());
 		}
 
 		int count = 0;
@@ -86,6 +91,7 @@ public final class Shipping extends Ownable {
 		for (int i = 0; i < ownerList.size(); i++) {
 			if (player.equals(ownerList.get(i))) {
 				ownerList.remove(i);
+				break;
 			}
 		}
 

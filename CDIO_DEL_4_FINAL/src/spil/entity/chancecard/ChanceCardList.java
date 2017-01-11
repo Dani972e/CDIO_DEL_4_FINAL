@@ -28,14 +28,12 @@ public class ChanceCardList {
 		//Place and move
 		for (int i = 21; i < 24; ++i)
 			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
-		chanceCardList[24] = new MoveChanceCard(TextInfo.chanceCardValue[24], TextInfo.chanceCardText[24], 24);
-		chanceCardList[25] = new MoveChanceCard(TextInfo.chanceCardValue[25], TextInfo.chanceCardText[25], 24);
-		chanceCardList[26] = new MoveChanceCard(TextInfo.chanceCardValue[26], TextInfo.chanceCardText[26], 24);
+		for (int i = 24; i < 27; ++i)
+			chanceCardList[i] = new MoveChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 		//Jail
-		chanceCardList[27] = new JailChanceCard(TextInfo.chanceCardValue[27], TextInfo.chanceCardText[27], 27);
-		chanceCardList[28] = new JailChanceCard(TextInfo.chanceCardValue[28], TextInfo.chanceCardText[28], 28);
-		chanceCardList[29] = new JailChanceCard(TextInfo.chanceCardValue[29], TextInfo.chanceCardText[29], 29);
+		for (int i = 27; i < numberOfChanceCards; ++i)
+			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 	}
 
@@ -80,11 +78,39 @@ public class ChanceCardList {
 
 		return pickedCard;
 	}
+	
+/*
+ * Just a Method to test one card with an index
+ */
+	public ChanceCard pickOneSpecialCard(Player player, int cardID) {
+
+		if(cardID>=chanceCardList.length) //Array Exception
+			cardID=29;
+		
+		int newIndex;
+
+		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
+
+		ChanceCard pickedCard = chanceCardList[cardID];
+
+		useEffect(player, pickedCard); // Activate
+
+		for (int i = 0; i < temp.length; ++i) {
+			newIndex = i + 2; // use shift number to make the new position
+
+			while (newIndex > temp.length) {
+				newIndex = newIndex - (temp.length); // if we go out the array,
+				// make a modulo
+			}
+			temp[newIndex - 1] = chanceCardList[i]; // apply the new position to every number (not the last)
+		}
+
+		chanceCardList = temp;
+
+		return pickedCard;
+	}
 
 	private void useEffect(Player player, ChanceCard card) {
-
-		if (gameBoard.equals(null))
-			System.out.println("DEBUG");
 
 		if (card instanceof BonusChanceCard) {
 			GUIBoundary.showChanceCard(player, card.getDesc());
@@ -120,7 +146,6 @@ public class ChanceCardList {
 			GUIBoundary.showChanceCard(player, card.getDesc());
 			GUIBoundary.removePlayerCar(player);
 			player.setPosition(card.getEffect());
-			System.out.println("Debug: " + card.getEffect());
 			GUIBoundary.setPlayerVehicle(player);
 			GUIBoundary.updatePlayer(player);
 			gameBoard.landOnField(player);
@@ -129,7 +154,6 @@ public class ChanceCardList {
 		else if (card instanceof PlaceChanceCard) {
 			GUIBoundary.showChanceCard(player, card.getDesc());
 			while (player.getPosition() != card.getEffect()) {
-				System.out.println(player.getName() + " DEBUG PLACE " + card.getEffect() + "/n" + card.getDesc());
 				GUIBoundary.removePlayerCar(player);
 				gameBoard.movePlayer(player, 1);
 				GUIBoundary.updatePlayer(player);
