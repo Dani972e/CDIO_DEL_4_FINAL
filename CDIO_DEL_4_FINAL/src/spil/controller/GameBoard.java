@@ -476,6 +476,9 @@ public class GameBoard {
 				} else if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Shipping.class)) {
 					((spil.entity.field.Shipping) fields[soldFieldIndex]).sellField(player, soldFieldName,
 							soldFieldIndex);
+				} else if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Brewery.class)) {
+					((spil.entity.field.Brewery) fields[soldFieldIndex]).sellField(player, soldFieldName,
+							soldFieldIndex);
 				} else {
 					((spil.entity.field.Ownable) fields[soldFieldIndex]).sellField(player, soldFieldName,
 							soldFieldIndex);

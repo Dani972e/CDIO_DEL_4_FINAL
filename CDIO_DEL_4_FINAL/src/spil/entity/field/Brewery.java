@@ -3,8 +3,10 @@ package spil.entity.field;
 import java.util.ArrayList;
 import java.util.List;
 
+import spil.boundary.GUIBoundary;
 import spil.entity.FieldInfo;
 import spil.entity.Player;
+import spil.entity.TextInfo;
 
 /* 
  * final class so nobody accidently inherits from this class.
@@ -43,6 +45,22 @@ public final class Brewery extends Ownable {
 		if (super.purchaseField(player, price, rent)) {
 			ownerList.add(player);
 		}
+	}
+
+	@Override
+	public void sellField(Player player, String fieldName, int fieldIndex) {
+		owner = null;
+		for (int i = 0; i < ownerList.size(); i++) {
+			if (player.equals(ownerList.get(i))) {
+				ownerList.remove(i);
+			}
+		}
+
+		int balance = price / 2;
+		player.addBalance(balance);
+
+		GUIBoundary.print(TextInfo.ownableSoldMessage(player, fieldName, balance));
+		GUIBoundary.updatePlayer(player);
 	}
 
 	/*
