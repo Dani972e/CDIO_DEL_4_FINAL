@@ -78,6 +78,37 @@ public class ChanceCardList {
 
 		return pickedCard;
 	}
+	
+/*
+ * Just a Method to test one card with an index
+ */
+	public ChanceCard pickOneSpecialCard(Player player, int cardID) {
+
+		if(cardID>=chanceCardList.length) //Array Exception
+			cardID=29;
+		
+		int newIndex;
+
+		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
+
+		ChanceCard pickedCard = chanceCardList[cardID];
+
+		useEffect(player, pickedCard); // Activate
+
+		for (int i = 0; i < temp.length; ++i) {
+			newIndex = i + 2; // use shift number to make the new position
+
+			while (newIndex > temp.length) {
+				newIndex = newIndex - (temp.length); // if we go out the array,
+				// make a modulo
+			}
+			temp[newIndex - 1] = chanceCardList[i]; // apply the new position to every number (not the last)
+		}
+
+		chanceCardList = temp;
+
+		return pickedCard;
+	}
 
 	private void useEffect(Player player, ChanceCard card) {
 
