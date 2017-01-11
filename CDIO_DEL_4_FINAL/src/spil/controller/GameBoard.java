@@ -449,6 +449,7 @@ public class GameBoard {
 				fieldNames.add(TextInfo.fieldText[i][0]);
 			}
 		}
+		fieldNames.add(TextInfo.selectNoField);
 
 		String soldFieldName = "";
 		int soldFieldIndex = 0;
@@ -457,8 +458,14 @@ public class GameBoard {
 		 * If the player owns a field and the player has pressed 'yes' for a sale, then 
 		 * let the player select the specified owned field that they want to sell.
 		 */
-		if (fieldNames.size() > 0 && GUIBoundary.promptSale(player)) {
+		if (fieldNames.size() > 1 && GUIBoundary.promptSale(player)) {
 			soldFieldName = GUIBoundary.showSaleMenu(player, fieldNames.toArray(new String[fieldNames.size()]));
+
+			/* If the player does not wish to purchase any field, return out of the function. */
+			if (soldFieldName.equals(TextInfo.selectNoField)) {
+				GUIBoundary.print("Du valgte ikke at sælge noget felt.");
+				return;
+			}
 
 			/* Find index of the field to be sold */
 			for (int i = 0, n = guiFields.length; i < n; i++) {
@@ -484,7 +491,7 @@ public class GameBoard {
 							soldFieldIndex);
 				}
 			}
-		} else if (fieldNames.size() > 0) {
+		} else if (fieldNames.size() > 1) {
 			GUIBoundary.print(TextInfo.sellFieldDeniedMessage(player));
 		}
 

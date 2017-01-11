@@ -181,6 +181,8 @@ public class TextInfo {
 	public static final String buttonYesMessage = "Ja";
 	public static final String buttonNoMessage = "Nej";
 
+	public static final String selectNoField = "Ingen";
+
 	public static final String btnBalancePercentage = "10% af spillerens pengebeholdning";
 
 	public static final String pickCardMessage = " har trukket et kort.";
@@ -374,6 +376,10 @@ public class TextInfo {
 
 	public static String cantPurchaseHouse(Player player) {
 		return player.getName() + " kan ikke købe flere huse eller hoteller på " + getFieldName(player) + ".";
+	}
+
+	public static String declinedFieldSaleMessag(Player player) {
+		return player.getName() + " valgte ikke at sælge noget felt.";
 	}
 
 	private TextInfo() {
