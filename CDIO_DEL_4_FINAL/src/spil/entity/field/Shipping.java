@@ -57,6 +57,7 @@ public final class Shipping extends Ownable {
 		} else {
 			GUIBoundary.print(TextInfo.fleetOwnedMessage(player, owner, sameOwnerCount, rent));
 		}
+		
 	}
 
 	/*
