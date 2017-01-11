@@ -87,6 +87,9 @@ public class GameController {
 	* etc.
 	*/
 	private void playRound(Player currentPlayer) {
+		/*Check if player is bankrupt*/
+		checkForBankruptcy(currentPlayer);
+		
 		/* Notifying the player about a new round. */
 		GUIBoundary.print(TextInfo.nextRoundMessage(currentPlayer));
 
@@ -109,7 +112,7 @@ public class GameController {
 		currentPlayer.setLatestRoll(rollTotal);
 		GUIBoundary.showDice(rollList);
 		GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
-
+		
 		/*
 		 * Checks whether the player has rolled the same values in one throw, is not jailed and has thrown equal
 		 * three times, if yes, then gets put to jail.
@@ -125,6 +128,7 @@ public class GameController {
 			GUIBoundary.setPlayerVehicle(currentPlayer);
 
 			gameBoard.landOnField(currentPlayer);
+			checkForBankruptcy(currentPlayer);
 			GUIBoundary.updatePlayer(currentPlayer);
 
 			if (diceCup.checkRollEquality(false) && !gameBoard.isJailed(currentPlayer)) {
@@ -132,11 +136,13 @@ public class GameController {
 				playRound(currentPlayer);
 			}
 		}
+	}
 
-		/*
-		 * Checks whether the player is bankrupt, if yes, message gets shown and 
-		 * player gets removed from the game with all its associated fields.
-		 */
+	/*
+	 * Checks whether the player is bankrupt, if yes, message gets shown and 
+	 * player gets removed from the game with all its associated fields.
+	 */
+	private void checkForBankruptcy(Player currentPlayer) {
 		if (currentPlayer.isBankrupt()) {
 			GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 			GUIBoundary.removePlayerCar(currentPlayer);
