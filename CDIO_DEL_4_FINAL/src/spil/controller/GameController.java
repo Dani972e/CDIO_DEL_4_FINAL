@@ -48,6 +48,7 @@ public class GameController {
 
 		/* Initialize player index at 0 */
 		int index = 0;
+		boolean isBankrupt = false;
 
 		/* 
 		 * Make sure the index is calculated correctly and run 
@@ -64,7 +65,11 @@ public class GameController {
 			if (gameBoard.isJailed(currentPlayer)) {
 				GUIBoundary.print(TextInfo.stillJailedMessage(currentPlayer));
 			} else {
-				playRound(currentPlayer);
+				isBankrupt = playRound(currentPlayer);
+			}
+
+			if (isBankrupt) {
+				continue;
 			}
 
 			/*
@@ -86,10 +91,12 @@ public class GameController {
 	* which means that the player gets to roll the dice, purchase/sell fields or house/hotels,
 	* etc.
 	*/
-	private void playRound(Player currentPlayer) {
+	private boolean playRound(Player currentPlayer) {
 		/*Check if player is bankrupt*/
-		checkForBankruptcy(currentPlayer);
-		
+		if (checkForBankruptcy(currentPlayer)) {
+			return true;
+		}
+
 		/* Notifying the player about a new round. */
 		GUIBoundary.print(TextInfo.nextRoundMessage(currentPlayer));
 
@@ -112,7 +119,7 @@ public class GameController {
 		currentPlayer.setLatestRoll(rollTotal);
 		GUIBoundary.showDice(rollList);
 		GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
-		
+
 		/*
 		 * Checks whether the player has rolled the same values in one throw, is not jailed and has thrown equal
 		 * three times, if yes, then gets put to jail.
@@ -128,7 +135,9 @@ public class GameController {
 			GUIBoundary.setPlayerVehicle(currentPlayer);
 
 			gameBoard.landOnField(currentPlayer);
-			checkForBankruptcy(currentPlayer);
+			if (checkForBankruptcy(currentPlayer)) {
+				return true;
+			}
 			GUIBoundary.updatePlayer(currentPlayer);
 
 			if (diceCup.checkRollEquality(false) && !gameBoard.isJailed(currentPlayer)) {
@@ -136,20 +145,22 @@ public class GameController {
 				playRound(currentPlayer);
 			}
 		}
+		return false;
 	}
 
 	/*
 	 * Checks whether the player is bankrupt, if yes, message gets shown and 
 	 * player gets removed from the game with all its associated fields.
 	 */
-	private void checkForBankruptcy(Player currentPlayer) {
+	private boolean checkForBankruptcy(Player currentPlayer) {
 		if (currentPlayer.isBankrupt()) {
 			GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 			GUIBoundary.removePlayerCar(currentPlayer);
 			gameBoard.deleteFieldOwners(currentPlayer);
 			playerList.removePlayer(currentPlayer);
+			return true;
 		}
-
+		return false;
 	}
 
 	/*
