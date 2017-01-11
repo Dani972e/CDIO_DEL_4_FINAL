@@ -38,6 +38,10 @@ public final class Street extends Ownable {
 	 */
 	@Override
 	public void landOnField(Player player) {
+		if (houseCount > 0) {
+			calculateRent(houseCount - 1);
+		}
+
 		boolean isPurchased = super.purchaseField(player, price, rent);
 
 		if (player.equals(owner) && !isPurchased) {
@@ -48,15 +52,13 @@ public final class Street extends Ownable {
 					player.removeBalance(housePrice);
 					if (houseCount <= 4) {
 						GUIBoundary.setHouses(player.getPosition(), houseCount);
-					} else {
+					} else if (houseCount == 5) {
 						GUIBoundary.setHotel(player.getPosition(), true);
 					}
 				}
 			} else {
 				GUIBoundary.print(TextInfo.purchaseHouseDeniedMessage(player));
 			}
-			if (houseCount > 0)
-				calculateRent(houseCount - 1);
 		}
 	}
 
@@ -102,6 +104,7 @@ public final class Street extends Ownable {
 
 	@Override
 	public void sellField(Player player, String fieldName, int fieldIndex) {
+		calculateHousePrice();
 		deleteOwner();
 
 		int balance = 0;
