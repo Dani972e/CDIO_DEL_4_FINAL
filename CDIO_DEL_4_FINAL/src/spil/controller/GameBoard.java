@@ -533,6 +533,17 @@ public class GameBoard {
 	 * Method that deletes all the houses owned by this specific player.
 	 */
 	public void deletePlayerHouses(Player player) {
+		for (int i = 0, n = fields.length; i < n; i++) {
+			if (fields[i] instanceof spil.entity.field.Street
+					&& player.equals(((spil.entity.field.Street) fields[i]).getOwner())
+					&& ((spil.entity.field.Street) fields[i]).getHouseCount() > 0) {
+
+				GUIBoundary.setHouses(i, 0);
+				GUIBoundary.setHotel(i, false);
+
+				((spil.entity.field.Street) fields[i]).resetHouseCount();
+			}
+		}
 
 	}
 

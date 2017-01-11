@@ -149,6 +149,13 @@ public final class Street extends Ownable {
 	}
 
 	/*
+	 * Resets the houseCount to 0.
+	 */
+	public void resetHouseCount() {
+		houseCount = 0;
+	}
+
+	/*
 	 * Getter method for rent variable.
 	 */
 	@Override

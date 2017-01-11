@@ -157,8 +157,8 @@ public class GameController {
 			GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 			GUIBoundary.removePlayerCar(currentPlayer);
 			gameBoard.deleteFieldOwners(currentPlayer);
-			// DEBUG: Not done yet,
-			//gameBoard.deletePlayerHouses(currentPlayer);
+			// DEBUG: Not done yet. Beta available.
+			gameBoard.deletePlayerHouses(currentPlayer);
 			playerList.removePlayer(currentPlayer);
 			return true;
 		}
