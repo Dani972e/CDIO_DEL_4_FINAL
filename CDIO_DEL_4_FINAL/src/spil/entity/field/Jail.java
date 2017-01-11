@@ -5,6 +5,9 @@ import spil.entity.JailedPlayers;
 import spil.entity.Player;
 import spil.entity.TextInfo;
 
+/* 
+ * final class so nobody accidently inherits from this class.
+ */
 public final class Jail extends Field {
 
 	/*

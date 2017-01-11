@@ -69,6 +69,10 @@ public final class Street extends Ownable {
 		}
 	}
 
+	/*
+	 * Method that calculates the correct rent of
+	 * this particular field.
+	 */
 	private void calculateRent(int rentIndex) {
 		if (IDColor.equals(Color.BLUE)) {
 			rent = FieldInfo.blueRents[rentIndex];
@@ -89,6 +93,10 @@ public final class Street extends Ownable {
 		}
 	}
 
+	/*
+	 * Method that calculates the correct housePrice
+	 * of this particular field.
+	 */
 	private void calculateHousePrice() {
 		if (IDColor.equals(Color.BLUE)) {
 			housePrice = FieldInfo.blueHousePrice;
@@ -109,6 +117,9 @@ public final class Street extends Ownable {
 		}
 	}
 
+	/*
+	 * Method that sells this field to the player for half its worthy sum.
+	 */
 	@Override
 	public void sellField(Player player, String fieldName, int fieldIndex) {
 		calculateHousePrice();
@@ -153,10 +164,16 @@ public final class Street extends Ownable {
 		owner = null;
 	}
 
+	/*
+	 * Getter for IDColor object.
+	 */
 	public Color getIDColor() {
 		return IDColor;
 	}
 
+	/*
+	 * Getter for houseCount variable.
+	 */
 	public int getHouseCount() {
 		return houseCount;
 	}
