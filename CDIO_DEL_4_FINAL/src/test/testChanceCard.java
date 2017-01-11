@@ -9,15 +9,14 @@ import org.junit.Test;
 import spil.controller.GameBoard;
 import spil.entity.Player;
 import spil.entity.PlayerList;
-import spil.entity.chancecard.ChanceCard;
 import spil.entity.chancecard.ChanceCardList;
-import spil.entity.field.ChanceField;
-import spil.entity.field.Field;
 
 public class testChanceCard {
-
-	private PlayerList playerList;
+	
+	private static final int numberOfChanceCards=30;
+	private static PlayerList playerList;
 	private static GameBoard gameBoard;
+	private static Player actualPlayer;
 	private static ChanceCardList chanceCardList;
 
 	@Before
@@ -25,6 +24,8 @@ public class testChanceCard {
 		gameBoard = new GameBoard();
 		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueVehicles());
 		gameBoard.setPlayerList(playerList);
+		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
+		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 
 	}
 
@@ -33,22 +34,35 @@ public class testChanceCard {
 		gameBoard=null;
 		chanceCardList=null;
 		playerList=null;
+		actualPlayer=null;
 	}
 
 	@Test
 	public final void testBonusEffect() {
-		chanceCardList=new ChanceCardList(30, gameBoard);
 		
-		Player player = playerList.getPlayer(0);
 		int expected = 2000;
 		
-		chanceCardList.pickOneSpecialCard(player, 0);
+		chanceCardList.pickOneSpecialCard(actualPlayer, 0);
 		
-		int actual = player.getBalance();
+		int actual = actualPlayer.getBalance();
 		
 		assertEquals(expected, actual);
 		
-		System.out.println(player.getBalance());
+		System.out.println(actualPlayer.getBalance());
+	}
+	
+	@Test
+	public final void testBonusEffect2() {
+		
+		int expected = 4000;
+		
+		chanceCardList.pickOneSpecialCard(actualPlayer, 1);
+		
+		int actual = actualPlayer.getBalance();
+		
+		assertEquals(expected, actual);
+		
+		System.out.println(actualPlayer.getBalance());
 	}
 
 }
