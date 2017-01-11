@@ -530,6 +530,13 @@ public class GameBoard {
 	}
 
 	/*
+	 * Method that deletes all the houses owned by this specific player.
+	 */
+	public void deletePlayerHouses(Player player) {
+
+	}
+
+	/*
 	* Setter for the playerList object.
 	*/
 	public void setPlayerList(PlayerList playerList) {

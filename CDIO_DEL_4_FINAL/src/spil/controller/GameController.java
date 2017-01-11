@@ -87,9 +87,9 @@ public class GameController {
 	* etc.
 	*/
 	private void playRound(Player currentPlayer) {
-		/*Check if player is bankrupt*/
+		/* Check if player is bankrupt */
 		checkForBankruptcy(currentPlayer);
-		
+
 		/* Notifying the player about a new round. */
 		GUIBoundary.print(TextInfo.nextRoundMessage(currentPlayer));
 
@@ -112,7 +112,7 @@ public class GameController {
 		currentPlayer.setLatestRoll(rollTotal);
 		GUIBoundary.showDice(rollList);
 		GUIBoundary.print(TextInfo.rollMessage(currentPlayer, rollList));
-		
+
 		/*
 		 * Checks whether the player has rolled the same values in one throw, is not jailed and has thrown equal
 		 * three times, if yes, then gets put to jail.
@@ -147,6 +147,8 @@ public class GameController {
 			GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 			GUIBoundary.removePlayerCar(currentPlayer);
 			gameBoard.deleteFieldOwners(currentPlayer);
+			// DEBUG: Not done yet,
+			//gameBoard.deletePlayerHouses(currentPlayer);
 			playerList.removePlayer(currentPlayer);
 		}
 
