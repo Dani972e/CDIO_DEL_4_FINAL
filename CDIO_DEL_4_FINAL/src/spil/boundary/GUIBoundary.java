@@ -32,7 +32,7 @@ public class GUIBoundary {
 	public static boolean purchaseHouse(Player player, int houseCount, int housePrice) {
 
 		if (houseCount > 5) {
-			return false;
+			return true;
 		}
 
 		String result = GUI.getUserButtonPressed(TextInfo.purchaseHouseMessage(player, houseCount, housePrice),
