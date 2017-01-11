@@ -192,5 +192,16 @@ public class ChanceCardList {
 	public ChanceCard[] getChanceCardList() {
 		return chanceCardList;
 	}
+	
+	/*
+	 * Getter for a ChanceCard
+	 */
+	public ChanceCard getCard(int cardID){
+		for(ChanceCard card:chanceCardList)
+			if(card.getUniqueID()==cardID)
+				return card;
+
+		return null;
+	}
 
 }
