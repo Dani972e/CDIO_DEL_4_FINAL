@@ -14,7 +14,7 @@ import spil.entity.TextInfo;
 public final class Street extends Ownable {
 
 	/*
-	 * Rent for the Territory field.
+	 * Global variables of the Street field.
 	 */
 	private int rent;
 	private int houseCount = 0;
@@ -24,7 +24,7 @@ public final class Street extends Ownable {
 	private int initialRent;
 
 	/*
-	 * Territory constructor with field price and field rent.
+	 * Street constructor with field price and field rent.
 	 */
 	public Street(int price, int rent, Color IDColor, GameBoard gameBoard) {
 		super(price);
@@ -36,7 +36,7 @@ public final class Street extends Ownable {
 	}
 
 	/*
-	 * Prompts the player to purchase the field or not.
+	 * Prompts the player whether purchase the field or not.
 	 */
 	@Override
 	public void landOnField(Player player) {
@@ -53,10 +53,11 @@ public final class Street extends Ownable {
 			if (gameBoard.isAllFieldsPurchased(player, IDColor)) {
 				if (GUIBoundary.purchaseHouse(player, houseCount, housePrice)) {
 					player.removeBalance(housePrice);
-					if (houseCount < 5) {
+					if (houseCount < 4) {
 						houseCount++;
 						GUIBoundary.setHouses(player.getPosition(), houseCount);
-					} else if (houseCount == 5) {
+					} else if (houseCount == 4) {
+						houseCount++;
 						GUIBoundary.setHotel(player.getPosition(), true);
 					} else {
 						GUIBoundary.print("Du kan ikke købe flere huse eller hoteller.");

@@ -59,6 +59,9 @@ public abstract class Ownable extends Field {
 
 	}
 
+	/*
+	 * Method that sells this field to the player for half its worthy sum.
+	 */
 	public void sellField(Player player, String fieldName, int fieldIndex) {
 		owner = null;
 		int balance = price / 2;
