@@ -54,6 +54,8 @@ public final class Shipping extends Ownable {
 		if (super.purchaseField(player, price, rent)) {
 			ownerList.add(player);
 			owner = player;
+		} else {
+			GUIBoundary.print(TextInfo.fleetOwnedMessage(player, owner, sameOwnerCount, rent));
 		}
 	}
 

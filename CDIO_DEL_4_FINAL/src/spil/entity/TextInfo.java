@@ -1,7 +1,7 @@
 package spil.entity;
 
 /*
- * TextBoundary is a general class that holds all the text information of the system.
+ * TextInfo is a general class that holds all the text information of the system.
  * There are variable Strings that are used throughout the game, as well as specific methods
  * that uses the Players name and roll values to display for a more interactive feeling of the
  * game.
@@ -181,19 +181,21 @@ public class TextInfo {
 	public static final String buttonYesMessage = "Ja";
 	public static final String buttonNoMessage = "Nej";
 
-	public static final String btnBalancePercentage = "10% af din pengebeholdning";
+	public static final String btnBalancePercentage = "10% af spillerens pengebeholdning";
+
+	public static final String pickCardMessage = "har trukket et kort.";
 
 	public static String purchaseFieldMessage(Player player, int price) {
 		return landMessage(player) + getFieldName(player) + " er til rådighed for køb. Vil " + player.getName()
-				+ " købe dette felt for " + price + " kr?";
+				+ " købe dette felt for Kr. " + price + "?";
 	}
 
 	public static String purchaseConfirmedMessage(Player player, int price) {
-		return player.getName() + " købte " + getFieldName(player) + " for " + price + " kr.";
+		return player.getName() + " købte " + getFieldName(player) + " for Kr. " + price + ".";
 	}
 
 	public static String purchaseDeniedMessage(Player player) {
-		return player.getName() + " købte ikke " + getFieldName(player) + ".";
+		return player.getName() + " købte ej " + getFieldName(player) + ".";
 	}
 
 	public static final String playerAmountMessage(int playerAmount) {
@@ -225,30 +227,21 @@ public class TextInfo {
 	}
 
 	public static String alreadyPurchasedMessage(Player player, Player owner, int rent) {
-		return getFieldName(player) + " er allerede købt. Du skal betale en rente på " + rent + " til ejeren, "
-				+ owner.getName() + ".";
-	}
-
-	public static String bonusMessage(Player player, int bonus) {
-		return landMessage(player) + player.getName() + " fik en bonus på " + bonus + "!";
+		return getFieldName(player) + " er allerede købt. " + player.getName() + " skal betale en rente på Kr. " + rent
+				+ " til ejeren, " + owner.getName() + ".";
 	}
 
 	public static String taxMessage(Player player, int rent) {
-		return player.getName() + " betaler en rente på " + rent + " for at lande på " + getFieldName(player);
+		return player.getName() + " betaler en rente på Kr. " + rent + " for at lande på " + getFieldName(player);
 	}
 
 	public static String taxChoiceMessage(Player player) {
-		return player.getName() + " vælg venligst.";
+		return landMessage(player) + player.getName() + " vælg venligst.";
 	}
 
 	public static String fleetOwnedMessage(Player player, Player owner, int sameOwnerCount, int rent) {
 		return landMessage(player) + "Dette felt er ejet af " + owner.getName() + ", som ejer " + sameOwnerCount
 				+ " flåde felter. Derfor skal " + player.getName() + " betale en rente på " + rent + ".";
-	}
-
-	public static String fleetMessage(Player player, int sameOwnerCount, int rent) {
-		return landMessage(player) + "Dette felt er ikke købt, som ejer " + sameOwnerCount + " flåde felter."
-				+ "Derfor skal " + player.getName() + " betale en rente på " + rent + ".";
 	}
 
 	public static String removePlayerMessage(Player player) {
@@ -373,10 +366,6 @@ public class TextInfo {
 
 	public static String sellFieldDeniedMessage(Player player) {
 		return player.getName() + " valgte ikke at sælge en grund.";
-	}
-
-	public static String pickCardMessage(Player player, String desc) {
-		return player.getName() + " træk kortet \"" + desc + "\"";
 	}
 
 	private TextInfo() {

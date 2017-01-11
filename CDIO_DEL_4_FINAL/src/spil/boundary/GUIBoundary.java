@@ -136,4 +136,10 @@ public class GUIBoundary {
 		return result;
 	}
 
+	public static void showChanceCard(Player player, String desc) {
+		GUI.setChanceCard(desc);
+		GUI.displayChanceCard(desc);
+		print(player.getName() + TextInfo.pickCardMessage);
+	}
+
 }

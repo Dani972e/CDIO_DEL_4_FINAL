@@ -87,17 +87,17 @@ public class ChanceCardList {
 			System.out.println("DEBUG");
 
 		if (card instanceof BonusChanceCard) {
-			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
+			GUIBoundary.showChanceCard(player, card.getDesc());
 			player.addBalance(card.getEffect());
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof TaxChanceCard) {
-			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
+			GUIBoundary.showChanceCard(player, card.getDesc());
 			player.removeBalance(card.getEffect());
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof MoveChanceCard) {
-			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
+			GUIBoundary.showChanceCard(player, card.getDesc());
 			GUIBoundary.removePlayerCar(player);
 			gameBoard.movePlayer(player, card.getEffect());
 			GUIBoundary.setPlayerVehicle(player);
@@ -106,7 +106,7 @@ public class ChanceCardList {
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof PayChanceCard) {
-			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
+			GUIBoundary.showChanceCard(player, card.getDesc());
 			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i)
 				if (!player.equals(gameBoard.getPlayerList().getPlayer(i))
 						&& gameBoard.getPlayerList().getPlayer(i) == null) {
@@ -117,7 +117,7 @@ public class ChanceCardList {
 			GUIBoundary.updatePlayer(player);
 
 		} else if (card instanceof JailChanceCard) {
-			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
+			GUIBoundary.showChanceCard(player, card.getDesc());
 			GUIBoundary.removePlayerCar(player);
 			player.setPosition(card.getEffect());
 			System.out.println("Debug: " + card.getEffect());
@@ -127,7 +127,7 @@ public class ChanceCardList {
 		}
 
 		else if (card instanceof PlaceChanceCard) {
-			GUIBoundary.print(TextInfo.pickCardMessage(player, card.getDesc()));
+			GUIBoundary.showChanceCard(player, card.getDesc());
 			while (player.getPosition() != card.getEffect()) {
 				System.out.println(player.getName() + " DEBUG PLACE " + card.getEffect() + "/n" + card.getDesc());
 				GUIBoundary.removePlayerCar(player);

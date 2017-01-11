@@ -38,15 +38,6 @@ public class PlayerList {
 	}
 
 	/*
-	 * Sets all Player vehicles to the initial start position.
-	 */
-	public void setStartVehicles() {
-		for (Player player : playerList) {
-			GUIBoundary.setPlayerVehicle(player);
-		}
-	}
-
-	/*
 	 * Removes a Player from the game by pointing the object at null.
 	 */
 	public void removePlayer(Player playerToDelete) {
@@ -58,6 +49,15 @@ public class PlayerList {
 
 			}
 			++index;
+		}
+	}
+
+	/*
+	 * Sets all Player vehicles to the initial start position.
+	 */
+	public void setStartVehicles() {
+		for (Player player : playerList) {
+			GUIBoundary.setPlayerVehicle(player);
 		}
 	}
 
