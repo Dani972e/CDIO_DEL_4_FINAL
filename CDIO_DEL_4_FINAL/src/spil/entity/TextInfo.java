@@ -183,7 +183,7 @@ public class TextInfo {
 
 	public static final String btnBalancePercentage = "10% af spillerens pengebeholdning";
 
-	public static final String pickCardMessage = "har trukket et kort.";
+	public static final String pickCardMessage = " har trukket et kort.";
 
 	public static String purchaseFieldMessage(Player player, int price) {
 		return landMessage(player) + getFieldName(player) + " er til rådighed for køb. Vil " + player.getName()
