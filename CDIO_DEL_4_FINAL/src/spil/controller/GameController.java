@@ -91,12 +91,12 @@ public class GameController {
 	* which means that the player gets to roll the dice, purchase/sell fields or house/hotels,
 	* etc.
 	*/
+
 	private boolean playRound(Player currentPlayer) {
 		/*Check if player is bankrupt*/
 		if (checkForBankruptcy(currentPlayer)) {
 			return true;
 		}
-
 		/* Notifying the player about a new round. */
 		GUIBoundary.print(TextInfo.nextRoundMessage(currentPlayer));
 
@@ -157,6 +157,8 @@ public class GameController {
 			GUIBoundary.print(TextInfo.removePlayerMessage(currentPlayer));
 			GUIBoundary.removePlayerCar(currentPlayer);
 			gameBoard.deleteFieldOwners(currentPlayer);
+			// DEBUG: Not done yet,
+			//gameBoard.deletePlayerHouses(currentPlayer);
 			playerList.removePlayer(currentPlayer);
 			return true;
 		}
