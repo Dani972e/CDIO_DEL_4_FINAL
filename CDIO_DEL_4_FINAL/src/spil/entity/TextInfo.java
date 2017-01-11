@@ -14,24 +14,28 @@ public class TextInfo {
 			"Deres præmieobligation er kommet ud. De modtager Kr. 1.000 af banken.",
 			"Kommunen har eftergivet et kvartals skat. Hæv i banken Kr. 3.000.",
 			"Deres præmieobligation er kommet ud. De modtager Kr. 1.000 af banken.",
-			"De havde en række med elleve rigtige i tipning. Modtag Kr. 1.000.", "De modtager Deres aktieudbytte. Modtag Kr. 1.000 af banken.",
-			"Modtag udbytte af Deres aktier Kr. 1.000.", "Modtag udbytte af Deres aktier Kr. 1.000.",
-			"Grundet dyrtiden har De fået gageforhøjelse. Modtag Kr. 1.000.", "Modtag udbytte af Deres aktier Kr. 1.000.", "De modtager Kr. 5.000.",
-			"De har vundet i Klasselotteriet. Modtag Kr. 500.", "Værdien af egen avl fra nyttehaven udgør Kr. 200, som De modtager af banken",
+			"De havde en række med elleve rigtige i tipning. Modtag Kr. 1.000.",
+			"De modtager Deres aktieudbytte. Modtag Kr. 1.000 af banken.", "Modtag udbytte af Deres aktier Kr. 1.000.",
+			"Modtag udbytte af Deres aktier Kr. 1.000.",
+			"Grundet dyrtiden har De fået gageforhøjelse. Modtag Kr. 1.000.",
+			"Modtag udbytte af Deres aktier Kr. 1.000.", "De modtager Kr. 5.000.",
+			"De har vundet i Klasselotteriet. Modtag Kr. 500.",
+			"Værdien af egen avl fra nyttehaven udgør Kr. 200, som De modtager af banken",
 			"Det er Deres fødselsdag. Modtag af hver medspiller Kr. 200.",
 
 			// Betal penge
 			"De har måtte vedtage en parkeringsbøde. Betal Kr. 200 i bøde.", "Betal Deres bilforsikring Kr. 1.000.",
 			"Betal Kr. 3.000 for reparation af Deres vogn.", "Betal Kr. 3.000 for reparation af Deres vogn.",
-			"De har modtaget Deres tandlægeregning. Betal Kr. 2.000.", "De har kørt frem for \"Fuld Stop\". Betal Kr. 1.000 i bøde.",
+			"De har modtaget Deres tandlægeregning. Betal Kr. 2.000.",
+			"De har kørt frem for \"Fuld Stop\". Betal Kr. 1.000 i bøde.",
 			"De har kørt frem for \"Fuld Stop\". Betal Kr. 1.000 i bøde.",
 			"De har været en tur i udlandet og haft for mange cigaretter med hjem. Betal told Kr. 200.",
 
 			// Ryk til felt
 			"Tag ind på Rådhuspladsen. Hvis De passerer \"Start\", indkassér da Kr. 4.000.",
 			"Ryk frem til Grønningen. Hvis De passerer \"Start\", indkassér da Kr. 4.000.",
-			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér Kr. 4.000.", "Ryk fem felter foran.", "Ryk to felter foran.",
-			"Ryk tre felter foran.",
+			"Ryk frem til Frederiksberg Allé. Hvis De passerer \"Start\", indkassér Kr. 4.000.",
+			"Ryk fem felter foran.", "Ryk to felter foran.", "Ryk tre felter foran.",
 
 			// Gå i fængsel
 			"Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer \"Start\" indkasserer de ikke Kr. 4.000.",
@@ -182,8 +186,8 @@ public class TextInfo {
 	public static final String pickCardMessage = " har trukket et kort.";
 
 	public static String purchaseFieldMessage(Player player, int price) {
-		return landMessage(player) + getFieldName(player) + " er til rådighed for køb. Vil " + player.getName() + " købe dette felt for Kr. " + price
-				+ "?";
+		return landMessage(player) + getFieldName(player) + " er til rådighed for køb. Vil " + player.getName()
+				+ " købe dette felt for Kr. " + price + "?";
 	}
 
 	public static String purchaseConfirmedMessage(Player player, int price) {
@@ -223,8 +227,8 @@ public class TextInfo {
 	}
 
 	public static String alreadyPurchasedMessage(Player player, Player owner, int rent) {
-		return getFieldName(player) + " er allerede købt. " + player.getName() + " skal betale en rente på Kr. " + rent + " til ejeren, "
-				+ owner.getName() + ".";
+		return getFieldName(player) + " er allerede købt. " + player.getName() + " skal betale en rente på Kr. " + rent
+				+ " til ejeren, " + owner.getName() + ".";
 	}
 
 	public static String taxMessage(Player player, int rent) {
@@ -236,8 +240,8 @@ public class TextInfo {
 	}
 
 	public static String fleetOwnedMessage(Player player, Player owner, int sameOwnerCount, int rent) {
-		return landMessage(player) + "Dette felt er ejet af " + owner.getName() + ", som ejer " + sameOwnerCount + " flåde felter. Derfor skal "
-				+ player.getName() + " betale en rente på Kr. " + rent + ".";
+		return landMessage(player) + "Dette felt er ejet af " + owner.getName() + ", som ejer " + sameOwnerCount
+				+ " flåde felter. Derfor skal " + player.getName() + " betale en rente på Kr. " + rent + ".";
 	}
 
 	public static String removePlayerMessage(Player player) {
@@ -285,7 +289,7 @@ public class TextInfo {
 	}
 
 	public static String startMessage(Player player) {
-		return player.getName() + " har passeret \"Start\" og modtaget 4.000 Kr.";
+		return player.getName() + " har passeret \"Start\" feltet og modtaget 4.000 Kr.";
 	}
 
 	public static String startFieldMessage(Player player) {
@@ -313,7 +317,7 @@ public class TextInfo {
 	}
 
 	public static String nextRoundMessage(Player player) {
-		return "Det er nu " + player.getName() + " tur.";
+		return "Det er nu " + player.getName() + "'s tur.";
 	}
 
 	public static String purchaseHouseMessage(Player player, int houseCount, int housePrice) {
@@ -335,7 +339,8 @@ public class TextInfo {
 			houseString = "et hotel";
 			break;
 		}
-		return "Vil " + player.getName() + " købe " + houseString + " på " + getFieldName(player) + " for Kr. " + housePrice + "?";
+		return "Vil " + player.getName() + " købe " + houseString + " på " + getFieldName(player) + " for Kr. "
+				+ housePrice + "?";
 	}
 
 	public static String streetSoldMessage(Player player, String fieldName, int houseCount, int price) {
@@ -365,6 +370,10 @@ public class TextInfo {
 
 	public static String sellFieldDeniedMessage(Player player) {
 		return player.getName() + " valgte ikke at sælge en grund.";
+	}
+
+	public static String cantPurchaseHouse(Player player) {
+		return player.getName() + " kan ikke købe flere huse eller hoteller på " + getFieldName(player) + ".";
 	}
 
 	private TextInfo() {

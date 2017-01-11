@@ -60,7 +60,7 @@ public final class Street extends Ownable {
 						houseCount++;
 						GUIBoundary.setHotel(player.getPosition(), true);
 					} else {
-						GUIBoundary.print("Du kan ikke købe flere huse eller hoteller.");
+						GUIBoundary.print(TextInfo.cantPurchaseHouse(player));
 					}
 				}
 			} else {

@@ -23,7 +23,6 @@ public class DiceCup {
 	 * the dice. Initializes the diceList and rollList objects.
 	 */
 	public DiceCup(int dieCount, int maxFaceValue) {
-
 		if (dieCount > MAX_DIE_COUNT) {
 			dieCount = MAX_DIE_COUNT;
 		} else if (dieCount < MIN_DIE_COUNT) {
