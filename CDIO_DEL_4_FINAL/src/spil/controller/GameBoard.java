@@ -463,7 +463,7 @@ public class GameBoard {
 
 			/* If the player does not wish to purchase any field, return out of the function. */
 			if (soldFieldName.equals(TextInfo.selectNoField)) {
-				GUIBoundary.print("Du valgte ikke at sælge noget felt.");
+				GUIBoundary.print(TextInfo.declinedFieldSaleMessag(player));
 				return;
 			}
 
