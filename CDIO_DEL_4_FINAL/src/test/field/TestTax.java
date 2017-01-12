@@ -39,7 +39,6 @@ public class TestTax {
 		int expected = 26000;
 		int actual = actualPlayer.getBalance();
 
-		System.out.println(actualPlayer.getBalance());
 		assertEquals("False " + expected + actual, expected, actual);
 	}
 	
@@ -57,7 +56,6 @@ public class TestTax {
 		int expected = 27000;
 		int actual = actualPlayer.getBalance();
 
-		System.out.println(actualPlayer.getBalance());
 		assertEquals("False " + expected + actual, expected, actual);
 	}
 	
@@ -74,7 +72,6 @@ public class TestTax {
 		int expected = 28000;
 		int actual = actualPlayer.getBalance();
 
-		System.out.println(actualPlayer.getBalance());
 		assertEquals("False " + expected + actual, expected, actual);
 	}
 }
