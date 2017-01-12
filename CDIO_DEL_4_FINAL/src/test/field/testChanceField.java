@@ -1,4 +1,4 @@
-package test.fields;
+package test.field;
 
 import static org.junit.Assert.*;
 

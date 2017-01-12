@@ -1,4 +1,4 @@
-package test;
+package test.entity;
 
 import spil.entity.JailedPlayers;
 import spil.entity.Player;
