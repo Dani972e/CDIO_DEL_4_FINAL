@@ -76,7 +76,6 @@ public class TestShipping {
 		int actual = player2.getBalance();
 
 		assertEquals("Price is not correct.", expected, actual);
-
 	}
 
 }
