@@ -1,5 +1,6 @@
 package spil.controller;
 
+import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.entity.DiceCup;
 import spil.entity.Player;
@@ -159,6 +160,7 @@ public class GameController {
 			gameBoard.deletePlayerHouses(currentPlayer);
 			gameBoard.deleteFieldOwners(currentPlayer);
 			playerList.removePlayer(currentPlayer);
+			GUIBoundary.updatePlayer(currentPlayer);
 			return true;
 		}
 		return false;
