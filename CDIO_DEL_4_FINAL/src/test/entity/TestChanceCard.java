@@ -50,7 +50,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getBalance();
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 	@Test
@@ -62,7 +62,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getBalance();
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 
@@ -79,7 +79,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getBalance();
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getBalance();
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 
@@ -108,7 +108,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getPosition();
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 	@Test
@@ -134,7 +134,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getPosition();
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 	/*
@@ -149,11 +149,11 @@ public class TestChanceCard {
 		chanceCardList.pickOneSpecialCard(actualPlayer, 12);
 
 		int actual = actualPlayer.getBalance();
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 
 		for(int i=0; i<playerList.getPlayersLeft(); ++i){
 			actual = playerList.getPlayer(i).getBalance();
-			assertEquals(expected2, actual);
+			assertEquals("Values are not correct", expected2, actual);
 		}
 	}
 
@@ -169,7 +169,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 	/*
@@ -184,7 +184,7 @@ public class TestChanceCard {
 
 		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
 
-		assertEquals(expected, actual);
+		assertEquals("Values are not correct", expected, actual);
 	}
 
 }
