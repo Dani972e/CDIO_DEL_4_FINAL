@@ -1,4 +1,4 @@
-package test;
+package test.entity;
 
 import static org.junit.Assert.*;
 
@@ -158,13 +158,23 @@ public class testChanceCard {
 	@Test
 	public final void testPayEffect() {
 
-		int expected = 11;
-
-		chanceCardList.pickOneSpecialCard(actualPlayer, 23);
-
-		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
+		int expected = 2000;
+		int expected2 = 800;
 		
+		System.out.println("Debug " + actualPlayer.getBalance());
+		
+		chanceCardList.pickOneSpecialCard(actualPlayer, 12);
+
+		int actual = actualPlayer.getBalance();
+		
+		System.out.println("Debug " + actualPlayer.getBalance());
 		assertEquals(expected, actual);
+		
+		for(int i=0; i<gameBoard.getPlayerList().getTotalPlayers(); ++i){
+			System.out.println("Debug 5 " + gameBoard.getPlayerList().getPlayer(i).getBalance());
+			actual = gameBoard.getPlayerList().getPlayer(i).getBalance();
+			assertEquals(expected2, actual);
+		}
 	}
 	
 	/*

@@ -37,7 +37,7 @@ public class ChanceCardList {
 			chanceCardList[i] = new MoveChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 		// Jail kort
-		for (int i = 27; i < numberOfChanceCards; ++i)
+		for (int i = 27; i < 29; ++i)
 			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 	}
 
@@ -154,14 +154,19 @@ public class ChanceCardList {
 
 			/* PayChanceCard effect */
 		} else if (card instanceof PayChanceCard) {
+			
 			GUIBoundary.showChanceCard(player, card.getDesc());
-			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i)
+			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i){
+				System.out.println("DEBUG ");
 				if (!player.equals(gameBoard.getPlayerList().getPlayer(i))
-						&& gameBoard.getPlayerList().getPlayer(i) == null) {
+						&& !(gameBoard.getPlayerList().getPlayer(i) == null)) {
+
+					System.out.println("DEBUG : SUCCESS");
 					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
 					player.addBalance(card.getEffect());
 					GUIBoundary.updatePlayer(gameBoard.getPlayerList().getPlayer(i));
 				}
+			}
 			GUIBoundary.updatePlayer(player);
 
 			/* JailChanceCard effect */
