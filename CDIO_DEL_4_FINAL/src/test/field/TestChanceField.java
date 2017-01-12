@@ -13,7 +13,7 @@ import spil.entity.chancecard.ChanceCardList;
 import spil.entity.field.ChanceField;
 import spil.entity.field.Field;
 
-public class testChanceField {
+public class TestChanceField {
 
 	private static final int numberOfChanceCards=30;
 	private static PlayerList playerList;

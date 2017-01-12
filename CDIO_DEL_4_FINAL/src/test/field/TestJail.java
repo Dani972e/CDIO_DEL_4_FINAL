@@ -1,6 +1,7 @@
 package test.field;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,7 +11,7 @@ import spil.entity.JailedPlayers;
 import spil.entity.Player;
 import spil.entity.field.Jail;
 
-public class testJail {
+public class TestJail {
 
 	private Player p1;
 	private Player p2;
@@ -46,7 +47,6 @@ public class testJail {
 		boolean actual = jp.isJailed(p1);
 
 		assertFalse(actual);
-
 	}
 
 	/*

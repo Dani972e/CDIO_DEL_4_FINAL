@@ -9,7 +9,7 @@ import org.junit.Test;
 import spil.entity.Player;
 import spil.entity.field.Shipping;
 
-public class testShipping {
+public class TestShipping {
 	private Player player1;
 	private Player player2;
 	private Shipping shipping1;

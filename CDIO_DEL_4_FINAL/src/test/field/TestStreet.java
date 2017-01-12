@@ -20,7 +20,7 @@ import spil.entity.field.Street;
  * Assert.assertNotNull() deprecated method.
  */
 @SuppressWarnings("deprecation")
-public class testStreet {
+public class TestStreet {
 
 	private Player player1;
 	private Player player2;

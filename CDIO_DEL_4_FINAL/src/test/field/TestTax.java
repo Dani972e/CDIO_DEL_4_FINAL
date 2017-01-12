@@ -9,7 +9,7 @@ import org.junit.Test;
 import spil.entity.Player;
 import spil.entity.field.Tax;
 
-public class testTax {
+public class TestTax {
 
 	Tax T100;
 	Tax TNeg1235;

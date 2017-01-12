@@ -9,7 +9,7 @@ import org.junit.Test;
 import spil.entity.Player;
 import spil.entity.field.Brewery;
 
-public class testBrewery {
+public class TestBrewery {
 
 	private Brewery huts;
 	private Brewery thePit;
