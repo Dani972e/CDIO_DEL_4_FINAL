@@ -11,8 +11,8 @@ import spil.entity.field.Brewery;
 
 public class TestBrewery {
 
-	private Brewery huts;
-	private Brewery thePit;
+	private Brewery b1;
+	private Brewery b2;
 	private Player player;
 	private Player owner;
 
@@ -20,76 +20,76 @@ public class TestBrewery {
 	public void setUp() throws Exception {
 		player = new Player("Player 1", 1000000, 0, 30000, 0);
 		owner = new Player("Owner", 1000000, 0, 30000, 0);
-		huts = new Brewery(1000);
-		thePit = new Brewery(3000);
+		b1 = new Brewery(1000);
+		b2 = new Brewery(3000);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		huts = null;
-		thePit = null;
+		b1 = null;
+		b2 = null;
 		player = null;
 		owner = null;
 	}
 
 	/*
 	 * Tests whether the landOnField method works correctly, when both
-	 * LaborCamps are owned. This is a positive test because we are testing
+	 * Breweries are owned. This is a positive test because we are testing
 	 * our requirements. 
 	 */
 	@Test
-	public void testLaborCamp2OwnersRent() {
+	public void testBrewery2OwnersRent() {
 		int latestRoll = 5;
 		int sameOwner = 2;
 
 		/*
-		 * Make sure that the owner object owns both LaborCamp fields. 
+		 * Make sure that the owner object owns both Brewery fields. 
 		 */
 
-		// Position 15 for Huts in the Mountain
-		owner.setPosition(15);
-		huts.landOnField(owner);
+		// Position 12 for Bryghuset
+		owner.setPosition(12);
+		b1.landOnField(owner);
 
-		// Position 16 for The Pit
-		owner.setPosition(16);
-		thePit.landOnField(owner);
+		// Position 28 for Kroen
+		owner.setPosition(28);
+		b2.landOnField(owner);
 
 		int rent = (100 * latestRoll) * sameOwner;
 		int expected = player.getBalance() - rent;
 
 		/*
-		 * Sets a sample latestRoll for LaborCamp to work.
+		 * Sets a sample latestRoll for Brewery to work.
 		 * Sets position to 15 to simulate that the Player
 		 * lands on Huts In The Mountain. It works as we have expected. 
 		 */
 		player.setLatestRoll(latestRoll);
 		player.setPosition(15);
-		huts.landOnField(player);
+		b1.landOnField(player);
 
 		int actual = player.getBalance();
 
-		assertEquals("LaborCamp field is not removing the correct rent.", actual, expected);
+		assertEquals("Brewery field is not removing the correct rent.", actual, expected);
 	}
 
 	/*
 	 * Tests whether the landOnField method works correctly, when only one
-	 * LaborCamp is owned. This is also a positive test because it should work
+	 * Brewery is owned. This is also a positive test because it should work
 	 * without any errors. 
 	 */
 	@Test
-	public void testLaborCamp1OwnersRent() {
+	public void testBrewery1OwnersRent() {
 		int latestRoll = 5;
 		int sameOwner = 1;
 
 		/*
-		 * Make sure that the owner object owns one LaborCamp fields. 
+		 * Make sure that the owner object owns one Brewery fields. 
 		 */
 
 		// Position 15 for Huts in the Mountain
 		owner.setPosition(15);
-		huts.landOnField(owner);
+		b1.landOnField(owner);
 
-		int rent = (100 * latestRoll) * sameOwner;
+		int rent = (200 * latestRoll) * sameOwner;
 		int expected = player.getBalance() - rent;
 
 		/*
@@ -100,11 +100,11 @@ public class TestBrewery {
 		 */
 		player.setLatestRoll(latestRoll);
 		player.setPosition(15);
-		huts.landOnField(player);
+		b1.landOnField(player);
 
 		int actual = player.getBalance();
 
-		assertEquals("LaborCamp field is not removing the correct rent.", actual, expected);
+		assertEquals("Brewery field is not removing the correct rent.", actual, expected);
 	}
 
 }
