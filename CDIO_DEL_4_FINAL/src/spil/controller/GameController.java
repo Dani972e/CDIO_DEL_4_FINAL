@@ -18,7 +18,7 @@ public class GameController {
 	private GameBoard gameBoard;
 
 	/*
-	 * Constructor that initializes the above objects, and starts the game loop.
+	 * Constructor thatOFOFOF initializes the above objects, and starts the game loop.
 	 */
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
