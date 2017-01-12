@@ -70,10 +70,6 @@ public final class Shipping extends Ownable {
 			return 0;
 		}
 
-		for (int i = 0; i < ownerList.size(); i++) {
-			System.out.println(i + ": " + ownerList.get(i).getName());
-		}
-
 		int count = 0;
 
 		if (ownerList.size() > 0) {

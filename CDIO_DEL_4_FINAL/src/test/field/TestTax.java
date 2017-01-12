@@ -12,7 +12,7 @@ import spil.entity.Player;
 public class TestTax {
 
 	private static GameBoard gameBoard;
-	Player actualPlayer;
+	private Player actualPlayer;
 
 	@Before
 	public void setUp() throws Exception {
@@ -22,7 +22,7 @@ public class TestTax {
 
 	@After
 	public void tearDown() throws Exception {
-		gameBoard=null;
+		gameBoard = null;
 		actualPlayer = null;
 	}
 
@@ -41,7 +41,6 @@ public class TestTax {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
 
 	/*
 	 * Assume : Select 10%
@@ -58,7 +57,7 @@ public class TestTax {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
-	
+
 	/*
 	 * Assume : Select 4000
 	 */
@@ -74,4 +73,5 @@ public class TestTax {
 
 		assertEquals("False " + expected + actual, expected, actual);
 	}
+
 }

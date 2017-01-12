@@ -1,6 +1,7 @@
 package test.field;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
@@ -15,7 +16,7 @@ import spil.entity.field.Field;
 
 public class TestChanceField {
 
-	private static final int numberOfChanceCards=30;
+	private static final int numberOfChanceCards = 30;
 	private static PlayerList playerList;
 	private static Player actualPlayer;
 	private static GameBoard gameBoard;
@@ -27,18 +28,18 @@ public class TestChanceField {
 		gameBoard = new GameBoard();
 		playerList = new PlayerList(6, 10000000, 0, 1000, 1, gameBoard.getRandomUniqueVehicles());
 		gameBoard.setPlayerList(playerList);
-		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
+		chanceCardList = new ChanceCardList(numberOfChanceCards, gameBoard);
 		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 		allFields = gameBoard.getAllFields();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		gameBoard=null;
-		chanceCardList=null;
-		playerList=null;
-		actualPlayer=null;
-		allFields=null;
+		gameBoard = null;
+		chanceCardList = null;
+		playerList = null;
+		actualPlayer = null;
+		allFields = null;
 	}
 
 	@Test
@@ -48,7 +49,7 @@ public class TestChanceField {
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = chanceCardList.getCard(numberOfChanceCards-1).getUniqueID();
+		int expected = chanceCardList.getCard(numberOfChanceCards - 1).getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[pos];
 
@@ -57,7 +58,6 @@ public class TestChanceField {
 		assertEquals("False " + expected + actual, expected, actual);
 	}
 
-
 	@Test
 	public final void testLandOnFieldPos7() {
 		int pos = 7;
@@ -65,7 +65,7 @@ public class TestChanceField {
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = chanceCardList.getCard(numberOfChanceCards-1).getUniqueID();
+		int expected = chanceCardList.getCard(numberOfChanceCards - 1).getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[pos];
 
@@ -81,7 +81,7 @@ public class TestChanceField {
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = chanceCardList.getCard(numberOfChanceCards-1).getUniqueID();
+		int expected = chanceCardList.getCard(numberOfChanceCards - 1).getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[pos];
 
@@ -97,7 +97,7 @@ public class TestChanceField {
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = chanceCardList.getCard(numberOfChanceCards-1).getUniqueID();
+		int expected = chanceCardList.getCard(numberOfChanceCards - 1).getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[pos];
 
@@ -113,7 +113,7 @@ public class TestChanceField {
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = chanceCardList.getCard(numberOfChanceCards-1).getUniqueID();
+		int expected = chanceCardList.getCard(numberOfChanceCards - 1).getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[pos];
 
@@ -129,7 +129,7 @@ public class TestChanceField {
 		actualPlayer.setPosition(pos); //ChanceField
 		gameBoard.landOnField(actualPlayer);
 
-		int expected = chanceCardList.getCard(numberOfChanceCards-1).getUniqueID();
+		int expected = chanceCardList.getCard(numberOfChanceCards - 1).getUniqueID();
 
 		ChanceField actualField = (ChanceField) allFields[pos];
 
@@ -147,17 +147,16 @@ public class TestChanceField {
 		actualPlayer.setPosition(2); //ChanceField
 		int actual = 0;
 
-		for (int i=0; i<30; ++i){
-			try{
+		for (int i = 0; i < 30; ++i) {
+			try {
 				actualPlayer.setPosition(2); //ChanceField
 				System.out.println(i);
 				gameBoard.landOnField(actualPlayer);
 				ChanceField actualField = (ChanceField) allFields[2];
-				actual=actualField.getPickedCard().getUniqueID();
-			}catch (Exception e){
-				fail("Exception with the card id: " + actual + " " +e);
+				actual = actualField.getPickedCard().getUniqueID();
+			} catch (Exception e) {
+				fail("Exception with the card id: " + actual + " " + e);
 			}
-
 
 		}
 

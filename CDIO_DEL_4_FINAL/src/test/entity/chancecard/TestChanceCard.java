@@ -1,6 +1,6 @@
 package test.entity.chancecard;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
@@ -13,7 +13,7 @@ import spil.entity.chancecard.ChanceCardList;
 
 public class TestChanceCard {
 
-	private static final int numberOfChanceCards=30;
+	private static final int numberOfChanceCards = 30;
 	private static PlayerList playerList;
 	private static GameBoard gameBoard;
 	private static Player actualPlayer;
@@ -24,18 +24,17 @@ public class TestChanceCard {
 		gameBoard = new GameBoard();
 		playerList = new PlayerList(6, 10000000, 0, 1000, 0, gameBoard.getRandomUniqueVehicles());
 		gameBoard.setPlayerList(playerList);
-		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
+		chanceCardList = new ChanceCardList(numberOfChanceCards, gameBoard);
 		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		gameBoard=null;
-		chanceCardList=null;
-		playerList=null;
-		actualPlayer=null;
+		gameBoard = null;
+		chanceCardList = null;
+		playerList = null;
+		actualPlayer = null;
 	}
-
 
 	/*
 	 * Testing 2 BonusChanceCard Effect
@@ -43,7 +42,6 @@ public class TestChanceCard {
 	 */
 	@Test
 	public final void testBonusEffect() {
-
 		int expected = 2000;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 0);
@@ -55,7 +53,6 @@ public class TestChanceCard {
 
 	@Test
 	public final void testBonusEffect2() {
-
 		int expected = 4000;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 1);
@@ -65,14 +62,12 @@ public class TestChanceCard {
 		assertEquals("Values are not correct", expected, actual);
 	}
 
-
 	/*
 	 * Testing 2 TaxChanceCard Effect
 	 * Index 13 and 14
 	 */
 	@Test
 	public final void testTaxEffect() {
-
 		int expected = 800;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 13);
@@ -84,7 +79,6 @@ public class TestChanceCard {
 
 	@Test
 	public final void testTaxEffect2() {
-
 		int expected = 0;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 14);
@@ -94,14 +88,12 @@ public class TestChanceCard {
 		assertEquals("Values are not correct", expected, actual);
 	}
 
-
 	/*
 	 * Testing 2 MoveChanceCard Effect
 	 * Index 24, 25 and 26
 	 */
 	@Test
 	public final void testMoveEffect() {
-
 		int expected = 5;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 24);
@@ -113,7 +105,6 @@ public class TestChanceCard {
 
 	@Test
 	public final void testMoveEffect2() {
-
 		int expected = 4;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 25);
@@ -123,10 +114,9 @@ public class TestChanceCard {
 		assertEquals(expected, actual);
 	}
 
-	//Array Exception
+	// Array Exception
 	@Test
 	public final void testMoveEffect3() {
-
 		int expected = 1;
 
 		gameBoard.movePlayer(actualPlayer, 38);
@@ -142,7 +132,6 @@ public class TestChanceCard {
 	 */
 	@Test
 	public final void testPayEffect() {
-
 		int expected = 2000;
 		int expected2 = 800;
 
@@ -151,7 +140,7 @@ public class TestChanceCard {
 		int actual = actualPlayer.getBalance();
 		assertEquals("Values are not correct", expected, actual);
 
-		for(int i=0; i<playerList.getPlayersLeft(); ++i){
+		for (int i = 0; i < playerList.getPlayersLeft(); ++i) {
 			actual = playerList.getPlayer(i).getBalance();
 			assertEquals("Values are not correct", expected2, actual);
 		}
@@ -162,7 +151,6 @@ public class TestChanceCard {
 	 */
 	@Test
 	public final void testPlaceEffect() {
-
 		int expected = 11;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 23);
@@ -177,7 +165,6 @@ public class TestChanceCard {
 	 */
 	@Test
 	public final void testJailEffect() {
-
 		int expected = 10;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 28);

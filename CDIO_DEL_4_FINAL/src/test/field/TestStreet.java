@@ -8,25 +8,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import junit.framework.Assert;
 import spil.controller.GameBoard;
-import spil.entity.DiceCup;
 import spil.entity.Player;
 import spil.entity.field.Street;
 
-/*
- * @SuppressWarnings("deprecation") 
- * is used here to prevent getting warnings from the
- * Assert.assertNotNull() deprecated method.
- */
-@SuppressWarnings("deprecation")
 public class TestStreet {
 
 	private Player player1;
 	private Player player2;
-	private Player playerNullTest;
-	private DiceCup diceCup;
+
 	private GameBoard gameBoard;
+
 	private Street streetP1000R100;
 	private Street streetP4000R1000;
 	private Street streetP6000R3200;
@@ -34,18 +26,11 @@ public class TestStreet {
 
 	@Before
 	public void setUp() throws Exception {
-		playerNullTest = new Player("Player 1", 1000000, 0, 30000, 0);
-
 		gameBoard = new GameBoard();
 
-		diceCup = new DiceCup(2, 6);
-		// Player position 2
 		streetP1000R100 = new Street(1000, 100, Color.BLUE, gameBoard);
-		// Player position 6
 		streetP4000R1000 = new Street(4000, 1000, Color.BLUE, gameBoard);
-		// Player position 9
 		streetP6000R3200 = new Street(6000, 3200, Color.BLUE, gameBoard);
-		// Player position 8
 		streetP5500R2600 = new Street(5500, 2600, Color.BLUE, gameBoard);
 	}
 
@@ -53,25 +38,10 @@ public class TestStreet {
 	public void tearDown() throws Exception {
 		player1 = null;
 		player2 = null;
-		diceCup = null;
 	}
 
 	/*
-	 * Tests whether all the needed objects are null or not.
-	 * It should not be null.
-	 */
-	@Test
-	public void testEntities() {
-		Assert.assertNotNull(playerNullTest);
-		Assert.assertNotNull(this.diceCup);
-		Assert.assertNotNull(this.streetP1000R100);
-		Assert.assertNotNull(this.streetP4000R1000);
-		Assert.assertNotNull(this.streetP6000R3200);
-		Assert.assertNotNull(this.streetP5500R2600);
-	}
-
-	/*
-	 * Tests whether the landOnField() methods works on a specific Territory field,
+	 * Tests whether the landOnField() methods works on a specific Street field,
 	 * with the price of 1000 and rent of 100. It is needed that Player 1 purchases
 	 * the first field, so when Player 2 lands on the field, the player will pay a 
 	 * rent to Player 1.
@@ -86,9 +56,6 @@ public class TestStreet {
 
 		final int price = 1000;
 		final int rent = 100;
-		final int position = 2;
-
-		player1.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -97,11 +64,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
-
-		player2.setPosition(position);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		expected = player2.getBalance() - rent;
 
@@ -110,13 +73,12 @@ public class TestStreet {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
-	 * Tests whether the landOnField() methods works on a specific Territory field,
+	 * Tests whether the landOnField() methods works on a specific Street field,
 	 * with the price of 4000 and rent of 1000. It is needed that Player 1 purchases
 	 * the first field, so  when Player 2 lands on the field, he will pay the 
 	 * rent to Player 1.
@@ -131,9 +93,6 @@ public class TestStreet {
 
 		final int price = 4000;
 		final int rent = 1000;
-		final int position = 6;
-
-		player1.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -142,11 +101,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
-
-		player2.setPosition(position);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		expected = player2.getBalance() - rent;
 
@@ -155,9 +110,8 @@ public class TestStreet {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
@@ -176,9 +130,6 @@ public class TestStreet {
 
 		final int price = 6000;
 		final int rent = 3200;
-		final int position = 9;
-
-		player1.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -187,11 +138,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
-
-		player2.setPosition(position);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		expected = player2.getBalance() - rent;
 
@@ -200,9 +147,8 @@ public class TestStreet {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
@@ -221,9 +167,6 @@ public class TestStreet {
 
 		final int price = 5500;
 		final int rent = 2600;
-		final int position = 8;
-
-		player1.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -232,11 +175,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
-
-		player2.setPosition(position);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		expected = player2.getBalance() - rent;
 
@@ -245,9 +184,8 @@ public class TestStreet {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
@@ -261,10 +199,6 @@ public class TestStreet {
 	public void testLandOnFieldInsufficientBalance() {
 		player1 = new Player("Player 1", 1000000, 0, 0, 0);
 
-		final int position = 6;
-
-		player1.setPosition(position);
-
 		/* Nothing is removed, since the player does not purchase the field. */
 		int expected = player1.getBalance();
 
@@ -273,9 +207,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 	}
 
 	/*
@@ -291,9 +223,6 @@ public class TestStreet {
 		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
 
 		final int price = 4000;
-		final int position = 6;
-
-		player1.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -302,9 +231,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		/* Player 1 lands on the Field again */
 		streetP4000R1000.landOnField(player1);
@@ -323,9 +250,6 @@ public class TestStreet {
 		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
 
 		final int price = 4000;
-		final int position = 6;
-
-		player1.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -334,9 +258,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		/* Player 1 lands on the Field again */
 		streetP4000R1000.landOnField(player1);
@@ -358,10 +280,6 @@ public class TestStreet {
 		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
 
 		final int price = 4000;
-		final int position = 6;
-
-		player1.setPosition(position);
-		player2.setPosition(position);
 
 		int expected = player1.getBalance() - price;
 
@@ -370,9 +288,7 @@ public class TestStreet {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		/* Player 2 lands on the Field */
 		streetP4000R1000.landOnField(player2);

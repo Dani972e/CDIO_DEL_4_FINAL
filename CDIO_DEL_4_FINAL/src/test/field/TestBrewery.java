@@ -18,10 +18,10 @@ public class TestBrewery {
 
 	@Before
 	public void setUp() throws Exception {
-		player = new Player("Player 1", 1000000, 0, 30000, 0);
+		b1 = new Brewery(1000); /* Test if price of 1000 works */
+		b2 = new Brewery(3000); /* Test if price of 3000 works */
+		player = new Player("Player", 1000000, 0, 30000, 0);
 		owner = new Player("Owner", 1000000, 0, 30000, 0);
-		b1 = new Brewery(1000);
-		b2 = new Brewery(3000);
 	}
 
 	@After
@@ -33,78 +33,59 @@ public class TestBrewery {
 	}
 
 	/*
-	 * Tests whether the landOnField method works correctly, when both
-	 * Breweries are owned. This is a positive test because we are testing
-	 * our requirements. 
+	 * Tests whether the rent calculation works with 1 owner 
+	 * of a Brewery field.
+	 * This is a positive test, since this is expected to work.
 	 */
+	//////////////////////////////////////////////OWNER ARRAYLIST DOES NOT GET RESET!!!!!!!!!!!! //////////////////////////////////////
 	@Test
-	public void testBrewery2OwnersRent() {
-		int latestRoll = 5;
-		int sameOwner = 2;
+	public void test1OwnerRent() {
+		/* Simulate player latestRoll */
+		int latestRoll = 4;
 
-		/*
-		 * Make sure that the owner object owns both Brewery fields. 
-		 */
-
-		// Position 12 for Bryghuset
-		owner.setPosition(12);
+		/* Owner lands on b1 and purchases it */
 		b1.landOnField(owner);
 
-		// Position 28 for Kroen
-		owner.setPosition(28);
-		b2.landOnField(owner);
-
-		int rent = (100 * latestRoll) * sameOwner;
-		int expected = player.getBalance() - rent;
-
-		/*
-		 * Sets a sample latestRoll for Brewery to work.
-		 * Sets position to 15 to simulate that the Player
-		 * lands on Huts In The Mountain. It works as we have expected. 
-		 */
 		player.setLatestRoll(latestRoll);
-		player.setPosition(15);
+
+		/* 100 times latest roll times the Brewery owner count of owner object. */
+		int expected = player.getBalance() - (100 * latestRoll * 1);
+
+		/* Player lands on b1 */
 		b1.landOnField(player);
 
 		int actual = player.getBalance();
 
-		assertEquals("Brewery field is not removing the correct rent.", actual, expected);
+		assertEquals("Brewery rent is not calculated correctly.", expected, actual);
 	}
 
 	/*
-	 * Tests whether the landOnField method works correctly, when only one
-	 * Brewery is owned. This is also a positive test because it should work
-	 * without any errors. 
+	 * Tests whether the rent calculation works with 2 owner 
+	 * of Brewery fields.
+	 * This is a positive test, since this is expected to work.
 	 */
 	@Test
-	public void testBrewery1OwnersRent() {
-		int latestRoll = 5;
-		int sameOwner = 1;
+	public void test2OwnerRent() {
+		/* Simulate player latestRoll */
+		int latestRoll = 4;
 
-		/*
-		 * Make sure that the owner object owns one Brewery fields. 
-		 */
-
-		// Position 15 for Huts in the Mountain
-		owner.setPosition(15);
+		/* Owner lands on b1 and purchases it */
 		b1.landOnField(owner);
 
-		int rent = (200 * latestRoll) * sameOwner;
-		int expected = player.getBalance() - rent;
+		/* Owner lands on b2 and purchases it */
+		b2.landOnField(owner);
 
-		/*
-		 * Sets a sample latestRoll for LaborCamp to work.
-		 * Sets position to 15 to simulate that the Player
-		 * lands on Huts In The Mountain. We can see that this method
-		 * works correctly and functional. 
-		 */
 		player.setLatestRoll(latestRoll);
-		player.setPosition(15);
+
+		/* 100 times latest roll times the Brewery owner count of owner object. */
+		int expected = player.getBalance() - (100 * latestRoll * 2);
+
+		/* Player lands on b1 */
 		b1.landOnField(player);
 
 		int actual = player.getBalance();
 
-		assertEquals("Brewery field is not removing the correct rent.", actual, expected);
+		assertEquals("Brewery rent is not calculated correctly.", expected, actual);
 	}
 
 }

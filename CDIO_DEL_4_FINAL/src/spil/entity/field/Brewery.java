@@ -39,6 +39,7 @@ public final class Brewery extends Ownable {
 	 */
 	@Override
 	public void landOnField(Player player) {
+		
 		int sameOwnerCount = getSameOwnerCount();
 		rent = ((FieldInfo.DICE_MULTIPLIER * player.getLatestRoll()) * sameOwnerCount);
 
