@@ -1,4 +1,4 @@
-package test.entity;
+package test.entity.chancecard;
 
 import static org.junit.Assert.*;
 
