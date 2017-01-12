@@ -166,13 +166,10 @@ public class testChanceCard {
 		chanceCardList.pickOneSpecialCard(actualPlayer, 12);
 
 		int actual = actualPlayer.getBalance();
-		
-		System.out.println("Debug " + actualPlayer.getBalance());
 		assertEquals(expected, actual);
 		
-		for(int i=0; i<gameBoard.getPlayerList().getTotalPlayers(); ++i){
-			System.out.println("Debug 5 " + gameBoard.getPlayerList().getPlayer(i).getBalance());
-			actual = gameBoard.getPlayerList().getPlayer(i).getBalance();
+		for(int i=0; i<playerList.getPlayersLeft(); ++i){
+			actual = playerList.getPlayer(i).getBalance();
 			assertEquals(expected2, actual);
 		}
 	}
@@ -200,7 +197,7 @@ public class testChanceCard {
 
 		int expected = 10;
 
-		chanceCardList.pickOneSpecialCard(actualPlayer, 29);
+		chanceCardList.pickOneSpecialCard(actualPlayer, 28);
 		
 		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
 		

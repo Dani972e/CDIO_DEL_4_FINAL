@@ -37,7 +37,7 @@ public class ChanceCardList {
 			chanceCardList[i] = new MoveChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 		// Jail kort
-		for (int i = 27; i < 29; ++i)
+		for (int i = 27; i < numberOfChanceCards; ++i)
 			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 	}
 
