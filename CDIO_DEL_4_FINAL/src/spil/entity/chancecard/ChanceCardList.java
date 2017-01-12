@@ -154,14 +154,12 @@ public class ChanceCardList {
 
 			/* PayChanceCard effect */
 		} else if (card instanceof PayChanceCard) {
-			
+
 			GUIBoundary.showChanceCard(player, card.getDesc());
 			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i){
-				System.out.println("DEBUG ");
 				if (!player.equals(gameBoard.getPlayerList().getPlayer(i))
 						&& !(gameBoard.getPlayerList().getPlayer(i) == null)) {
 
-					System.out.println("DEBUG : SUCCESS");
 					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
 					player.addBalance(card.getEffect());
 					GUIBoundary.updatePlayer(gameBoard.getPlayerList().getPlayer(i));

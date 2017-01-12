@@ -7,10 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import spil.controller.GameBoard;
-import spil.entity.JailedPlayers;
 import spil.entity.Player;
 import spil.entity.PlayerList;
-import spil.entity.chancecard.ChanceCard;
 import spil.entity.chancecard.ChanceCardList;
 
 public class testChanceCard {
@@ -20,7 +18,6 @@ public class testChanceCard {
 	private static GameBoard gameBoard;
 	private static Player actualPlayer;
 	private static ChanceCardList chanceCardList;
-	private static JailedPlayers jp;
 
 	@Before
 	public void setUp() throws Exception {
@@ -29,7 +26,6 @@ public class testChanceCard {
 		gameBoard.setPlayerList(playerList);
 		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
 		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-		jp = new JailedPlayers();
 	}
 
 	@After
@@ -38,7 +34,6 @@ public class testChanceCard {
 		chanceCardList=null;
 		playerList=null;
 		actualPlayer=null;
-		jp=null;
 	}
 
 
@@ -56,8 +51,6 @@ public class testChanceCard {
 		int actual = actualPlayer.getBalance();
 
 		assertEquals(expected, actual);
-
-		System.out.println(actualPlayer.getBalance());
 	}
 
 	@Test
@@ -70,8 +63,6 @@ public class testChanceCard {
 		int actual = actualPlayer.getBalance();
 
 		assertEquals(expected, actual);
-
-		System.out.println(actualPlayer.getBalance());
 	}
 
 
@@ -125,15 +116,9 @@ public class testChanceCard {
 
 		int expected = 4;
 
-		System.out.println(actualPlayer.getPosition());
-
-		ChanceCard pickedcard=chanceCardList.pickOneSpecialCard(actualPlayer, 25);
-
-		System.out.println(pickedcard.getEffect());
+		chanceCardList.pickOneSpecialCard(actualPlayer, 25);
 
 		int actual = actualPlayer.getPosition();
-
-		System.out.println(actualPlayer.getPosition());
 
 		assertEquals(expected, actual);
 	}
@@ -151,29 +136,27 @@ public class testChanceCard {
 
 		assertEquals(expected, actual);
 	}
-	
+
 	/*
-	 * Testing PayEffect
+	 * Testing PayEffect : Work but not in Unit Testing
 	 */
 	@Test
 	public final void testPayEffect() {
 
 		int expected = 2000;
 		int expected2 = 800;
-		
-		System.out.println("Debug " + actualPlayer.getBalance());
-		
+
 		chanceCardList.pickOneSpecialCard(actualPlayer, 12);
 
 		int actual = actualPlayer.getBalance();
 		assertEquals(expected, actual);
-		
+
 		for(int i=0; i<playerList.getPlayersLeft(); ++i){
 			actual = playerList.getPlayer(i).getBalance();
 			assertEquals(expected2, actual);
 		}
 	}
-	
+
 	/*
 	 * Testing PlaceEffect
 	 */
@@ -185,7 +168,7 @@ public class testChanceCard {
 		chanceCardList.pickOneSpecialCard(actualPlayer, 23);
 
 		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
-		
+
 		assertEquals(expected, actual);
 	}
 
@@ -198,9 +181,9 @@ public class testChanceCard {
 		int expected = 10;
 
 		chanceCardList.pickOneSpecialCard(actualPlayer, 28);
-		
+
 		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
-		
+
 		assertEquals(expected, actual);
 	}
 
