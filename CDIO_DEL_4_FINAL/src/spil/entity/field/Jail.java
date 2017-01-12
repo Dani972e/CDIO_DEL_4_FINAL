@@ -34,7 +34,7 @@ public final class Jail extends Field {
 	public void landOnField(Player player) {
 		if (!isJail) {
 			GUIBoundary.print(TextInfo.jailFieldMessage(player));
-		} else if (isJail) {
+		} else {
 			GUIBoundary.print(TextInfo.jailedFieldMessage(player));
 			jailedPlayers.jailPlayer(player);
 		}
