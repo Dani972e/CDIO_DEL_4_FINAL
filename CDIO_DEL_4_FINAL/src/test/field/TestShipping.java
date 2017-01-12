@@ -13,6 +13,7 @@ public class TestShipping {
 
 	private Player player1;
 	private Player player2;
+
 	private Shipping shipping1;
 	private Shipping shipping2;
 	private Shipping shipping3;
@@ -75,10 +76,6 @@ public class TestShipping {
 		int actual = player2.getBalance();
 
 		assertEquals("Price is not correct.", expected, actual);
-	}
-
-	@Test
-	public void testRentShipping2() {
 
 	}
 
