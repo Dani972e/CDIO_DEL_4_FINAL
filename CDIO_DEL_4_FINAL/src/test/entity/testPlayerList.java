@@ -21,7 +21,7 @@ public class testPlayerList {
 	@Before
 	public void setUp() throws Exception {
 		gameBoard = new GameBoard();
-		playerList = new PlayerList(6, MAX_BALANCE, MIN_BALANCE, 30000, 0, gameBoard.getRandomUniqueCars());
+		playerList = new PlayerList(6, MAX_BALANCE, MIN_BALANCE, 30000, 0, gameBoard.getRandomUniqueVehicles());
 	}
 
 	@After
