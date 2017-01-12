@@ -10,7 +10,7 @@ import spil.controller.GameBoard;
 import spil.entity.Player;
 import spil.entity.PlayerList;
 
-public class testPlayerList {
+public class TestPlayerList {
 
 	private final int MAX_BALANCE = 100000;
 	private final int MIN_BALANCE = 0;

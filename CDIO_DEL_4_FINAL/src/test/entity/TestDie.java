@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import spil.entity.Die;
 
-public class testDie {
+public class TestDie {
 
 	private Die die;
 

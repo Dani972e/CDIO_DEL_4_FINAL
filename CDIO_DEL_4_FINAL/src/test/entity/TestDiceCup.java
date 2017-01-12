@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import spil.entity.DiceCup;
 
-public class testDiceCup {
+public class TestDiceCup {
 
 	private DiceCup diceCup;
 

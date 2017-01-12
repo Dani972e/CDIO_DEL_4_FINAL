@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import spil.entity.Player;
 
-public class testPlayer {
+public class TestPlayer {
 
 	private final int MAX_BALANCE = 100000;
 	private final int MIN_BALANCE = 0;

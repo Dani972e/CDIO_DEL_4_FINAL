@@ -11,7 +11,7 @@ import spil.entity.Player;
 import spil.entity.PlayerList;
 import spil.entity.chancecard.ChanceCardList;
 
-public class testChanceCard {
+public class TestChanceCard {
 
 	private static final int numberOfChanceCards=30;
 	private static PlayerList playerList;

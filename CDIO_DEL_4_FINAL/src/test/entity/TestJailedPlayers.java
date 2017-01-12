@@ -9,7 +9,7 @@ import org.junit.Test;
 import spil.entity.JailedPlayers;
 import spil.entity.Player;
 
-public class testJailedPlayers {
+public class TestJailedPlayers {
 
 	private Player player1, player2;
 	private JailedPlayers jailedPlayers;

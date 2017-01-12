@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import spil.entity.BankAccount;
 
-public class testBankAccount {
+public class TestBankAccount {
 
 	private BankAccount b1;
 
