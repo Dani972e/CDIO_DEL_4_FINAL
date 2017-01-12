@@ -10,24 +10,22 @@ import spil.entity.Player;
 import spil.entity.field.Shipping;
 
 public class testShipping {
-
+	private Player player1;
+	private Player player2;
 	private Shipping shipping1;
 	private Shipping shipping2;
 	private Shipping shipping3;
 	private Shipping shipping4;
 
-	private Player player;
-	private Player player2;
-
 	@Before
 	public void setUp() throws Exception {
 		shipping1 = new Shipping(4000);
-		shipping2 = new Shipping(-6000);
-		shipping3 = new Shipping(0);
-		shipping4 = new Shipping(1);
+		shipping2 = new Shipping(4000);
+		shipping3 = new Shipping(4000);
+		shipping4 = new Shipping(4000);
 
-		player = new Player("Player 1", 1000000, 0, 30000, 0);
-		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
+		player1 = new Player("player1", 1000000, 0, 30000, 0);
+		player2 = new Player("player2", 1000000, 0, 30000, 0);
 	}
 
 	@After
@@ -36,99 +34,97 @@ public class testShipping {
 		shipping2 = null;
 		shipping3 = null;
 		shipping4 = null;
-		player = null;
+		player1 = null;
 		player2 = null;
 	}
 
 	/*
-	 * Assuming that the user wants to buy the Fleet.
-	 * Testing Prices.
-	 * 
-	 * Positive test, since the Fleet field should handle this
-	 * without any errors.
+	 * Assuming that the user wants to buy the Fleet. Testing Prices. Positive
+	 * test, since the Fleet field should handle this without any errors. The
+	 * player can buy the field for 4000kr
 	 */
 	@Test
 	public void testShipping1() {
-		player.setPosition(1);
-		int expected = player.getBalance() - 4000;
-		shipping1.landOnField(player);
-		int actual = player.getBalance();
+		player1.setPosition(5);
+		int expected = player1.getBalance() - 4000;
+		shipping1.landOnField(player1);
+		int actual = player1.getBalance();
 
 		assertEquals("Price is not correct.", expected, actual);
 	}
 
 	/*
-	 * Assuming that the user wants to buy the Fleet.
-	 * Testing Prices.
-	 * 
-	 * Positive test, since the Fleet field should handle this
-	 * without any errors.
+	 * Assuming that the user wants to buy the Fleet. Testing Prices. Positive
+	 * test, since the Fleet field should handle this without any errors. The
+	 * player can buy the field for 4000kr
 	 */
 	@Test
 	public void testShipping2() {
-		player.setPosition(2);
-		int expected = player.getBalance() + 6000;
-		shipping2.landOnField(player);
-		int actual = player.getBalance();
+		player1.setPosition(15);
+		int expected = player1.getBalance() - 4000;
+		shipping2.landOnField(player1);
+		int actual = player1.getBalance();
 
 		assertEquals("Price is not correct.", expected, actual);
 	}
 
 	/*
-	 * Assuming that the user wants to buy the Fleet.
-	 * Testing Prices.
-	 * 
-	 * Positive test, since the Fleet field should handle this
-	 * without any errors.
+	 * Assuming that the user wants to buy the Fleet. Testing Prices. Positive
+	 * test, since the Fleet field should handle this without any errors. The
+	 * player can buy the field for 4000kr
 	 */
 	@Test
 	public void testShipping3() {
-		player.setPosition(1);
-		int expected = player.getBalance();
-		shipping3.landOnField(player);
-		int actual = player.getBalance();
+		player1.setPosition(25);
+		int expected = player1.getBalance() - 4000;
+		shipping3.landOnField(player1);
+		int actual = player1.getBalance();
 
 		assertEquals("Price is not correct.", expected, actual);
 	}
 
 	/*
-	 * Assuming that the user wants to buy the Fleet.
-	 * Testing Prices.
-	 * 
-	 * Positive test, since the Fleet field should handle this
-	 * without any errors.
+	 * Assuming that the user wants to buy the Fleet. Testing Prices. Positive
+	 * test, since the Fleet field should handle this without any errors. The
+	 * player can buy the field for 4000kr
 	 */
 	@Test
 	public void testShipping4() {
-		player.setPosition(1);
-
-		int expected = player.getBalance() - 1;
-		shipping4.landOnField(player);
-		int actual = player.getBalance();
+		player1.setPosition(35);
+		int expected = player1.getBalance() - 4000;
+		shipping4.landOnField(player1);
+		int actual = player1.getBalance();
 
 		assertEquals("Price is not correct.", expected, actual);
 	}
 
-	/*
-	 * Assuming that the player1 want to buy 3 Fleets.
-	 * player2 lands on fleet1 and pays the correct rent.
-	 */
 	@Test
-	public void testBuy3Shipping() {
-		player.setPosition(1);
-		player2.setPosition(2);
+	public void testRentShipping1() {
+		int expected = player2.getBalance() - 500;
 
-		int expected = player2.getBalance() - 2000;
-
-		shipping1.landOnField(player);
-		shipping2.landOnField(player);
-		shipping3.landOnField(player);
+		player1.setPosition(5);
+		shipping1.landOnField(player1);
 
 		shipping1.landOnField(player2);
-
 		int actual = player2.getBalance();
 
-		assertEquals("Rent is not correct.", expected, actual);
+		assertEquals("Price is not correct.", expected, actual);
+	}
+
+	@Test
+	public void testRentShipping2() {
+		int expected = player2.getBalance() - 1000;
+
+		player1.setPosition(5);
+		shipping1.landOnField(player1);
+
+		player1.setPosition(15);
+		shipping2.landOnField(player1);
+
+		shipping2.landOnField(player2);
+		int actual = player2.getBalance();
+
+		assertEquals("Price is not correct.", expected, actual);
 	}
 
 }
