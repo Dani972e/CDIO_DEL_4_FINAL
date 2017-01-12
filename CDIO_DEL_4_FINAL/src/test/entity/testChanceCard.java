@@ -1,4 +1,4 @@
-package test.entity;
+package test;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import spil.controller.GameBoard;
+import spil.entity.JailedPlayers;
 import spil.entity.Player;
 import spil.entity.PlayerList;
 import spil.entity.chancecard.ChanceCard;
@@ -19,6 +20,7 @@ public class testChanceCard {
 	private static GameBoard gameBoard;
 	private static Player actualPlayer;
 	private static ChanceCardList chanceCardList;
+	private static JailedPlayers jp;
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,7 +29,7 @@ public class testChanceCard {
 		gameBoard.setPlayerList(playerList);
 		chanceCardList=new ChanceCardList(numberOfChanceCards, gameBoard);
 		actualPlayer = gameBoard.getPlayerList().getPlayer(0);
-
+		jp = new JailedPlayers();
 	}
 
 	@After
@@ -36,6 +38,7 @@ public class testChanceCard {
 		chanceCardList=null;
 		playerList=null;
 		actualPlayer=null;
+		jp=null;
 	}
 
 
@@ -103,7 +106,7 @@ public class testChanceCard {
 
 	/*
 	 * Testing 2 MoveChanceCard Effect
-	 * Index 24 and 25
+	 * Index 24, 25 and 26
 	 */
 	@Test
 	public final void testMoveEffect() {
@@ -148,4 +151,50 @@ public class testChanceCard {
 
 		assertEquals(expected, actual);
 	}
+	
+	/*
+	 * Testing PayEffect
+	 */
+	@Test
+	public final void testPayEffect() {
+
+		int expected = 11;
+
+		chanceCardList.pickOneSpecialCard(actualPlayer, 23);
+
+		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
+		
+		assertEquals(expected, actual);
+	}
+	
+	/*
+	 * Testing PlaceEffect
+	 */
+	@Test
+	public final void testPlaceEffect() {
+
+		int expected = 11;
+
+		chanceCardList.pickOneSpecialCard(actualPlayer, 23);
+
+		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
+		
+		assertEquals(expected, actual);
+	}
+
+	/*
+	 * Testing if player go to jail
+	 */
+	@Test
+	public final void testJailEffect() {
+
+		int expected = 10;
+
+		chanceCardList.pickOneSpecialCard(actualPlayer, 29);
+		
+		int actual = actualPlayer.getPosition(); // Don't work with jp.isJailed Method
+		
+		assertEquals(expected, actual);
+	}
+
 }
