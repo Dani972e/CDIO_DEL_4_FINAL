@@ -1,6 +1,5 @@
 package spil.controller;
 
-import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.entity.DiceCup;
 import spil.entity.Player;
