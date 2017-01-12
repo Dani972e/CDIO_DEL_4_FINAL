@@ -255,24 +255,6 @@ public class testPlayer {
 	}
 
 	/*
-	 * Tests whether balance related methods are
-	 * working correctly. Positive test it the amount
-	 * is within the bounds.
-	 */
-	@Test
-	public void testBalance() {
-		int expected = 1500;
-		player.addBalance(500);
-		int actual = player.getBalance();
-		assertEquals(expected, actual);
-
-		expected = 500;
-		player.removeBalance(1000);
-		actual = player.getBalance();
-		assertEquals(expected, actual);
-	}
-
-	/*
 	 * adding overflow which is a negative test.
 	 */
 	@Test
