@@ -58,7 +58,9 @@ public class TestShipping {
 	}
 
 	/*
-	 * 
+	 * Testing whether the correct rent is removed when 
+	 * the owner owns only one Shipping field.
+	 * Positive test.
 	 */
 	@Test
 	public void testRentShipping1() {
@@ -66,6 +68,84 @@ public class TestShipping {
 
 		/* Purchase the field */
 		shipping1.landOnField(player1);
+
+		/* Land on the field */
+		shipping1.landOnField(player2);
+
+		int actual = player2.getBalance();
+
+		assertEquals("Price is not correct.", expected, actual);
+	}
+
+	/*
+	 * Testing whether the correct rent is removed when 
+	 * the owner owns 2 Shipping fields.
+	 * Positive test.
+	 */
+	@Test
+	public void testRentShipping2() {
+		int expected = player2.getBalance() - 1000;
+
+		/* Purchase the field */
+		shipping1.landOnField(player1);
+
+		/* Purchase the field */
+		shipping2.landOnField(player1);
+
+		/* Land on the field */
+		shipping1.landOnField(player2);
+
+		int actual = player2.getBalance();
+
+		assertEquals("Price is not correct.", expected, actual);
+	}
+
+	/*
+	 * Testing whether the correct rent is removed when 
+	 * the owner owns 3 Shipping fields.
+	 * Positive test.
+	 */
+	@Test
+	public void testRentShipping3() {
+		int expected = player2.getBalance() - 2000;
+
+		/* Purchase the field */
+		shipping1.landOnField(player1);
+
+		/* Purchase the field */
+		shipping2.landOnField(player1);
+
+		/* Purchase the field */
+		shipping3.landOnField(player1);
+
+		/* Land on the field */
+		shipping1.landOnField(player2);
+
+		int actual = player2.getBalance();
+
+		assertEquals("Price is not correct.", expected, actual);
+	}
+
+	/*
+	 * Testing whether the correct rent is removed when 
+	 * the owner owns 4 Shipping fields.
+	 * Positive test.
+	 */
+	@Test
+	public void testRentShipping4() {
+		int expected = player2.getBalance() - 4000;
+
+		/* Purchase the field */
+		shipping1.landOnField(player1);
+
+		/* Purchase the field */
+		shipping2.landOnField(player1);
+
+		/* Purchase the field */
+		shipping3.landOnField(player1);
+
+		/* Purchase the field */
+		shipping4.landOnField(player1);
 
 		/* Land on the field */
 		shipping1.landOnField(player2);
