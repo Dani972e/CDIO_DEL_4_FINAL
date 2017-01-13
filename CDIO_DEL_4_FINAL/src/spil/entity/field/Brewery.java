@@ -17,7 +17,7 @@ public final class Brewery extends Ownable {
 	 * ArrayList object to keep track of Players who own instances of the
 	 * Brewery field.
 	 */
-	private static List<Player> ownerList = new ArrayList<Player>();
+	private static List<Player> ownerList;
 
 	/*
 	 * Rent amount of the field.
@@ -39,7 +39,8 @@ public final class Brewery extends Ownable {
 	 */
 	@Override
 	public void landOnField(Player player) {
-		
+		ownerList = new ArrayList<>();
+
 		int sameOwnerCount = getSameOwnerCount();
 		rent = ((FieldInfo.DICE_MULTIPLIER * player.getLatestRoll()) * sameOwnerCount);
 

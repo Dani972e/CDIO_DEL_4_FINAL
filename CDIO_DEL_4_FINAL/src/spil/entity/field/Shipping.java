@@ -26,7 +26,7 @@ public final class Shipping extends Ownable {
 	 * ArrayList object to keep track of Players who own instances of the Fleet
 	 * field.
 	 */
-	private static List<Player> ownerList = new ArrayList<Player>();
+	private static List<Player> ownerList;
 
 	/*
 	 * Constructor that sets price variable with super constructor.
@@ -42,6 +42,7 @@ public final class Shipping extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		int sameOwnerCount = getSameOwnerCount();
+		ownerList = new ArrayList<>();
 
 		if ((sameOwnerCount - 1) < 1) {
 			sameOwnerCount = 0;
