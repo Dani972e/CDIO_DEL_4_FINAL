@@ -299,7 +299,7 @@ public class TextInfo {
 	}
 
 	public static String purchaseHouseDeniedMessage(Player player) {
-		return player.getName() + " har ikke købt alle felter med denne farve.";
+		return player.getName() + " kan ikke købe et hus på denne grund, da " + player.getName() + " ikke har købt alle grunde med denne farve.";
 	}
 
 	public static String purchaseHouseNotEnoughMoneyMessage(Player player, int price) {
@@ -374,7 +374,7 @@ public class TextInfo {
 	}
 
 	public static String declinedFieldSaleMessag(Player player) {
-		return player.getName() + " valgte ikke at sælge noget felt.";
+		return player.getName() + " valgte ikke at sælge nogen grund.";
 	}
 
 	private TextInfo() {
