@@ -42,12 +42,6 @@ public class TestShipping {
 	}
 
 	/*
-	 * 
-	 * Der sker et eller andet med de static ArrayLists?
-	 * 
-	 */
-
-	/*
 	 * Assuming that the user wants to buy the Shipping field. Testing Prices. Positive
 	 * test, since the Shipping field should handle this without any errors. The
 	 * player can buy the field for 4000.
@@ -63,6 +57,9 @@ public class TestShipping {
 		assertEquals("Price is not correct.", expected, actual);
 	}
 
+	/*
+	 * 
+	 */
 	@Test
 	public void testRentShipping1() {
 		int expected = player2.getBalance() - 500;

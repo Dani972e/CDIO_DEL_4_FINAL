@@ -37,7 +37,6 @@ public class TestBrewery {
 	 * of a Brewery field.
 	 * This is a positive test, since this is expected to work.
 	 */
-	//////////////////////////////////////////////OWNER ARRAYLIST DOES NOT GET RESET!!!!!!!!!!!! //////////////////////////////////////
 	@Test
 	public void test1OwnerRent() {
 		/* Simulate player latestRoll */

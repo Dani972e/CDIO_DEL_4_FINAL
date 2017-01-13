@@ -33,6 +33,7 @@ public final class Shipping extends Ownable {
 	 */
 	public Shipping(int price) {
 		super(price);
+		ownerList = new ArrayList<>();
 	}
 
 	/*
@@ -42,15 +43,11 @@ public final class Shipping extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		int sameOwnerCount = getSameOwnerCount();
-		ownerList = new ArrayList<>();
 
 		if ((sameOwnerCount - 1) < 1) {
 			sameOwnerCount = 0;
 		} else {
 			sameOwnerCount -= 1;
-		}
-		for (int i = 0; i < ownerList.size(); i++) {
-			System.out.println(i + ": " + ownerList.get(i).getName());
 		}
 
 		rent = rents[sameOwnerCount];

@@ -29,6 +29,7 @@ public final class Brewery extends Ownable {
 	 */
 	public Brewery(int price) {
 		super(price);
+		ownerList = new ArrayList<>();
 	}
 
 	/*
@@ -39,8 +40,6 @@ public final class Brewery extends Ownable {
 	 */
 	@Override
 	public void landOnField(Player player) {
-		ownerList = new ArrayList<>();
-
 		int sameOwnerCount = getSameOwnerCount();
 		rent = ((FieldInfo.DICE_MULTIPLIER * player.getLatestRoll()) * sameOwnerCount);
 
