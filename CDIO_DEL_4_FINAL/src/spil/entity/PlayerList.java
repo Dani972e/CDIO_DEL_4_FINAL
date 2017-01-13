@@ -31,8 +31,7 @@ public class PlayerList {
 		playerList = new Player[playerCount];
 
 		for (int i = 0; i < playerCount; i++) {
-			playerList[i] = new Player(TextInfo.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins,
-					position);
+			playerList[i] = new Player(TextInfo.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins, position);
 			GUIBoundary.addPlayer(playerList[i], cars[i]);
 		}
 	}
@@ -46,9 +45,8 @@ public class PlayerList {
 		for (Player player : playerList) {
 			if (playerToDelete.equals(player)) {
 				playerList[index] = null;
-
 			}
-			++index;
+			index++;
 		}
 	}
 
@@ -82,7 +80,7 @@ public class PlayerList {
 		int left = 0;
 		for (Player player : playerList) {
 			if (player instanceof Player) {
-				++left;
+				left++;
 			}
 		}
 		return left;
@@ -92,12 +90,12 @@ public class PlayerList {
 	 * Returns the last Player object inside the array.
 	 */
 	public Player getLastPlayer() {
-		Player last = null;
+		Player lastPlayer = null;
 		for (Player player : playerList) {
 			if (player instanceof Player)
-				last = player;
+				lastPlayer = player;
 		}
-		return last;
+		return lastPlayer;
 	}
 
 }

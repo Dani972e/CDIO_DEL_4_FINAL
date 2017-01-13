@@ -96,10 +96,8 @@ public class Player {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof Player) {
-			if (((Player) obj).getName().equals(this.getName())) {
-				return true;
-			}
+		if (obj instanceof Player && ((Player) obj).getName().equals(this.getName())) {
+			return true;
 		}
 		return false;
 	}

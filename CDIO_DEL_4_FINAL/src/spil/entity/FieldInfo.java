@@ -18,19 +18,16 @@ public class FieldInfo {
 	public static final double TAX_MULTIPLIER = 0.1;
 
 	/* Array of colours for the player fields */
-	public static final Color[][] fieldColors = { { Color.WHITE, Color.BLACK }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.YELLOW, Color.BLACK }, { Color.YELLOW, Color.BLACK },
-			{ Color.RED, Color.WHITE }, { Color.RED, Color.WHITE }, { Color.BLUE, Color.WHITE },
-			{ Color.BLUE, Color.WHITE }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK },
-			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, };
+	public static final Color[][] fieldColors = { { Color.WHITE, Color.BLACK }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.YELLOW, Color.BLACK }, { Color.YELLOW, Color.BLACK }, { Color.RED, Color.WHITE },
+			{ Color.RED, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.CYAN, Color.BLACK },
+			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, };
 
 	/* Array of colours for the player vehicles */
-	public static final Color[][] vehicleColors = { { new Color(0x03453F), new Color(0xFF0010) },
-			{ new Color(0x0400FF), new Color(0xFF00E1) }, { new Color(0xAF4342), new Color(0xFF0910) },
-			{ new Color(0xFA4039), new Color(0xF023E1) }, { new Color(0xABC423), new Color(0xAB0FA0) },
+	public static final Color[][] vehicleColors = { { new Color(0x03453F), new Color(0xFF0010) }, { new Color(0x0400FF), new Color(0xFF00E1) },
+			{ new Color(0xAF4342), new Color(0xFF0910) }, { new Color(0xFA4039), new Color(0xF023E1) }, { new Color(0xABC423), new Color(0xAB0FA0) },
 			{ new Color(0xA4FBC3), new Color(0xF234B0) }, };
 
 	/*

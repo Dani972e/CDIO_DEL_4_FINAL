@@ -53,10 +53,8 @@ public class DiceCup {
 	 */
 	public boolean checkRollEquality(boolean increaseCounter) {
 		for (int i = 0, n = rollList.length; i < n; i++) {
-			if ((i + 1) < n) {
-				if (rollList[i] != rollList[i + 1]) {
-					return false;
-				}
+			if ((i + 1) < n && rollList[i] != rollList[i + 1]) {
+				return false;
 			}
 		}
 		if (increaseCounter) {

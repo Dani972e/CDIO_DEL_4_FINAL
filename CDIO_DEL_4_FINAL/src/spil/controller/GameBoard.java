@@ -39,21 +39,19 @@ public class GameBoard {
 	private final desktop_fields.Field[] guiFields = {
 
 			// index 0 
-			new Start.Builder().setBgColor(Color.RED).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[0][0])
-					.setSubText(TextInfo.fieldText[0][1]).setDescription(TextInfo.fieldText[0][2]).build(),
+			new Start.Builder().setBgColor(Color.RED).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[0][0]).setSubText(TextInfo.fieldText[0][1])
+					.setDescription(TextInfo.fieldText[0][2]).build(),
 
 			// index 1 
-			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[1][0]).setSubText(TextInfo.fieldText[1][1])
-					.setDescription(TextInfo.fieldText[1][2]).build(),
+			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[1][0])
+					.setSubText(TextInfo.fieldText[1][1]).setDescription(TextInfo.fieldText[1][2]).build(),
 
 			// index 2 
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 
 			// index 3 
-			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[3][0]).setSubText(TextInfo.fieldText[3][1])
-					.setDescription(TextInfo.fieldText[3][2]).build(),
+			new Street.Builder().setBgColor(new Color(0x169DE5)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[3][0])
+					.setSubText(TextInfo.fieldText[3][1]).setDescription(TextInfo.fieldText[3][2]).build(),
 
 			// index 4 
 			new Street.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[4][0])
@@ -64,45 +62,39 @@ public class GameBoard {
 					.setSubText(TextInfo.fieldText[5][1]).setDescription(TextInfo.fieldText[5][2]).build(),
 
 			// index 6 
-			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[6][0]).setSubText(TextInfo.fieldText[6][1])
-					.setDescription(TextInfo.fieldText[6][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[6][0])
+					.setSubText(TextInfo.fieldText[6][1]).setDescription(TextInfo.fieldText[6][2]).build(),
 
 			// index 7 
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 
 			// index 8 
-			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[8][0]).setSubText(TextInfo.fieldText[8][1])
-					.setDescription(TextInfo.fieldText[8][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[8][0])
+					.setSubText(TextInfo.fieldText[8][1]).setDescription(TextInfo.fieldText[8][2]).build(),
 
 			// index 9 					
-			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[9][0]).setSubText(TextInfo.fieldText[9][1])
-					.setDescription(TextInfo.fieldText[9][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xFCb16F)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[9][0])
+					.setSubText(TextInfo.fieldText[9][1]).setDescription(TextInfo.fieldText[9][2]).build(),
 
 			// index 10 
 			new Jail.Builder().setBgColor(Color.GRAY).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[10][0])
 					.setSubText(TextInfo.fieldText[10][1]).setDescription(TextInfo.fieldText[10][2]).build(),
 
 			// index 11 					
-			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[11][0]).setSubText(TextInfo.fieldText[11][1])
-					.setDescription(TextInfo.fieldText[11][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[11][0])
+					.setSubText(TextInfo.fieldText[11][1]).setDescription(TextInfo.fieldText[11][2]).build(),
 
 			// index 12
 			new Brewery.Builder().setBgColor(Color.BLACK).setFgColor(Color.WHITE).setTitle(TextInfo.fieldText[12][0])
 					.setSubText(TextInfo.fieldText[12][1]).setDescription(TextInfo.fieldText[12][2]).build(),
 
 			// index 13 
-			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[13][0]).setSubText(TextInfo.fieldText[13][1])
-					.setDescription(TextInfo.fieldText[13][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[13][0])
+					.setSubText(TextInfo.fieldText[13][1]).setDescription(TextInfo.fieldText[13][2]).build(),
 
 			// index 14 
-			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[14][0]).setSubText(TextInfo.fieldText[14][1])
-					.setDescription(TextInfo.fieldText[14][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xA9F446)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[14][0])
+					.setSubText(TextInfo.fieldText[14][1]).setDescription(TextInfo.fieldText[14][2]).build(),
 
 			// index 15 
 			new Shipping.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[15][0])
@@ -189,18 +181,16 @@ public class GameBoard {
 			new Chance.Builder().setBgColor(Color.WHITE).setFgColor(Color.BLACK).build(),
 
 			// index 37
-			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[37][0]).setSubText(TextInfo.fieldText[37][1])
-					.setDescription(TextInfo.fieldText[37][2]).build(),
+			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[37][0])
+					.setSubText(TextInfo.fieldText[37][1]).setDescription(TextInfo.fieldText[37][2]).build(),
 
 			// index 38
 			new Street.Builder().setBgColor(Color.PINK).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[38][0])
 					.setSubText(TextInfo.fieldText[38][1]).setDescription(TextInfo.fieldText[38][2]).build(),
 
 			// index 39
-			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK)
-					.setTitle(TextInfo.fieldText[39][0]).setSubText(TextInfo.fieldText[39][1])
-					.setDescription(TextInfo.fieldText[39][2]).build(), };
+			new Street.Builder().setBgColor(new Color(0xB144FF)).setFgColor(Color.BLACK).setTitle(TextInfo.fieldText[39][0])
+					.setSubText(TextInfo.fieldText[39][1]).setDescription(TextInfo.fieldText[39][2]).build(), };
 
 	/*
 	 * Array that holds all the functional fields.
@@ -333,16 +323,16 @@ public class GameBoard {
 	private final Car[] playerVehicles = {
 			new Car.Builder().patternHorizontalGradiant().typeRacecar().primaryColor(FieldInfo.vehicleColors[0][0])
 					.secondaryColor(FieldInfo.vehicleColors[0][1]).build(),
-			new Car.Builder().patternZebra().typeCar().primaryColor(FieldInfo.vehicleColors[1][0])
-					.secondaryColor(FieldInfo.vehicleColors[1][1]).build(),
-			new Car.Builder().patternDotted().typeTractor().primaryColor(FieldInfo.vehicleColors[2][0])
-					.secondaryColor(FieldInfo.vehicleColors[2][1]).build(),
+			new Car.Builder().patternZebra().typeCar().primaryColor(FieldInfo.vehicleColors[1][0]).secondaryColor(FieldInfo.vehicleColors[1][1])
+					.build(),
+			new Car.Builder().patternDotted().typeTractor().primaryColor(FieldInfo.vehicleColors[2][0]).secondaryColor(FieldInfo.vehicleColors[2][1])
+					.build(),
 			new Car.Builder().patternHorizontalGradiant().typeUfo().primaryColor(FieldInfo.vehicleColors[3][0])
 					.secondaryColor(FieldInfo.vehicleColors[3][1]).build(),
-			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldInfo.vehicleColors[4][0])
-					.secondaryColor(FieldInfo.vehicleColors[4][1]).build(),
-			new Car.Builder().patternDotted().typeUfo().primaryColor(FieldInfo.vehicleColors[5][0])
-					.secondaryColor(FieldInfo.vehicleColors[5][1]).build(), };
+			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldInfo.vehicleColors[4][0]).secondaryColor(FieldInfo.vehicleColors[4][1])
+					.build(),
+			new Car.Builder().patternDotted().typeUfo().primaryColor(FieldInfo.vehicleColors[5][0]).secondaryColor(FieldInfo.vehicleColors[5][1])
+					.build(), };
 
 	/*
 	 * Wrapper method for the shuffleCards method in ChanceCardList class.
@@ -478,17 +468,11 @@ public class GameBoard {
 			/* Determine which class the field to be sold is and act accordingly */
 			if (fields[soldFieldIndex] instanceof Ownable) {
 				if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Street.class)) {
-					((spil.entity.field.Street) fields[soldFieldIndex]).sellField(player, soldFieldName,
-							soldFieldIndex);
+					((spil.entity.field.Street) fields[soldFieldIndex]).sellField(player, soldFieldName, soldFieldIndex);
 				} else if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Shipping.class)) {
-					((spil.entity.field.Shipping) fields[soldFieldIndex]).sellField(player, soldFieldName,
-							soldFieldIndex);
+					((spil.entity.field.Shipping) fields[soldFieldIndex]).sellField(player, soldFieldName, soldFieldIndex);
 				} else if (fields[soldFieldIndex].getClass().equals(spil.entity.field.Brewery.class)) {
-					((spil.entity.field.Brewery) fields[soldFieldIndex]).sellField(player, soldFieldName,
-							soldFieldIndex);
-				} else {
-					((spil.entity.field.Ownable) fields[soldFieldIndex]).sellField(player, soldFieldName,
-							soldFieldIndex);
+					((spil.entity.field.Brewery) fields[soldFieldIndex]).sellField(player, soldFieldName, soldFieldIndex);
 				}
 			}
 		} else if (fieldNames.size() > 1) {
@@ -534,8 +518,7 @@ public class GameBoard {
 	 */
 	public void deletePlayerHouses(Player player) {
 		for (int i = 0, n = fields.length; i < n; i++) {
-			if (fields[i] instanceof spil.entity.field.Street
-					&& player.equals(((spil.entity.field.Street) fields[i]).getOwner())
+			if (fields[i] instanceof spil.entity.field.Street && player.equals(((spil.entity.field.Street) fields[i]).getOwner())
 					&& ((spil.entity.field.Street) fields[i]).getHouseCount() > 0) {
 				GUIBoundary.setHouses(i, 0);
 				GUIBoundary.setHotel(i, false);

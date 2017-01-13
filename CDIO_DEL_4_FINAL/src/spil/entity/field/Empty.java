@@ -27,7 +27,7 @@ public class Empty extends Field {
 	public void landOnField(Player player) {
 		if (!isStart) {
 			GUIBoundary.print(TextInfo.parkingMessage(player));
-		} else if (isStart) {
+		} else {
 			GUIBoundary.print(TextInfo.startFieldMessage(player));
 		}
 	}

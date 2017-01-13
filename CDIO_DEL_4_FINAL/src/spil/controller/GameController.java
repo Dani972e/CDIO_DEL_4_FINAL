@@ -125,7 +125,7 @@ public class GameController {
 		 * 
 		 * If not, player lands on a field and gets checked for another equal throw.
 		 */
-		if (diceCup.checkRollEquality(true) && !gameBoard.isJailed(currentPlayer) && diceCup.sameThrowJail(3)) {
+		if (diceCup.checkRollEquality(true) && diceCup.sameThrowJail(3)) {
 			GUIBoundary.print(TextInfo.sameCounterThrowJailMessage(currentPlayer));
 			gameBoard.jailPlayer(currentPlayer);
 		} else {

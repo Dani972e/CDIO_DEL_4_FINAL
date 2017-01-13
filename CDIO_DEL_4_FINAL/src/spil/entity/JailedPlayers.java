@@ -49,12 +49,10 @@ public class JailedPlayers {
 	 */
 	public void decPlayerCounter(Player jailedPlayer) {
 		for (int i = 0, n = jailedPlayers.length; i < n; i++) {
-			if (jailedPlayers[i] != null) {
-				if (jailedPlayers[i].equals(jailedPlayer) && counters[i] > 0) {
-					counters[i] -= 1;
-					removeJailedPlayer(i);
-					break;
-				}
+			if (jailedPlayers[i] != null && jailedPlayers[i].equals(jailedPlayer) && counters[i] > 0) {
+				counters[i] -= 1;
+				removeJailedPlayer(i);
+				break;
 			}
 		}
 	}

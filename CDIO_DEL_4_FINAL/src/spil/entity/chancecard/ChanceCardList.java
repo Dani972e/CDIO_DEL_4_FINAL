@@ -22,22 +22,22 @@ public class ChanceCardList {
 		chanceCardList = new ChanceCard[numberOfChanceCards];
 
 		// Bonus og betaling
-		for (int i = 0; i < 12; ++i)
+		for (int i = 0; i < 12; i++)
 			chanceCardList[i] = new BonusChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 		chanceCardList[12] = new PayChanceCard(TextInfo.chanceCardValue[12], TextInfo.chanceCardText[12], 12);
 
 		// Tax
-		for (int i = 13; i < 21; ++i)
+		for (int i = 13; i < 21; i++)
 			chanceCardList[i] = new TaxChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 		// Placering og movePlayer
-		for (int i = 21; i < 24; ++i)
+		for (int i = 21; i < 24; i++)
 			chanceCardList[i] = new PlaceChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
-		for (int i = 24; i < 27; ++i)
+		for (int i = 24; i < 27; i++)
 			chanceCardList[i] = new MoveChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 
 		// Jail kort
-		for (int i = 27; i < numberOfChanceCards; ++i)
+		for (int i = 27; i < numberOfChanceCards; i++)
 			chanceCardList[i] = new JailChanceCard(TextInfo.chanceCardValue[i], TextInfo.chanceCardText[i], i);
 	}
 
@@ -49,7 +49,7 @@ public class ChanceCardList {
 		ChanceCard[] temp = new ChanceCard[chanceCardList.length];
 		int randomIndex = 0;
 
-		for (int i = 0; i < chanceCardList.length; ++i) {
+		for (int i = 0; i < chanceCardList.length; i++) {
 			while (temp[randomIndex] != null)
 				randomIndex = (int) (Math.random() * temp.length);
 
@@ -156,9 +156,8 @@ public class ChanceCardList {
 		} else if (card instanceof PayChanceCard) {
 
 			GUIBoundary.showChanceCard(player, card.getDesc());
-			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i){
-				if (!player.equals(gameBoard.getPlayerList().getPlayer(i))
-						&& !(gameBoard.getPlayerList().getPlayer(i) == null)) {
+			for (int i = 0; i < gameBoard.getPlayerList().getTotalPlayers(); ++i) {
+				if (!player.equals(gameBoard.getPlayerList().getPlayer(i)) && !(gameBoard.getPlayerList().getPlayer(i) == null)) {
 
 					gameBoard.getPlayerList().getPlayer(i).removeBalance(card.getEffect());
 					player.addBalance(card.getEffect());
