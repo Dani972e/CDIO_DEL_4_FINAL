@@ -69,7 +69,7 @@ public class ChanceCardList {
 
 		ChanceCard pickedCard = chanceCardList[chanceCardList.length - 1];
 
-		/* Use card effect on the player */
+		/* Use card effect on the player and the gameboard*/
 		useEffect(player, pickedCard);
 
 		for (int i = 0; i < temp.length; ++i) {
@@ -80,7 +80,7 @@ public class ChanceCardList {
 			while (newIndex > temp.length) {
 				newIndex = newIndex - (temp.length);
 			}
-			/* Apply the new position to every number (not the last) */
+			/* Apply the new position to every number*/
 			temp[newIndex - 1] = chanceCardList[i];
 		}
 
@@ -115,7 +115,7 @@ public class ChanceCardList {
 			while (newIndex > temp.length) {
 				newIndex = newIndex - (temp.length);
 			}
-			/* Apply the new position to every number (not the last) */
+			/* Apply the new position to every number */
 			temp[newIndex - 1] = chanceCardList[i];
 		}
 
@@ -126,7 +126,7 @@ public class ChanceCardList {
 
 	/*
 	 * Method that uses the effect of the card object on the 
-	 * specified player object.
+	 * specified player and gameBoard objects.
 	 */
 	private void useEffect(Player player, ChanceCard card) {
 
